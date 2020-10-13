@@ -137,7 +137,7 @@
 (define (add-to-end l element)
   (append l (list element)))
 
-(define (process-good read-result)
+(define (process-instructions read-result)
   (let ([labels (make-eq-hashtable)])
     (define (loop data instructions args i)
       (define (loop-again inst arg)
@@ -169,7 +169,7 @@
     (loop read-result '() '() 0)))
 
 (define (simulate data starting-stack)
-  (let* ([processed (process-good data)]
+  (let* ([processed (process-instructions data)]
          [instructions (car processed)]
          [args (cadr processed)]
          [labels (caddr processed)])

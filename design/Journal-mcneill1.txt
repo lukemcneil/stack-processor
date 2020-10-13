@@ -1,0 +1,25 @@
+Luke McNeil
+Milestone 2
+
+1) Thursday, Friday October 8-9, 2020
+
+   [4 hours]
+   Created a simulator for our stack language written in Chez
+   Scheme. The simulator can take a program such as our relprime
+   example and then run it, simulating the stack as a list.
+
+2) Tuesday, October 13, 2020
+
+   [1.5 hours]
+   Wrote the RTL descriptions for add, sub, or, dup, swap, drop, and
+   over. While doing this I had to figure out how we would refer to
+   the stack of registers in RTL. The way I decided to do it was with
+   Reg.push(value) which pushes onto the stack a value and Reg.pop()
+   which pops off the top thing on the stack.
+   
+   I also edited our design document in response to Sid's feedback of
+   M1. This includes making places for a title page, table of
+   contents, executive summary, and additional sections. I then
+   combined the table showing instruction description with the table
+   showing opcode and funct into 1 table. I also replaced exit with
+   halt, an instruction which always jumps to itself.
