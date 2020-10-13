@@ -51,50 +51,50 @@
 (define (halt stack return-stack pc labels)
   (cons* stack -1 return-stack))
 
-#;(define (process program)
-(let ([inst-i 0]
-[arg-i -1]
-[label-i -1]
-[inst-count 0]
-[instructions '()]
-[args '()]
-[labels (make-eq-hashtable)])
-(for-each
-(lambda (ch i)
-(when (char=? ch #\:)
-(set! label-i (1+ i)))
-(when (char=? ch #\ )
-(set! arg-i (1+ i)))
-(when (char=? ch #\newline)
-(when (not (= label-i -1))
-(hashtable-set! labels (string->symbol (substring program inst-i (1- label-i))) inst-count))
-(let ([inst-symbol (string->symbol (substring program
-(if (= label-i -1) inst-i label-i)
-(if (= arg-i -1)
-i
-(1- arg-i))))])
-(set!
-instructions        
-(append             
-instructions       
-(list inst-symbol)))
-(set!
-args                         
-(append                      
-args                         
-(if (= -1 arg-i)             
-'(#f)                        
-(list                        
-((if (or (symbol=? 'j inst-symbol) (symbol=? 'beq inst-symbol) (symbol=? 'bez inst-symbol) (symbol=? 'jal inst-symbol))
-string->symbol               
-string->number) (substring program arg-i i))))))
-(set! label-i -1)
-(set! arg-i -1)
-(set! inst-i (1+ i))
-(set! inst-count (1+ inst-count)))))
-(string->list program)
-(iota (string-length program)))
-(list (list->vector instructions) (list->vector args) labels)))
+;; (define (process program)
+;;   (let ([inst-i 0]
+;;         [arg-i -1]
+;;         [label-i -1]
+;;         [inst-count 0]
+;;         [instructions '()]
+;;         [args '()]
+;;         [labels (make-eq-hashtable)])
+;;     (for-each
+;;      (lambda (ch i)
+;;        (when (char=? ch #\:)
+;;          (set! label-i (1+ i)))
+;;        (when (char=? ch #\ )
+;;          (set! arg-i (1+ i)))
+;;        (when (char=? ch #\newline)
+;;          (when (not (= label-i -1))
+;;            (hashtable-set! labels (string->symbol (substring program inst-i (1- label-i))) inst-count))
+;;          (let ([inst-symbol (string->symbol (substring program
+;;                                                        (if (= label-i -1) inst-i label-i)
+;;                                                        (if (= arg-i -1)
+;;                                                            i
+;;                                                            (1- arg-i))))])
+;;            (set!
+;;             instructions        
+;;             (append             
+;;              instructions       
+;;              (list inst-symbol)))
+;;            (set!
+;;             args                         
+;;             (append                      
+;;              args                         
+;;              (if (= -1 arg-i)             
+;;                  '(#f)                        
+;;                  (list                        
+;;                   ((if (or (symbol=? 'j inst-symbol) (symbol=? 'beq inst-symbol) (symbol=? 'bez inst-symbol) (symbol=? 'jal inst-symbol))
+;;                        string->symbol               
+;;                        string->number) (substring program arg-i i))))))
+;;            (set! label-i -1)
+;;            (set! arg-i -1)
+;;            (set! inst-i (1+ i))
+;;            (set! inst-count (1+ inst-count)))))
+;;      (string->list program)
+;;      (iota (string-length program)))
+;;    (list (list->vector instructions) (list->vector args) labels)))
 
 (define (file->list-of-lines filename)
   (let ([file (open-input-file filename)])
