@@ -286,5 +286,6 @@ F3:
 ;;(file->instructions "rel-prime.asm")
 ;;(string->instructions rel-prime)
 
-(time (simulate (file->instructions "fact.asm") '(50)))
+(time (simulate (file->instructions "fact.asm") '(61)))
+(time (simulate (file->instructions "rel-prime.asm") '(30030)))
 ;;(time (simulate (string->instructions rel-prime) '(30030)))
