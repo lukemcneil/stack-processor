@@ -283,9 +283,9 @@ F3:
 	add")
 
 ;;(time (simulate (process rel-prime) '(30030)))
-;;(file->instructions "rel-prime.asm")
+;;(file->instructions "example-programs/rel-prime.asm")
 ;;(string->instructions rel-prime)
 
-(time (simulate (file->instructions "fact.asm") '(61)))
-(time (simulate (file->instructions "rel-prime.asm") '(30030)))
+(time (simulate (file->instructions "example-programs/fact.asm") '(61)))
+(time (simulate (file->instructions "example-programs/rel-prime.asm") '(30030)))
 ;;(time (simulate (string->instructions rel-prime) '(30030)))

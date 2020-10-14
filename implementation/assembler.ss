@@ -232,6 +232,6 @@ RETURNA:
 	drop
 	return")
 
-(assert (equal? (assemble-file "rel-prime.asm") (assemble-string rel-prime)))
-(assemble-file "rel-prime.asm")
-(map 16-bit->hex (assemble-file "rel-prime.asm"))
+(assert (equal? (assemble-file "example-programs/rel-prime.asm") (assemble-string rel-prime)))
+(assemble-file "example-programs/rel-prime.asm")
+(map 16-bit->hex (assemble-file "example-programs/rel-prime.asm"))
