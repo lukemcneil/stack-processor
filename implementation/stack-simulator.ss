@@ -173,7 +173,7 @@
          [instructions (car processed)]
          [args (cadr processed)]
          [labels (caddr processed)])
-    (define (loop stack return-stack pc)
+    (define (loop stack return-stack pc max-stack-size max-return-stack-size instruction-count)
       (let* ([inst (vector-ref instructions pc)]
              [arg (vector-ref args pc)]
              [result (apply
@@ -183,11 +183,18 @@
              [pc-new (cadr result)]
              [return-stack-new (cddr result)])
         ;;(printf "~s ~s\n  stack: ~s\n  return: ~s\n" inst arg stack-new return-stack-new)
+        ;;(printf "~s\n" (length stack-new))
         (if (and (< pc-new (vector-length instructions)) (> pc-new 0))
-            (loop stack-new return-stack-new pc-new)
-            stack-new)))
+            (loop stack-new return-stack-new pc-new
+                  (max (length stack-new) max-stack-size)
+                  (max (length return-stack-new) max-return-stack-size)
+                  (1+ instruction-count))
+            (begin
+              (printf "max-stack-size: ~s\nmax-return-stack-size: ~s\ninstruction-count: ~s\n"
+                      max-stack-size max-return-stack-size instruction-count)
+              stack-new))))
     ;;(printf "~s\n" '())
-    (loop starting-stack '() 0)))
+    (loop starting-stack '() 0 0 0 0)))
 
 (define rel-prime
   "	jal RELPRIME
@@ -279,5 +286,5 @@ F3:
 ;;(file->instructions "rel-prime.asm")
 ;;(string->instructions rel-prime)
 
-;;(time (simulate (file->instructions "rel-prime.asm") '(30030)))
-(time (simulate (string->instructions rel-prime) '(30030)))
+(time (simulate (file->instructions "fact.asm") '(50)))
+;;(time (simulate (string->instructions rel-prime) '(30030)))
