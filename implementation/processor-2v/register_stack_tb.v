@@ -8,13 +8,16 @@ module register_stack_tb;
 	reg CLK;
 
 	// Outputs
-	wire [15:0] a;
-	wire [15:0] b;
+	wire signed [15:0] a;
+	wire signed [15:0] b;
 	
 	// use this if your design contains sequential logic
    parameter   PERIOD = 20;
    parameter   real DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
+	
+	integer i;
+	integer fails;
 
    initial    // Clock process for CLK
      begin
@@ -36,100 +39,150 @@ module register_stack_tb;
 		.CLK(CLK)
 	);
 	
-	function push;
+	task push;
 		input [15:0] val;
 		begin
 			stackOP = 1;
 			w = val;
+			#PERIOD;
 		end
-	endfunction
+	endtask
 	
-	function add;
-		input _;
+	task add;
 		begin
 			stackOP = 2;
 			w = b + a;
+			#PERIOD;
 		end
-	endfunction
+	endtask
 	
-	function sub;
-		input _;
+	task pop;
 		begin
-			stackOP = 2;
-			w = b - a;
+			stackOP = 3;
+			#PERIOD;	
 		end
-	endfunction
+	endtask
 	
-	function or2;
-		input _;
+	task pop2;
 		begin
-			stackOP = 2;
-			w = b | a;
+			stackOP = 4;
+			#PERIOD;	
 		end
-	endfunction
+	endtask
 	
-	function pop;
-		input _;
-		stackOP = 3;
-	endfunction
-	
-	function pop2;
-		input _;
-		stackOP = 4;
-	endfunction
-	
-	function swap;
-		input _;
-		stackOP = 5;
-	endfunction
-
-	function dup;
-		input _;
+	task swap;
 		begin
-			stackOP = 1;
-			w = a;
+			stackOP = 5;
+			#PERIOD;	
 		end
-	endfunction
-	
-	function over;
-		input _;
-		begin
-			stackOP = 1;
-			w = b;
-		end
-	endfunction
-	
-	function slt;
-		input _;
-		begin
-			stackOP = 2;
-			if (b < a)
-				w = 1;
-			else
-				w = 0;
-		end
-	endfunction
+	endtask
 	
 	initial begin
 		// Initialize Inputs
 		CLK = 0;
 		stackOP = 0;
 		w = 0;
+		fails = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
 		
 		// Add stimulus here
+		
+		// Test push
 		push(1);
-		#PERIOD;		
+		if (a != 1) begin
+			$display("FAIL: push: expected %d, actual %d", 1, a);
+			fails = fails + 1;
+		end
+		pop();
 		
+		// Test pop and replace
+		push(1);
+		push(4);
+		add();
+		if (a != 5) begin
+			$display("FAIL: pop and replace: expected %d, actual %d", 5, a);
+			fails = fails + 1;
+		end
+		pop();
+		
+		// Test pop
 		push(2);
-		#PERIOD;
+		push(4);
+		pop();
+		if (a != 2) begin
+			$display("FAIL: pop: expected %d, actual %d", 2, a);
+			fails = fails + 1;
+		end
+		pop();
+		if (a != 0) begin
+			$display("FAIL: pop: expected %d, actual %d", 0, a);
+			fails = fails + 1;
+		end
+			
+		// Test pop 2
+		push(2);
+		push(4);
+		push(3);
+		push(5);
+		pop2();
+		if (a != 4) begin
+			$display("FAIL: pop 2: expected %d, actual %d", 4, a);
+			fails = fails + 1;
+		end
+		pop2();
+		if (a != 0) begin
+			$display("FAIL: pop 2: expected %d, actual %d", 0, a);
+			fails = fails + 1;
+		end
+			
+		// Test swap
+		push(1);
+		push(2);
+		swap();
+		if (a != 1) begin
+			$display("FAIL: swap: expected %d, actual %d", 1, a);
+			fails = fails + 1;
+		end
+		swap();
+		if (a != 2) begin
+			$display("FAIL: swap: expected %d, actual %d", 2, a);
+			fails = fails + 1;
+		end
+		pop2();
 		
-		slt(0);
-		#PERIOD;
+		// Test many pushes
+		for (i = 0; i < 64; i = i + 1) begin
+			push(i+1);
+		end
+		for (i = 0; i < 63; i = i + 1) begin
+			pop();
+		end
+		if (a != 1) begin
+			$display("FAIL: many pushes: expected %d, actual %d", 1, a);
+			fails = fails + 1;
+		end
+		pop();
+		
+		// Test many pushes, 65 spot becomes 0
+		for (i = 0; i < 65; i = i + 1) begin
+			push(i+1);
+		end
+		for (i = 0; i < 64; i = i + 1) begin
+			pop();
+		end
+		if (a != 0) begin
+			$display("FAIL: lose 65: expected %d, actual %d", 0, a);
+			fails = fails + 1;
+		end
 		
 		stackOP = 0;
+		
+		if (fails == 0)
+			$display("ALL TESTS PASSED");
+		else
+			$display("FAILS %d TESTS", fails);
 	end
       
 endmodule

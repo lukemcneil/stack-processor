@@ -8,7 +8,7 @@ module register_stack(
 	 input CLK
     );
 	 
-	 parameter stackSize = 4;
+	 parameter stackSize = 32;
 	 
 	 reg [15:0] stack [stackSize-1:0];
 	 reg [15:0] temp;
@@ -19,13 +19,14 @@ module register_stack(
 	assign b = stack[1];
 	
 	initial begin
-		for (i = 0; i < stackSize; i = i + 1) begin
+		for (i = 0; i < stackSize; i = i + 1)
 			stack[i] = 0;
-		end
 	end
 	
-	always @ (posedge CLK)
+	always @ (negedge CLK)
 		case(stackOP)
+			0: begin
+			end
 			1: begin // push
 				for(i = stackSize - 1; i > 0; i = i - 1)
 					stack[i] = stack[i-1];
