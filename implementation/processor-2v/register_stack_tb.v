@@ -60,6 +60,14 @@ module register_stack_tb;
 		end
 	endfunction
 	
+	function or2;
+		input _;
+		begin
+			stackOP = 2;
+			w = b | a;
+		end
+	endfunction
+	
 	function pop;
 		input _;
 		stackOP = 3;
@@ -75,6 +83,33 @@ module register_stack_tb;
 		stackOP = 5;
 	endfunction
 
+	function dup;
+		input _;
+		begin
+			stackOP = 1;
+			w = a;
+		end
+	endfunction
+	
+	function over;
+		input _;
+		begin
+			stackOP = 1;
+			w = b;
+		end
+	endfunction
+	
+	function slt;
+		input _;
+		begin
+			stackOP = 2;
+			if (b < a)
+				w = 1;
+			else
+				w = 0;
+		end
+	endfunction
+	
 	initial begin
 		// Initialize Inputs
 		CLK = 0;
@@ -91,28 +126,7 @@ module register_stack_tb;
 		push(2);
 		#PERIOD;
 		
-		push(3);
-		#PERIOD;
-		
-		push(4);
-		#PERIOD;
-		
-		add(0);
-		#PERIOD;
-		
-		sub(0);
-		#PERIOD;
-		
-		add(0);
-		#PERIOD;
-
-		push(7);
-		#PERIOD;
-		
-		swap(0);
-		#PERIOD;
-		
-		pop2(0);
+		slt(0);
 		#PERIOD;
 		
 		stackOP = 0;
