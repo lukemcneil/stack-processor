@@ -5,7 +5,8 @@ module register_stack_tb;
 	// Inputs
 	reg [2:0] stackOP;
 	reg [15:0] w;
-	reg CLK;
+	reg reset;
+   reg CLK;
 
 	// Outputs
 	wire signed [15:0] a;
@@ -32,10 +33,11 @@ module register_stack_tb;
 
 	// Instantiate the Unit Under Test (UUT)
 	register_stack uut (
-		.stackOP(stackOP), 
-		.w(w), 
 		.a(a), 
 		.b(b),
+		.stackOP(stackOP), 
+		.w(w), 
+		.reset(reset),
 		.CLK(CLK)
 	);
 	
@@ -77,6 +79,15 @@ module register_stack_tb;
 		end
 	endtask
 	
+	task resetStack;
+		begin
+			reset = 1;
+			stackOP = 0;
+			#PERIOD;
+			reset = 0;
+		end
+	endtask;
+	
 	initial begin
 		// Initialize Inputs
 		CLK = 0;
@@ -89,13 +100,15 @@ module register_stack_tb;
 		
 		// Add stimulus here
 		
+		resetStack();
+		
 		// Test push
 		push(1);
 		if (a != 1) begin
 			$display("FAIL: push: expected %d, actual %d", 1, a);
 			fails = fails + 1;
 		end
-		pop();
+		resetStack();
 		
 		// Test pop and replace
 		push(1);
@@ -105,7 +118,7 @@ module register_stack_tb;
 			$display("FAIL: pop and replace: expected %d, actual %d", 5, a);
 			fails = fails + 1;
 		end
-		pop();
+		resetStack();
 		
 		// Test pop
 		push(2);
@@ -120,6 +133,7 @@ module register_stack_tb;
 			$display("FAIL: pop: expected %d, actual %d", 0, a);
 			fails = fails + 1;
 		end
+		resetStack();
 			
 		// Test pop 2
 		push(2);
@@ -136,6 +150,7 @@ module register_stack_tb;
 			$display("FAIL: pop 2: expected %d, actual %d", 0, a);
 			fails = fails + 1;
 		end
+		resetStack();
 			
 		// Test swap
 		push(1);
@@ -150,7 +165,7 @@ module register_stack_tb;
 			$display("FAIL: swap: expected %d, actual %d", 2, a);
 			fails = fails + 1;
 		end
-		pop2();
+		resetStack();
 		
 		// Test many pushes
 		for (i = 0; i < 64; i = i + 1) begin
@@ -163,7 +178,7 @@ module register_stack_tb;
 			$display("FAIL: many pushes: expected %d, actual %d", 1, a);
 			fails = fails + 1;
 		end
-		pop();
+		resetStack();
 		
 		// Test many pushes, 65 spot becomes 0
 		for (i = 0; i < 65; i = i + 1) begin
@@ -176,8 +191,7 @@ module register_stack_tb;
 			$display("FAIL: lose 65: expected %d, actual %d", 0, a);
 			fails = fails + 1;
 		end
-		
-		stackOP = 0;
+		resetStack();
 		
 		if (fails == 0)
 			$display("ALL TESTS PASSED");
