@@ -1,27 +1,5 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   18:20:21 10/19/2020
-// Design Name:   register_stack
-// Module Name:   /home/luke/csse232/project/2021a-project-2v/implementation/processor-2v/register_stack_tb.v
-// Project Name:  processor-2v
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: register_stack
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
 module register_stack_tb;
 
 	// Inputs

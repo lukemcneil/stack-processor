@@ -1,23 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    18:19:28 10/19/2020 
-// Design Name: 
-// Module Name:    register_stack 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module register_stack(
     input [2:0] stackOP,
     input [15:0] w,
@@ -32,7 +14,6 @@ module register_stack(
 	 reg [15:0] temp;
 	 
 	 integer i;
-//	foo[5] = 16'h1D3A; //put 0x1D3A  into sixth register
 
 	assign a = stack[0];
 	assign b = stack[1];
