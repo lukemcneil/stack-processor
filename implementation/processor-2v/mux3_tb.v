@@ -34,6 +34,8 @@ module mux3_test;
 	reg [15:0] i6;
 	reg [15:0] i7;
 	reg [2:0] control;
+	
+	wire [15:0] out;
 
 	// Instantiate the Unit Under Test (UUT)
 	mux3 uut (
@@ -45,7 +47,8 @@ module mux3_test;
 		.i5(i5), 
 		.i6(i6), 
 		.i7(i7), 
-		.control(control)
+		.control(control),
+		.out(out)
 	);
 
 	initial begin
@@ -66,17 +69,19 @@ module mux3_test;
 		// Add stimulus here
 		repeat (7) begin
 			case(control)
-				3'b000 : if(out = i0) $display("PASS!");
-				3'b001 : if(out = i1) $display("PASS!");
-				3'b010 : if(out = i2) $display("PASS!");
-				3'b011 : if(out = i3) $display("PASS!");
-				3'b100 : if(out = i4) $display("PASS!");
-				3'b101 : if(out = i5) $display("PASS!");
-				3'b110 : if(out = i6) $display("PASS!");
-				default: if(out = i7) $display("PASS!");
-			end
+				3'b000 : if(out == i0) $display("PASS!");
+				3'b001 : if(out == i1) $display("PASS!");
+				3'b010 : if(out == i2) $display("PASS!");
+				3'b011 : if(out == i3) $display("PASS!");
+				3'b100 : if(out == i4) $display("PASS!");
+				3'b101 : if(out == i5) $display("PASS!");
+				3'b110 : if(out == i6) $display("PASS!");
+				default: if(out == i7) $display("PASS!");
+			endcase
 
 			control = control + 1;
+			#10;
 		end
+	end
 
 endmodule
