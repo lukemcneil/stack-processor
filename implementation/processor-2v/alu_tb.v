@@ -258,7 +258,7 @@ module alu_tb;
 		A = 16'hAAAA;
 		B = 16'hBBBB;
 		#10;
-		if (ALU_Out != 1)
+		if (ALU_Out != 0)
 		begin
 			$display("AEqualsB.1 bad");
 			bad = bad + 1;
@@ -267,7 +267,7 @@ module alu_tb;
 		A = 16'h0abc;
 		B = 16'h0abc;
 		#10;
-		if (ALU_Out != 0)
+		if (ALU_Out != 1)
 		begin
 			$display("AEqualsB.2 bad");
 			bad = bad + 1;
@@ -276,7 +276,7 @@ module alu_tb;
 		A = 16'b0000000000100000;
 		B = 16'b0000000000010000;
 		#10;
-		if (ALU_Out != 1)
+		if (ALU_Out != 0)
 		begin
 			$display("AEqualsB.3 bad");
 			bad = bad + 1;
@@ -289,7 +289,7 @@ module alu_tb;
 		
 		A = 16'hCA11;
 		#10;
-		if (ALU_Out != 1)
+		if (ALU_Out != 0)
 		begin
 			$display("AEqualsZero.1 bad");
 			bad = bad + 1;
@@ -297,7 +297,7 @@ module alu_tb;
 		
 		A = 16'h0000;
 		#10;
-		if (ALU_Out != 0)
+		if (ALU_Out != 1)
 		begin
 			$display("AEqualsZero.2 bad");
 			bad = bad + 1;
@@ -305,7 +305,7 @@ module alu_tb;
 		
 		A = 16'hBEEF;
 		#10;
-		if (ALU_Out != 1)
+		if (ALU_Out != 0)
 		begin
 			$display("AEqualsZero.3 bad");
 			bad = bad + 1;

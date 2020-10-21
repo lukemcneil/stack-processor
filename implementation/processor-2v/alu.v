@@ -26,16 +26,16 @@ module alu(
 				ALU_Out <= A;
 			4'b0110:	//select B
 				ALU_Out <= B;
-			4'b0111:	//A == B? 0:1
+			4'b0111:	//A == B? 1:0
 				if (A == B)
-					ALU_Out <= 0;
-				else
 					ALU_Out <= 1;
-			4'b1000:	//A == 0? 0:1
+				else
+					ALU_Out <= 0;
+			4'b1000:	//A == 0? 1:0
 				if (A == 0)
-					ALU_Out <= 0;
-				else
 					ALU_Out <= 1;
+				else
+					ALU_Out <= 0;
 			4'b1001:	//B < A? 1:0
 				if (B < A)
 					ALU_Out <= 1;
