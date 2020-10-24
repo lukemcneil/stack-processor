@@ -1,0 +1,239 @@
+`timescale 1ns / 1ps
+
+module control(
+   input [15:0] inst,
+   input reset,	
+	input CLK,
+   output reg [2:0] stackOP,
+   output reg [1:0] rStackOP,
+   output reg [1:0] ALUOP,
+   output reg [2:0] stackControl,
+   output reg [2:0] PCControl,
+   output reg [0:0] MemWrite,
+   output reg [0:0] PCWrite
+   );
+	
+//	stackOP and rStackOP
+	parameter NONE = 0;
+	parameter PUSH = 1;
+	parameter POPANDREPLACE = 2;
+	parameter POP = 3;
+	parameter POP2 = 4;
+	parameter SWAP = 5;
+	
+//	ALUOP
+	parameter ADD = 0;
+	parameter SUB = 1;
+	parameter AND = 2;
+	parameter OR = 3;
+	parameter XOR = 4;
+	parameter A = 5;
+	parameter B = 6;
+	parameter EQ = 7;
+	parameter EZ = 8;
+	parameter BLESSA = 9;
+	
+//	stackControl
+	parameter IMM = 0;
+	parameter IMMLUI = 1;
+	parameter MEM = 2;
+	parameter ALU = 3;
+	parameter INPUT = 4;
+	
+//	PCControl
+	parameter RETURN = 0;
+	parameter TOPOFSTACK = 1;
+	parameter LABEL = 2;
+	parameter LABELORPCINC = 3;
+	parameter PCINC = 4;
+	
+	always @ (posedge CLK) begin
+		case(inst[15:12])
+			0: begin // O Type
+				case(inst[11:0])
+					0: begin // add
+						stackOP = POPANDREPLACE;
+						rStackOP = NONE;
+						ALUOP = ADD;
+						stackControl = ALU;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					1: begin // dup
+						stackOP = PUSH;
+						rStackOP = NONE;
+						ALUOP = A;
+						stackControl = ALU;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					2: begin // drop
+						stackOP = POP;
+						rStackOP = NONE;
+						ALUOP = 0;
+						stackControl = 0;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					3: begin // halt
+						stackOP = NONE;
+						rStackOP = NONE;
+						ALUOP = 0;
+						stackControl = 0;
+						PCControl = 0;
+						MemWrite = 0;
+						PCWrite = 0;
+					end
+					4: begin // getin
+						stackOP = PUSH;
+						rStackOP = NONE;
+						ALUOP = 0;
+						stackControl = INPUT;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					5: begin // js
+						stackOP = POP;
+						rStackOP = NONE;
+						ALUOP = 0;
+						stackControl = 0;
+						PCControl = TOPOFSTACK;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					6: begin // over
+						stackOP = PUSH;
+						rStackOP = NONE;
+						ALUOP = B;
+						stackControl = ALU;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					7: begin // or
+						stackOP = POPANDREPLACE;
+						rStackOP = NONE;
+						ALUOP = OR;
+						stackControl = ALU;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					8: begin // return
+						stackOP = NONE;
+						rStackOP = POP;
+						ALUOP = 0;
+						stackControl = 0;
+						PCControl = RETURN;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					9: begin // slt
+						stackOP = POPANDREPLACE;
+						rStackOP = NONE;
+						ALUOP = BLESSA;
+						stackControl = ALU;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					10: begin // sub
+						stackOP = POPANDREPLACE;
+						rStackOP = NONE;
+						ALUOP = SUB;
+						stackControl = ALU;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+					11: begin // swap
+						stackOP = SWAP;
+						rStackOP = NONE;
+						ALUOP = 0;
+						stackControl = 0;
+						PCControl = PCINC;
+						MemWrite = 0;
+						PCWrite = 1;
+					end
+				endcase
+			end
+			1: begin // beq
+				stackOP = POP2;
+				rStackOP = NONE;
+				ALUOP = EQ;
+				stackControl = 0;
+				PCControl = LABELORPCINC;
+				MemWrite = 0;
+				PCWrite = 1;
+			end
+			2: begin // bez
+				stackOP = POP;
+				rStackOP = NONE;
+				ALUOP = EZ;
+				stackControl = 0;
+				PCControl = LABELORPCINC;
+				MemWrite = 0;
+				PCWrite = 1;
+			end
+			3: begin // j
+				stackOP = NONE;
+				rStackOP = NONE;
+				ALUOP = 0;
+				stackControl = 0;
+				PCControl = LABEL;
+				MemWrite = 0;
+				PCWrite = 1;
+			end
+			4: begin // jal
+				stackOP = NONE;
+				rStackOP = PUSH;
+				ALUOP = 0;
+				stackControl = 0;
+				PCControl = LABEL;
+				MemWrite = 0;
+				PCWrite = 1;
+			end
+			5: begin // pop
+				stackOP = POP;
+				rStackOP = NONE;
+				ALUOP = 0;
+				stackControl = 0;
+				PCControl = PCINC;
+				MemWrite = 1;
+				PCWrite = 1;
+			end
+			6: begin // push
+				stackOP = PUSH;
+				rStackOP = NONE;
+				ALUOP = 0;
+				stackControl = MEM;
+				PCControl = PCINC;
+				MemWrite = 0;
+				PCWrite = 1;
+			end
+			7: begin // pushi
+				stackOP = PUSH;
+				rStackOP = NONE;
+				ALUOP = 0;
+				stackControl = IMM;
+				PCControl = PCINC;
+				MemWrite = 0;
+				PCWrite = 1;
+			end
+			8: begin // lui
+				stackOP = PUSH;
+				rStackOP = NONE;
+				ALUOP = 0;
+				stackControl = IMMLUI;
+				PCControl = PCINC;
+				MemWrite = 0;
+				PCWrite = 1;
+			end
+		endcase
+	end
+	
+endmodule

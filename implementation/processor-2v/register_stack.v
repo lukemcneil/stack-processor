@@ -2,7 +2,8 @@
 
 module register_stack(a, b, stackOP, w, reset, CLK);
 	output [15:0] a;
-   output [15:0] b;input [2:0] stackOP;
+   output [15:0] b;
+	input [2:0] stackOP;
    input [15:0] w;
 	input reset;
    input CLK;
@@ -46,9 +47,9 @@ module register_stack(a, b, stackOP, w, reset, CLK);
 			end
 			
 			5: begin // swap
-				temp <= stack[0];
+//				temp <= stack[0];
 				stack[0] <= stack[1];
-				stack[1] <= temp;
+				stack[1] <= stack[0];
 			end
 			default: begin end
 		endcase
