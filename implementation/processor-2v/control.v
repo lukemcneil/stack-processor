@@ -6,7 +6,7 @@ module control(
 	input CLK,
    output reg [2:0] stackOP,
    output reg [1:0] rStackOP,
-   output reg [1:0] ALUOP,
+   output reg [3:0] ALUOP,
    output reg [2:0] stackControl,
    output reg [2:0] PCControl,
    output reg [0:0] MemWrite,
@@ -72,8 +72,6 @@ module control(
 					2: begin // drop
 						stackOP = POP;
 						rStackOP = NONE;
-						ALUOP = 0;
-						stackControl = 0;
 						PCControl = PCINC;
 						MemWrite = 0;
 						PCWrite = 1;
@@ -81,16 +79,12 @@ module control(
 					3: begin // halt
 						stackOP = NONE;
 						rStackOP = NONE;
-						ALUOP = 0;
-						stackControl = 0;
-						PCControl = 0;
 						MemWrite = 0;
 						PCWrite = 0;
 					end
 					4: begin // getin
 						stackOP = PUSH;
 						rStackOP = NONE;
-						ALUOP = 0;
 						stackControl = INPUT;
 						PCControl = PCINC;
 						MemWrite = 0;
@@ -99,8 +93,6 @@ module control(
 					5: begin // js
 						stackOP = POP;
 						rStackOP = NONE;
-						ALUOP = 0;
-						stackControl = 0;
 						PCControl = TOPOFSTACK;
 						MemWrite = 0;
 						PCWrite = 1;
@@ -126,8 +118,6 @@ module control(
 					8: begin // return
 						stackOP = NONE;
 						rStackOP = POP;
-						ALUOP = 0;
-						stackControl = 0;
 						PCControl = RETURN;
 						MemWrite = 0;
 						PCWrite = 1;
@@ -153,8 +143,6 @@ module control(
 					11: begin // swap
 						stackOP = SWAP;
 						rStackOP = NONE;
-						ALUOP = 0;
-						stackControl = 0;
 						PCControl = PCINC;
 						MemWrite = 0;
 						PCWrite = 1;
@@ -165,7 +153,6 @@ module control(
 				stackOP = POP2;
 				rStackOP = NONE;
 				ALUOP = EQ;
-				stackControl = 0;
 				PCControl = LABELORPCINC;
 				MemWrite = 0;
 				PCWrite = 1;
@@ -174,7 +161,6 @@ module control(
 				stackOP = POP;
 				rStackOP = NONE;
 				ALUOP = EZ;
-				stackControl = 0;
 				PCControl = LABELORPCINC;
 				MemWrite = 0;
 				PCWrite = 1;
@@ -182,8 +168,6 @@ module control(
 			3: begin // j
 				stackOP = NONE;
 				rStackOP = NONE;
-				ALUOP = 0;
-				stackControl = 0;
 				PCControl = LABEL;
 				MemWrite = 0;
 				PCWrite = 1;
@@ -191,8 +175,6 @@ module control(
 			4: begin // jal
 				stackOP = NONE;
 				rStackOP = PUSH;
-				ALUOP = 0;
-				stackControl = 0;
 				PCControl = LABEL;
 				MemWrite = 0;
 				PCWrite = 1;
@@ -200,8 +182,6 @@ module control(
 			5: begin // pop
 				stackOP = POP;
 				rStackOP = NONE;
-				ALUOP = 0;
-				stackControl = 0;
 				PCControl = PCINC;
 				MemWrite = 1;
 				PCWrite = 1;
@@ -209,7 +189,6 @@ module control(
 			6: begin // push
 				stackOP = PUSH;
 				rStackOP = NONE;
-				ALUOP = 0;
 				stackControl = MEM;
 				PCControl = PCINC;
 				MemWrite = 0;
@@ -218,7 +197,6 @@ module control(
 			7: begin // pushi
 				stackOP = PUSH;
 				rStackOP = NONE;
-				ALUOP = 0;
 				stackControl = IMM;
 				PCControl = PCINC;
 				MemWrite = 0;
@@ -227,7 +205,6 @@ module control(
 			8: begin // lui
 				stackOP = PUSH;
 				rStackOP = NONE;
-				ALUOP = 0;
 				stackControl = IMMLUI;
 				PCControl = PCINC;
 				MemWrite = 0;

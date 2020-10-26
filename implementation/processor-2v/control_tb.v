@@ -12,8 +12,11 @@ module control_tb;
 	wire [1:0] rStackOP;
 	wire [2:0] stackControl;
 	wire [2:0] PCControl;
+	wire [3:0] ALUOP;
 	wire MemWrite;
 	wire PCWrite;
+	
+	integer fails;
 	
 	// use this if your design contains sequential logic
    parameter   PERIOD = 20;
@@ -41,7 +44,8 @@ module control_tb;
 		.stackControl(stackControl), 
 		.PCControl(PCControl), 
 		.MemWrite(MemWrite), 
-		.PCWrite(PCWrite)
+		.PCWrite(PCWrite),
+		.ALUOP(ALUOP)
 	);
 
 	initial begin
@@ -49,12 +53,23 @@ module control_tb;
 		inst = 0;
 		reset = 0;
 		CLK = 0;
+		fails = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
 		// Add stimulus here
 		inst = 'h0000;
+		if (stackOP != 2 ||
+				rStackOP != 0 ||
+				ALUOP != 0 ||
+				stackControl != 3 ||
+				PCControl != 4 ||
+				MemWrite != 0 ||
+				PCWrite != 1) begin
+			$display("FAIL: add");
+			fails = fails + 1;
+		end
 		#PERIOD;
 		inst = 'h0001;
 		#PERIOD;
@@ -95,6 +110,11 @@ module control_tb;
 		#PERIOD;
 		inst = 'h8000;
 		#PERIOD;
+		
+		if (fails == 0)
+			$display("ALL TESTS PASSED");
+		else
+			$display("FAILS %d TESTS", fails);
 	end
       
 endmodule
