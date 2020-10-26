@@ -11,7 +11,6 @@ module register_stack(a, b, stackOP, w, reset, CLK);
 	localparam stackSize = 64;
 	 
 	reg [15:0] stack [stackSize-1:0];
-	reg [15:0] temp;
 	 
 	integer i;
 
@@ -47,7 +46,6 @@ module register_stack(a, b, stackOP, w, reset, CLK);
 			end
 			
 			5: begin // swap
-//				temp <= stack[0];
 				stack[0] <= stack[1];
 				stack[1] <= stack[0];
 			end

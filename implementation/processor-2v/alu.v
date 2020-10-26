@@ -53,6 +53,8 @@ module alu(
 //				ALU_Out <= 
 //			4'b1111:
 //				ALU_Out <= 
+			default: 
+				ALU_Out <= 0;
 		endcase
 	end
 	 
