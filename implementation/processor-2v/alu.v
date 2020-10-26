@@ -15,7 +15,7 @@ module alu(
 			4'b0000:	//add
 				ALU_Out <= A + B;
 			4'b0001:	//sub
-				ALU_Out <= A - B;
+				ALU_Out <= B - A;
 			4'b0010:	//logical and
 				ALU_Out <= A & B;
 			4'b0011:	//logical or

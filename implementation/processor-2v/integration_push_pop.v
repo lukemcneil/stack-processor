@@ -7,14 +7,12 @@ module integration_push_pop(
 	input CLK,
 	input [15:0] immediate,
 	input [2:0] mux_selector,
-	output Overflow
-//	output wire [15:0] a,
-//	output wire [15:0] b
+	output Overflow,
+	output wire [15:0] aOut,
+	output wire [15:0] bOut,
+	output wire [15:0] ALU_out
    );
 	
-	wire [15:0] a;
-	wire [15:0] b;
-	wire [15:0] ALU_out;
 	wire [15:0] mux_out;
 	
 	mux3 mux (
@@ -25,8 +23,8 @@ module integration_push_pop(
 	);
 	
 	register_stack stack (
-		.a(a),
-		.b(b),
+		.a(aOut),
+		.b(bOut),
 		.stackOP(stackOP), 
 		.w(mux_out),
 		.reset(reset),
@@ -35,8 +33,8 @@ module integration_push_pop(
 	
 	alu alu (
 		.Oper(aluOP), 
-		.A(a),
-		.B(b),
+		.A(aOut),
+		.B(bOut),
 		.ALU_Out(ALU_out),
 		.Overflow(Overflow)
 	);

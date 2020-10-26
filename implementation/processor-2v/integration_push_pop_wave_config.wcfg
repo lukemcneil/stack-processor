@@ -10,15 +10,20 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="9" />
-   <wvobject fp_name="/integration_push_pop_tb/uut/stack/a" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">a[15:0]</obj_property>
-      <obj_property name="ObjectShortName">a[15:0]</obj_property>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/integration_push_pop_tb/topOfStack" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">topOfStack[15:0]</obj_property>
+      <obj_property name="ObjectShortName">topOfStack[15:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/integration_push_pop_tb/uut/stack/b" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">b[15:0]</obj_property>
-      <obj_property name="ObjectShortName">b[15:0]</obj_property>
+   <wvobject fp_name="/integration_push_pop_tb/secondOfStack" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">secondOfStack[15:0]</obj_property>
+      <obj_property name="ObjectShortName">secondOfStack[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_push_pop_tb/ALU_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALU_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_out[15:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/integration_push_pop_tb/stackOP" type="array" db_ref_id="1">

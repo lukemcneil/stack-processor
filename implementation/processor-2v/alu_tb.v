@@ -67,10 +67,10 @@ module alu_tb;
 	//Testing sub
 		Oper = 4'b0001;
 		
-		A = 16'hDEAD;
-		B = 16'hBEEF;
+		A = 16'hBEEF;
+		B = 16'hDEAD;
 		#10;
-		if (ALU_Out != (A-B))
+		if (ALU_Out != (B-A))
 		begin
 			$display("sub.1 bad");
 			bad = bad + 1;
@@ -79,16 +79,16 @@ module alu_tb;
 		A = 16'h1111;
 		B = 16'h1111;
 		#10;
-		if (ALU_Out != (A-B))
+		if (ALU_Out != (B-A))
 		begin
 			$display("sub.2 bad");
 			bad = bad + 1;
 		end
 		
-		A = 16'h0000;
-		B = 16'h0001;
+		A = 16'h0001;
+		B = 16'h0000;
 		#10;
-		if (ALU_Out != (A-B))
+		if (ALU_Out != (B-A))
 		begin
 			$display("sub.3 bad");
 			bad = bad + 1;
