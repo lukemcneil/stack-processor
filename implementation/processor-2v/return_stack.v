@@ -1,8 +1,7 @@
 `timescale 1ns / 1ps
 
-module return_stack(a, b, stackOP, w, reset, CLK);
+module return_stack(a, stackOP, w, reset, CLK);
 	output [15:0] a;
-   output [15:0] b;
 	input [1:0] stackOP;
    input [15:0] w;
 	input reset;
@@ -15,7 +14,6 @@ module return_stack(a, b, stackOP, w, reset, CLK);
 	integer i;
 
 	assign a = stack[0];
-	assign b = stack[1];
 	
 	always @ (negedge CLK) begin
 		case(stackOP)
