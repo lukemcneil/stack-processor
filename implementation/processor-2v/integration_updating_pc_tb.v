@@ -12,8 +12,10 @@ module integration_updating_pc_tb;
 	// Outputs
 	wire Overflow;
 	wire [15:0] PC_out;
+	wire [15:0] inst;
 	
 	integer fails;
+	integer i;
 	
 	// use this if your design contains sequential logic
    parameter   PERIOD = 20;
@@ -39,7 +41,8 @@ module integration_updating_pc_tb;
 		.CLK(CLK), 
 		.Reset(Reset), 
 		.Overflow(Overflow),
-		.PC_out(PC_out)
+		.PC_out(PC_out),
+		.inst(inst)
 	);
 
 	initial begin
@@ -50,6 +53,7 @@ module integration_updating_pc_tb;
 		CLK = 0;
 		Reset = 0;
 		fails = 0;
+		i = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
@@ -59,7 +63,7 @@ module integration_updating_pc_tb;
 		#PERIOD;
 		Reset = 0;
 		
-//		TEST: PC counts up by 2
+//		TEST: PC counts up by 2 and RStack
 		PCWrite = 1;
 		PCControl = 4;
 		#OFFSET;
@@ -118,6 +122,30 @@ module integration_updating_pc_tb;
 		if (PC_out != 16) begin
 			$display("fail at time %t: expected %d, actual %d", $time, 16, PC_out);
 			fails = fails + 1;
+		end
+		
+		PCWrite = 0;
+		PCControl = 4;
+		Reset = 1;
+		#(5*PERIOD);
+		Reset = 0;
+		
+//		TEST: instruction memory
+		PCWrite = 1;
+		for (i = 0; i < 12; i = i + 1) begin
+			#PERIOD;
+			if (inst != i) begin
+				$display("fail at time %t: expected %d, actual %d", $time, i, inst);
+				fails = fails + 1;
+			end
+		end
+		
+		for (i = 1; i < 9; i = i + 1) begin
+			#PERIOD;
+			if (inst != i << 12) begin
+				$display("fail at time %t: expected %d, actual %d", $time, i << 12, inst);
+				fails = fails + 1;
+			end
 		end
 		
 		PCWrite = 0;

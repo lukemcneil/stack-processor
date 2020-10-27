@@ -3,14 +3,14 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/home/luke/csse232/project/2021a-project-2v/implementation/processor-2v/work/integration_updating_pc_tb_isim_beh1.wdb" id="1" type="auto">
+      <db_ref path="/home/luke/csse232/project/2021a-project-2v/implementation/processor-2v/work/integration_updating_pc_tb_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="integration_updating_pc_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/integration_updating_pc_tb/Overflow" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">Overflow</obj_property>
       <obj_property name="ObjectShortName">Overflow</obj_property>
@@ -24,6 +24,11 @@
       <obj_property name="ElementShortName">PC_out[15:0]</obj_property>
       <obj_property name="ObjectShortName">PC_out[15:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_updating_pc_tb/inst" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst[15:0]</obj_property>
+      <obj_property name="ObjectShortName">inst[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/integration_updating_pc_tb/CLK" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">CLK</obj_property>
