@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    21:18:45 10/24/2020 
+// Create Date:    21:23:59 10/24/2020 
 // Design Name: 
-// Module Name:    signextender 
+// Module Name:    leftshifter 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,13 +18,16 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module signextender(
+module leftshifter(
     input [11:0] in,
-    output [15:0] out
+    output [12:0] out
     );
-	 
-	 out[11:0] = in[11:0];
-    out[15:12] = {4{in[11]}};
-
+	 CLK = 0;
+	 out[0] = 0;
+	while(CLK < 12)
+		out[CLK+1] = in[CLK];
+		CLK = CLK + 1;
+	end
+		
 
 endmodule
