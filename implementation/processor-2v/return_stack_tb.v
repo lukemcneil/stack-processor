@@ -10,7 +10,6 @@ module return_stack_tb;
 
 	// Outputs
 	wire signed [15:0] a;
-	wire signed [15:0] b;
 	
 	// use this if your design contains sequential logic
    parameter   PERIOD = 20;
@@ -34,7 +33,6 @@ module return_stack_tb;
 	// Instantiate the Unit Under Test (UUT)
 	return_stack uut (
 		.a(a), 
-		.b(b),
 		.stackOP(stackOP), 
 		.w(w), 
 		.reset(reset),
