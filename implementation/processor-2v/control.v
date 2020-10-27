@@ -9,8 +9,8 @@ module control(
    output reg [3:0] ALUOP,
    output reg [2:0] stackControl,
    output reg [2:0] PCControl,
-   output reg [0:0] MemWrite,
-   output reg [0:0] PCWrite
+   output reg MemWrite,
+   output reg PCWrite
    );
 	
 //	stackOP and rStackOP

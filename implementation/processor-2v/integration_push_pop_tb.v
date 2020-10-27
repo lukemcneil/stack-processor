@@ -8,7 +8,7 @@ module integration_push_pop_tb;
 	reg reset;
 	reg CLK;
 	reg [15:0] immediate;
-	reg [2:0] mux_selector;
+	reg mux_selector;
 
 	// Outputs
 	wire Overflow;
@@ -35,7 +35,6 @@ module integration_push_pop_tb;
    parameter   real DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
 	
-	integer i;
 	integer fails;
 
    initial    // Clock process for CLK

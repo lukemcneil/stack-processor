@@ -6,7 +6,7 @@ module integration_push_pop(
 	input reset,
 	input CLK,
 	input [15:0] immediate,
-	input [2:0] mux_selector,
+	input mux_selector,
 	output Overflow,
 	output wire [15:0] aOut,
 	output wire [15:0] bOut,
@@ -15,7 +15,7 @@ module integration_push_pop(
 	
 	wire [15:0] mux_out;
 	
-	mux3 mux (
+	mux1 mux (
 		.i0(ALU_out),
 		.i1(immediate),
 		.control(mux_selector),
