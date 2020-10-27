@@ -1,0 +1,5 @@
+Tue Oct 27 20:39:00 2020
+
+Upgraded blockmemory16kx1 from Block Memory Generator 6.3 to Block Memory Generator 7.3
+
+No changes made to parameter values.

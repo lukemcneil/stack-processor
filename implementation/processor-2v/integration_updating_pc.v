@@ -7,7 +7,8 @@ module integration_updating_pc(
 	input CLK,
 	input Reset,
 	output Overflow,
-	output wire [15:0] PC_out
+	output wire [15:0] PC_out,
+	output wire [15:0] inst
    );
 	 
 	wire [15:0] Adder_out;
@@ -47,6 +48,12 @@ module integration_updating_pc(
 		.w(Adder_out),
 		.reset(Reset),
 		.CLK(CLK)
+	);
+	
+	blockmemory16kx1 instMemory (
+		.clka(CLK),
+		.addra(PC_out >> 1), 
+		.douta(inst)
 	);
 
 
