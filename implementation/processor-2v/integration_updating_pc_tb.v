@@ -13,6 +13,8 @@ module integration_updating_pc_tb;
 	wire Overflow;
 	wire [15:0] PC_out;
 	
+	integer fails;
+	
 	// use this if your design contains sequential logic
    parameter   PERIOD = 20;
    parameter   real DUTY_CYCLE = 0.5;
@@ -47,6 +49,7 @@ module integration_updating_pc_tb;
 		RStackOP = 0;
 		CLK = 0;
 		Reset = 0;
+		fails = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
@@ -59,42 +62,70 @@ module integration_updating_pc_tb;
 //		TEST: PC counts up by 2
 		PCWrite = 1;
 		PCControl = 4;
+		#OFFSET;
+		if (PC_out != 0) begin
+			$display("fail at time %t: expected %d, actual %d", $time, 0, PC_out);
+			fails = fails + 1;
+		end
 		#PERIOD;
+		if (PC_out != 2) begin
+			$display("fail at time %t: expected %d, actual %d", $time, 2, PC_out);
+			fails = fails + 1;
+		end
 		#PERIOD;
-		if (PC_out != 2)
-			$display("fail: expected %d, actual %d", 2, PC_out);
-		#PERIOD;
-		if (PC_out != 4)
-			$display("fail: expected %d, actual %d", 4, PC_out);
-			
+		if (PC_out != 4) begin
+			$display("fail at time %t: expected %d, actual %d", $time, 4, PC_out);
+			fails = fails + 1;
+		end
+		#OFFSET;
 		PCWrite = 0;
-		#(2*PERIOD);
-		if (PC_out != 4)
-			$display("fail: expected %d, actual %d", 4, PC_out);
+		#(4*PERIOD);
+		if (PC_out != 4) begin
+			$display("fail at time %t: expected %d, actual %d", $time, 4, PC_out);
+			fails = fails + 1;
+		end
 
-		RStackOP = 1;
+		RStackOP = 1; // push 6 onto RStack
 		#PERIOD;
 		RStackOP = 0;
 		
-		PCWrite = 1;
+		PCWrite = 1; // increment PC a couple more times
 		PCControl = 4;
 		#(4*PERIOD);
 		
-		PCWrite = 0;
+		PCWrite = 0; // stop writing
+		PCControl = 0; // choose the top of return stack to put in PC
 		
-		PCWrite = 1;
-		PCControl = 0;
-		#PERIOD;	
+		#(4*PERIOD);
+		
+		PCWrite = 1; // write to PC
+		RStackOP = 3; // pop of RStack
 		#PERIOD;
-		
+		RStackOP = 0;
 		PCWrite = 0;
+		if (PC_out != 6) begin
+			$display("fail at time %t: expected %d, actual %d", $time, 6, PC_out);
+			fails = fails + 1;
+		end
+
+		PCWrite = 0;
+		PCControl = 4; // go back to incrementing PC
 		#(5*PERIOD);
 		
 		PCWrite = 1;
-		PCControl = 4;
-		#(3*PERIOD);
+		#(5*PERIOD);
+		
+		if (PC_out != 16) begin
+			$display("fail at time %t: expected %d, actual %d", $time, 16, PC_out);
+			fails = fails + 1;
+		end
 		
 		PCWrite = 0;
+		
+		if (fails == 0)
+			$display("ALL TESTS PASSED");
+		else
+			$display("FAILS %d TESTS", fails);
 	end
       
 endmodule
