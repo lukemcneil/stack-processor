@@ -53,8 +53,8 @@ module integration_updating_pc(
 	blockmemory16kx1 instMemory (
 		.clka(CLK),
 		.addra(PC_out >> 1),
-		.douta(inst)
+		.douta(inst),
+		.ena(1)
 	);
-
 
 endmodule
