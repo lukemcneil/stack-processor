@@ -5,7 +5,7 @@ module leftshifter12(
     output [15:0] out
     );
 
-	assign out = {in, 12'b000000000000};
+	assign out = in << 12;
 		
 
 endmodule
