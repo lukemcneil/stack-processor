@@ -49,6 +49,7 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 blockmemory16kx1 your_instance_name (
   .clka(clka), // input clka
+  .ena(ena), // input ena
   .wea(wea), // input [0 : 0] wea
   .addra(addra), // input [11 : 0] addra
   .dina(dina), // input [15 : 0] dina

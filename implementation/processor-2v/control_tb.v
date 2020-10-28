@@ -5,7 +5,6 @@ module control_tb;
 	// Inputs
 	reg [15:0] inst;
 	reg reset;
-	reg CLK;
 
 	// Outputs
 	wire [2:0] stackOP;
@@ -20,25 +19,11 @@ module control_tb;
 	
 	// use this if your design contains sequential logic
    parameter   PERIOD = 20;
-   parameter   real DUTY_CYCLE = 0.5;
-   parameter   OFFSET = 10;
-
-   initial    // Clock process for CLK
-     begin
-        #OFFSET;
-        forever
-          begin
-             CLK = 1'b0;
-             #(PERIOD-(PERIOD*DUTY_CYCLE)) CLK = 1'b1;
-             #(PERIOD*DUTY_CYCLE);
-          end
-     end
 
 	// Instantiate the Unit Under Test (UUT)
 	control uut (
 		.inst(inst), 
-		.reset(reset), 
-		.CLK(CLK), 
+		.reset(reset),
 		.stackOP(stackOP), 
 		.rStackOP(rStackOP), 
 		.stackControl(stackControl), 
@@ -52,7 +37,6 @@ module control_tb;
 		// Initialize Inputs
 		inst = 0;
 		reset = 0;
-		CLK = 0;
 		fails = 0;
 
 		// Wait 100 ns for global reset to finish

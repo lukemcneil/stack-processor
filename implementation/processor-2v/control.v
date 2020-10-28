@@ -2,8 +2,7 @@
 
 module control(
    input [15:0] inst,
-   input reset,	
-	input CLK,
+   input reset,
    output reg [2:0] stackOP,
    output reg [1:0] rStackOP,
    output reg [3:0] ALUOP,
@@ -47,168 +46,168 @@ module control(
 	parameter LABELORPCINC = 3;
 	parameter PCINC = 4;
 	
-	always @ (posedge CLK) begin
+	always @ (inst) begin
 		case(inst[15:12])
 			0: begin // O Type
 				case(inst[11:0])
 					0: begin // add
-						stackOP = POPANDREPLACE;
-						rStackOP = NONE;
-						ALUOP = ADD;
-						stackControl = ALU;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= POPANDREPLACE;
+						rStackOP <= NONE;
+						ALUOP <= ADD;
+						stackControl <= ALU;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					1: begin // dup
-						stackOP = PUSH;
-						rStackOP = NONE;
-						ALUOP = A;
-						stackControl = ALU;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= PUSH;
+						rStackOP <= NONE;
+						ALUOP <= A;
+						stackControl <= ALU;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					2: begin // drop
-						stackOP = POP;
-						rStackOP = NONE;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= POP;
+						rStackOP <= NONE;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					3: begin // halt
-						stackOP = NONE;
-						rStackOP = NONE;
-						MemWrite = 0;
-						PCWrite = 0;
+						stackOP <= NONE;
+						rStackOP <= NONE;
+						MemWrite <= 0;
+						PCWrite <= 0;
 					end
 					4: begin // getin
-						stackOP = PUSH;
-						rStackOP = NONE;
-						stackControl = INPUT;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= PUSH;
+						rStackOP <= NONE;
+						stackControl <= INPUT;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					5: begin // js
-						stackOP = POP;
-						rStackOP = NONE;
-						PCControl = TOPOFSTACK;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= POP;
+						rStackOP <= NONE;
+						PCControl <= TOPOFSTACK;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					6: begin // over
-						stackOP = PUSH;
-						rStackOP = NONE;
-						ALUOP = B;
-						stackControl = ALU;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= PUSH;
+						rStackOP <= NONE;
+						ALUOP <= B;
+						stackControl <= ALU;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					7: begin // or
-						stackOP = POPANDREPLACE;
-						rStackOP = NONE;
-						ALUOP = OR;
-						stackControl = ALU;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= POPANDREPLACE;
+						rStackOP <= NONE;
+						ALUOP <= OR;
+						stackControl <= ALU;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					8: begin // return
-						stackOP = NONE;
-						rStackOP = POP;
-						PCControl = RETURN;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= NONE;
+						rStackOP <= POP;
+						PCControl <= RETURN;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					9: begin // slt
-						stackOP = POPANDREPLACE;
-						rStackOP = NONE;
-						ALUOP = BLESSA;
-						stackControl = ALU;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= POPANDREPLACE;
+						rStackOP <= NONE;
+						ALUOP <= BLESSA;
+						stackControl <= ALU;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					10: begin // sub
-						stackOP = POPANDREPLACE;
-						rStackOP = NONE;
-						ALUOP = SUB;
-						stackControl = ALU;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= POPANDREPLACE;
+						rStackOP <= NONE;
+						ALUOP <= SUB;
+						stackControl <= ALU;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 					11: begin // swap
-						stackOP = SWAP;
-						rStackOP = NONE;
-						PCControl = PCINC;
-						MemWrite = 0;
-						PCWrite = 1;
+						stackOP <= SWAP;
+						rStackOP <= NONE;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
 					end
 				endcase
 			end
 			1: begin // beq
-				stackOP = POP2;
-				rStackOP = NONE;
-				ALUOP = EQ;
-				PCControl = LABELORPCINC;
-				MemWrite = 0;
-				PCWrite = 1;
+				stackOP <= POP2;
+				rStackOP <= NONE;
+				ALUOP <= EQ;
+				PCControl <= LABELORPCINC;
+				MemWrite <= 0;
+				PCWrite <= 1;
 			end
 			2: begin // bez
-				stackOP = POP;
-				rStackOP = NONE;
-				ALUOP = EZ;
-				PCControl = LABELORPCINC;
-				MemWrite = 0;
-				PCWrite = 1;
+				stackOP <= POP;
+				rStackOP <= NONE;
+				ALUOP <= EZ;
+				PCControl <= LABELORPCINC;
+				MemWrite <= 0;
+				PCWrite <= 1;
 			end
 			3: begin // j
-				stackOP = NONE;
-				rStackOP = NONE;
-				PCControl = LABEL;
-				MemWrite = 0;
-				PCWrite = 1;
+				stackOP <= NONE;
+				rStackOP <= NONE;
+				PCControl <= LABEL;
+				MemWrite <= 0;
+				PCWrite <= 1;
 			end
 			4: begin // jal
-				stackOP = NONE;
-				rStackOP = PUSH;
-				PCControl = LABEL;
-				MemWrite = 0;
-				PCWrite = 1;
+				stackOP <= NONE;
+				rStackOP <= PUSH;
+				PCControl <= LABEL;
+				MemWrite <= 0;
+				PCWrite <= 1;
 			end
 			5: begin // pop
-				stackOP = POP;
-				rStackOP = NONE;
-				PCControl = PCINC;
-				MemWrite = 1;
-				PCWrite = 1;
+				stackOP <= POP;
+				rStackOP <= NONE;
+				PCControl <= PCINC;
+				MemWrite <= 1;
+				PCWrite <= 1;
 			end
 			6: begin // push
-				stackOP = PUSH;
-				rStackOP = NONE;
-				stackControl = MEM;
-				PCControl = PCINC;
-				MemWrite = 0;
-				PCWrite = 1;
+				stackOP <= PUSH;
+				rStackOP <= NONE;
+				stackControl <= MEM;
+				PCControl <= PCINC;
+				MemWrite <= 0;
+				PCWrite <= 1;
 			end
 			7: begin // pushi
-				stackOP = PUSH;
-				rStackOP = NONE;
-				stackControl = IMM;
-				PCControl = PCINC;
-				MemWrite = 0;
-				PCWrite = 1;
+				stackOP <= PUSH;
+				rStackOP <= NONE;
+				stackControl <= IMM;
+				PCControl <= PCINC;
+				MemWrite <= 0;
+				PCWrite <= 1;
 			end
 			8: begin // lui
-				stackOP = PUSH;
-				rStackOP = NONE;
-				stackControl = IMMLUI;
-				PCControl = PCINC;
-				MemWrite = 0;
-				PCWrite = 1;
+				stackOP <= PUSH;
+				rStackOP <= NONE;
+				stackControl <= IMMLUI;
+				PCControl <= PCINC;
+				MemWrite <= 0;
+				PCWrite <= 1;
 			end
 		endcase
 	end
