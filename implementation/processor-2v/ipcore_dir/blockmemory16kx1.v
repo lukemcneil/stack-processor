@@ -38,7 +38,6 @@
 
 module blockmemory16kx1(
   clka,
-  ena,
   wea,
   addra,
   dina,
@@ -46,7 +45,6 @@ module blockmemory16kx1(
 );
 
 input clka;
-input ena;
 input [0 : 0] wea;
 input [11 : 0] addra;
 input [15 : 0] dina;
@@ -69,7 +67,7 @@ output [15 : 0] douta;
     .C_ENABLE_32BIT_ADDRESS(0),
     .C_FAMILY("spartan3"),
     .C_HAS_AXI_ID(0),
-    .C_HAS_ENA(1),
+    .C_HAS_ENA(0),
     .C_HAS_ENB(0),
     .C_HAS_INJECTERR(0),
     .C_HAS_MEM_OUTPUT_REGS_A(0),
@@ -119,12 +117,12 @@ output [15 : 0] douta;
   )
   inst (
     .CLKA(clka),
-    .ENA(ena),
     .WEA(wea),
     .ADDRA(addra),
     .DINA(dina),
     .DOUTA(douta),
     .RSTA(),
+    .ENA(),
     .REGCEA(),
     .CLKB(),
     .RSTB(),

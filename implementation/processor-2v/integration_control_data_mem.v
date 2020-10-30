@@ -5,6 +5,7 @@ module integration_control_data_mem(
    input [15:0] memWriteData,
 	input reset,
 	input CLK,
+	input [15:0] getinData,
 	output wire [15:0] newPC,
 	output wire [15:0] stackWriteData
    );
@@ -22,6 +23,8 @@ module integration_control_data_mem(
 	wire [12:0] ls1_out;
 	wire [15:0] merger_out;
 	wire [15:0] dout;
+	
+	assign newPC = merger_out;
 
 	control Control (
 		.inst(inst), 
@@ -58,23 +61,17 @@ module integration_control_data_mem(
 	
 	blockmemory16kx1 dataMemory (
 		.clka(CLK),
-		.addra(merger_out),
-		.wea(merger_out),
+		.addra(merger_out[12:1]),
+		.wea(MemWrite),
 		.dina(memWriteData),
-		.douta(dout),
-		.ena(MemoryWrite)
-	);
-	
-	mux3 PCControlMux (
-		.i2(merger_out),
-		.control(PCControl),
-		.out(newPC)
+		.douta(dout)
 	);
 
 	mux3 stackControlMux (
 		.i0(se_out),
 		.i1(ls12_out),
 		.i2(dout),
+		.i4(getinData),
 		.control(stackControl),
 		.out(stackWriteData)
 	);

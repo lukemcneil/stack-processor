@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/luke/csse232/project/2021a-project-2v/implementation/processor-2v/work/integration_control_data_mem_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="integration_control_data_mem_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/integration_control_data_mem_tb/inst" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst[15:0]</obj_property>
+      <obj_property name="ObjectShortName">inst[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/memWriteData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memWriteData[15:0]</obj_property>
+      <obj_property name="ObjectShortName">memWriteData[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/getinData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">getinData[15:0]</obj_property>
+      <obj_property name="ObjectShortName">getinData[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/uut/Control/MemWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemWrite</obj_property>
+      <obj_property name="ObjectShortName">MemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/uut/Control/stackControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">stackControl[2:0]</obj_property>
+      <obj_property name="ObjectShortName">stackControl[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/stackWriteData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">stackWriteData[15:0]</obj_property>
+      <obj_property name="ObjectShortName">stackWriteData[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/newPC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">newPC[15:0]</obj_property>
+      <obj_property name="ObjectShortName">newPC[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/uut/dataMemory/addra" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addra[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/uut/dataMemory/dina" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dina[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/uut/dataMemory/douta" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">douta[15:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/uut/dataMemory/wea" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/integration_control_data_mem_tb/uut/dataMemory/clka" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clka</obj_property>
+      <obj_property name="ObjectShortName">clka</obj_property>
+   </wvobject>
+</wave_config>
