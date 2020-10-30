@@ -21,10 +21,10 @@ module integration_control_data_mem(
 	wire [15:0] ls12_out;
 	wire [15:0] se_out;
 	wire [12:0] ls1_out;
-	wire [15:0] merger_out;
+//	wire [15:0] merger_out;
 	wire [15:0] dout;
 	
-	assign newPC = merger_out;
+	assign newPC = {3'b000, ls1_out};
 
 	control Control (
 		.inst(inst), 
@@ -53,15 +53,15 @@ module integration_control_data_mem(
 		.out(ls1_out)
 	);
 	
-	merger_3b13b merger (
-		.a('b000),
-		.b(ls1_out),
-		.r(merger_out)
-	);
+//	merger_3b13b merger (
+//		.a('b000),
+//		.b(ls1_out),
+//		.r(merger_out)
+//	);
 	
 	blockmemory16kx1 dataMemory (
 		.clka(CLK),
-		.addra(merger_out[12:1]),
+		.addra(ls1_out[12:1]),
 		.wea(MemWrite),
 		.dina(memWriteData),
 		.douta(dout)

@@ -30,7 +30,7 @@ module integration_updating_pc(
 		.out(Mux_out)
 	);
 	
-	alu alu (
+	alu adder (
 		.Oper(0),
 		.A(2),
 		.B(PC_out),
@@ -49,8 +49,9 @@ module integration_updating_pc(
 	blockmemory16kx1 instMemory (
 		.clka(CLK),
 		.addra(PC_out[12:1]),
-		.douta(inst),
-		.ena(1'b1)
+		.wea(0),
+		.dina(0),
+		.douta(inst)
 	);
 
 endmodule

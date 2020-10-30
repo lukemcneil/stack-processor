@@ -172,11 +172,11 @@ module integration_push_pop_tb;
 		pushi(1);
 		pushi(2);
 		add();
-		if (topOfStack != 3) begin
+		if (topOfStack !== 3) begin
 			$display("FAIL: add: expected %d, actual %d", 3, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 0) begin
+		if (secondOfStack !== 0) begin
 			$display("FAIL: add: expected %d, actual %d", 0, secondOfStack);
 			fails = fails + 1;
 		end
@@ -186,11 +186,11 @@ module integration_push_pop_tb;
 		pushi(1);
 		pushi(2);
 		sub();
-		if (topOfStack != -1) begin
+		if (topOfStack !== -1) begin
 			$display("FAIL: sub: expected %d, actual %d", -1, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 0) begin
+		if (secondOfStack !== 0) begin
 			$display("FAIL: sub: expected %d, actual %d", 0, secondOfStack);
 			fails = fails + 1;
 		end
@@ -200,11 +200,11 @@ module integration_push_pop_tb;
 		pushi(1);
 		pushi(3);
 		or2();
-		if (topOfStack != 3) begin
+		if (topOfStack !== 3) begin
 			$display("FAIL: or: expected %d, actual %d", 3, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 0) begin
+		if (secondOfStack !== 0) begin
 			$display("FAIL: or: expected %d, actual %d", 0, secondOfStack);
 			fails = fails + 1;
 		end
@@ -214,7 +214,7 @@ module integration_push_pop_tb;
 		pushi(1);
 		pushi(1);
 		beq();
-		if (ALU_out != 1) begin
+		if (ALU_out !== 1) begin
 			$display("FAIL: beq: expected %d, actual %d", 1, ALU_out);
 			fails = fails + 1;
 		end
@@ -223,7 +223,7 @@ module integration_push_pop_tb;
 		pushi(2);
 		pushi(1);
 		beq();
-		if (ALU_out != 0) begin
+		if (ALU_out !== 0) begin
 			$display("FAIL: beq: expected %d, actual %d", 0, ALU_out);
 			fails = fails + 1;
 		end
@@ -234,7 +234,7 @@ module integration_push_pop_tb;
 		pushi(7);
 		pushi(0);
 		bez();
-		if (ALU_out != 1) begin
+		if (ALU_out !== 1) begin
 			$display("FAIL: bez: expected %d, actual %d", 1, ALU_out);
 			fails = fails + 1;
 		end
@@ -243,7 +243,7 @@ module integration_push_pop_tb;
 		pushi(7);
 		pushi(1);
 		bez();
-		if (ALU_out != 0) begin
+		if (ALU_out !== 0) begin
 			$display("FAIL: bez: expected %d, actual %d", 0, ALU_out);
 			fails = fails + 1;
 		end
@@ -253,11 +253,11 @@ module integration_push_pop_tb;
 		resetStack();
 		pushi(3);
 		dup();
-		if (topOfStack != 3) begin
+		if (topOfStack !== 3) begin
 			$display("FAIL: dup: expected %d, actual %d", 3, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 3) begin
+		if (secondOfStack !== 3) begin
 			$display("FAIL: dup: expected %d, actual %d", 3, secondOfStack);
 			fails = fails + 1;
 		end
@@ -268,21 +268,21 @@ module integration_push_pop_tb;
 		pushi(4);
 		pushi(5);
 		drop();
-		if (topOfStack != 4) begin
+		if (topOfStack !== 4) begin
 			$display("FAIL: drop: expected %d, actual %d", 4, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 3) begin
+		if (secondOfStack !== 3) begin
 			$display("FAIL: drop: expected %d, actual %d", 3, secondOfStack);
 			fails = fails + 1;
 		end
 		drop();
 		drop();
-		if (topOfStack != 0) begin
+		if (topOfStack !== 0) begin
 			$display("FAIL: drop: expected %d, actual %d", 0, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 0) begin
+		if (secondOfStack !== 0) begin
 			$display("FAIL: drop: expected %d, actual %d", 0, secondOfStack);
 			fails = fails + 1;
 		end
@@ -292,11 +292,11 @@ module integration_push_pop_tb;
 		pushi(3);
 		pushi(7);
 		over();
-		if (topOfStack != 3) begin
+		if (topOfStack !== 3) begin
 			$display("FAIL: over: expected %d, actual %d", 3, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 7) begin
+		if (secondOfStack !== 7) begin
 			$display("FAIL: over: expected %d, actual %d", 7, secondOfStack);
 			fails = fails + 1;
 		end
@@ -306,11 +306,11 @@ module integration_push_pop_tb;
 		pushi(1);
 		pushi(2);
 		slt();
-		if (topOfStack != 1) begin
+		if (topOfStack !== 1) begin
 			$display("FAIL: slt: expected %d, actual %d", 1, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 0) begin
+		if (secondOfStack !== 0) begin
 			$display("FAIL: slt: expected %d, actual %d", 0, secondOfStack);
 			fails = fails + 1;
 		end
@@ -318,11 +318,11 @@ module integration_push_pop_tb;
 		pushi(2);
 		pushi(2);
 		slt();
-		if (topOfStack != 0) begin
+		if (topOfStack !== 0) begin
 			$display("FAIL: slt: expected %d, actual %d", 1, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 0) begin
+		if (secondOfStack !== 0) begin
 			$display("FAIL: slt: expected %d, actual %d", 0, secondOfStack);
 			fails = fails + 1;
 		end
@@ -332,11 +332,11 @@ module integration_push_pop_tb;
 		pushi(3);
 		pushi(7);
 		swap();
-		if (topOfStack != 3) begin
+		if (topOfStack !== 3) begin
 			$display("FAIL: swap: expected %d, actual %d", 3, topOfStack);
 			fails = fails + 1;
 		end
-		if (secondOfStack != 7) begin
+		if (secondOfStack !== 7) begin
 			$display("FAIL: swap: expected %d, actual %d", 7, secondOfStack);
 			fails = fails + 1;
 		end

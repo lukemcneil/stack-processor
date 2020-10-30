@@ -5,7 +5,7 @@ module blockmemory16kx1_tb;
 	// Inputs
 	reg clka;
 	reg [0:0] wea;
-	reg [12:0] addra;
+	reg [11:0] addra;
 	reg [15:0] dina;
 
 	// Outputs
@@ -53,7 +53,7 @@ module blockmemory16kx1_tb;
 		for (i = 0; i < 12; i = i + 1) begin
 			addra = i;
 			#(2*PERIOD);
-			if (douta != i) begin
+			if (douta !== i) begin
 				$display("fail: expected %d, actual %d", i, douta);
 				fails = fails + 1;
 			end
@@ -62,7 +62,7 @@ module blockmemory16kx1_tb;
 		for (i = 1; i < 9; i = i + 1) begin
 			addra = i + 11;
 			#(2*PERIOD);
-			if (douta != (i << 12)) begin
+			if (douta !== (i << 12)) begin
 				$display("fail: expected %d, actual %d", (i << 12), douta);
 				fails = fails + 1;
 			end
