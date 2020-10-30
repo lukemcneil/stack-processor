@@ -14,19 +14,15 @@ module integration_updating_pc(
 	wire [15:0] Adder_out;
 	wire [15:0] Mux_out;
 	wire [15:0] RStack_out;
-
-	reg [15:0] PC;
-
-	assign PC_out = PC;
 	
-	always @ (posedge CLK) begin
-		if (Reset == 1)
-			PC = 0;
-		else
-			if (PCWrite == 1)
-				PC = Mux_out;
-	end
-	 
+	register16b PC (
+		.D(Mux_out),
+		.CE(PCWrite),
+		.C(CLK),
+		.R(Reset),
+		.Q(PC_out)
+	);
+	
 	 mux3 mux (
 		.i0(RStack_out),
 		.i4(Adder_out),
@@ -52,9 +48,9 @@ module integration_updating_pc(
 	
 	blockmemory16kx1 instMemory (
 		.clka(CLK),
-		.addra(PC_out >> 1),
+		.addra(PC_out[12:1]),
 		.douta(inst),
-		.ena(1)
+		.ena(1'b1)
 	);
 
 endmodule
