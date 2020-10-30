@@ -67,24 +67,24 @@ module integration_updating_pc_tb;
 		PCWrite = 1;
 		PCControl = 4;
 		#OFFSET;
-		if (PC_out != 0) begin
+		if (PC_out !== 0) begin
 			$display("fail at time %t: expected %d, actual %d", $time, 0, PC_out);
 			fails = fails + 1;
 		end
 		#PERIOD;
-		if (PC_out != 2) begin
+		if (PC_out !== 2) begin
 			$display("fail at time %t: expected %d, actual %d", $time, 2, PC_out);
 			fails = fails + 1;
 		end
 		#PERIOD;
-		if (PC_out != 4) begin
+		if (PC_out !== 4) begin
 			$display("fail at time %t: expected %d, actual %d", $time, 4, PC_out);
 			fails = fails + 1;
 		end
 		#OFFSET;
 		PCWrite = 0;
 		#(4*PERIOD);
-		if (PC_out != 4) begin
+		if (PC_out !== 4) begin
 			$display("fail at time %t: expected %d, actual %d", $time, 4, PC_out);
 			fails = fails + 1;
 		end
@@ -107,7 +107,7 @@ module integration_updating_pc_tb;
 		#PERIOD;
 		RStackOP = 0;
 		PCWrite = 0;
-		if (PC_out != 6) begin
+		if (PC_out !== 6) begin
 			$display("fail at time %t: expected %d, actual %d", $time, 6, PC_out);
 			fails = fails + 1;
 		end
@@ -119,7 +119,7 @@ module integration_updating_pc_tb;
 		PCWrite = 1;
 		#(5*PERIOD);
 		
-		if (PC_out != 16) begin
+		if (PC_out !== 16) begin
 			$display("fail at time %t: expected %d, actual %d", $time, 16, PC_out);
 			fails = fails + 1;
 		end
@@ -134,7 +134,7 @@ module integration_updating_pc_tb;
 		PCWrite = 1;
 		for (i = 0; i < 12; i = i + 1) begin
 			#PERIOD;
-			if (inst != i) begin
+			if (inst !== i) begin
 				$display("fail at time %t: expected %d, actual %d", $time, i, inst);
 				fails = fails + 1;
 			end
@@ -142,7 +142,7 @@ module integration_updating_pc_tb;
 		
 		for (i = 1; i < 9; i = i + 1) begin
 			#PERIOD;
-			if (inst != i << 12) begin
+			if (inst !== i << 12) begin
 				$display("fail at time %t: expected %d, actual %d", $time, i << 12, inst);
 				fails = fails + 1;
 			end
