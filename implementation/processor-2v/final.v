@@ -9,18 +9,17 @@ module final_processor(
    );
 
 	wire [15:0] pc_out;
-	wire new_pc;
+	wire [15:0] new_pc;
 	wire [15:0] inst;
 	wire [15:0] alu_out;
 	wire [15:0] adder_out;
 	wire [15:0] r_stack_out;
 	wire [15:0] branch_mux_out;
 	wire [15:0] ls12_out;
-	wire [15:0] ls1_out;
+	wire [12:0] ls1_out;
 	wire [15:0] se_out;	
 	wire [15:0] data_mem_out;
 	wire [15:0] new_top_of_stack;
-
 	
 	wire [2:0] stack_op;
 	wire [1:0] r_stack_op;
@@ -33,7 +32,7 @@ module final_processor(
 	register16b pc (
 		.D(new_pc),
 		.CE(pc_write),
-		.C(CLK),
+		.C(~CLK),
 		.R(reset),
 		.Q(pc_out)
 	);
@@ -44,6 +43,16 @@ module final_processor(
 		.B(2), 
 		.ALU_Out(adder_out)
 //		.Overflow(Overflow)
+	);
+	
+	mux3 pc_control_mux (
+		.i0(r_stack_out),
+		.i1(top_of_stack),
+		.i2({3'b000, se_out}),
+		.i3(branch_mux_out),
+		.i4(adder_out),
+		.control(pc_control),
+		.out(new_pc)
 	);
 	
 	blockmemory16kx1 inst_memory (
@@ -64,16 +73,6 @@ module final_processor(
 		.MemWrite(mem_write), 
 		.PCWrite(pc_write),
 		.ALUOP(alu_op)
-	);
-	
-	mux3 pc_control_mux (
-		.i0(r_stack_out),
-		.i1(top_of_stack),
-		.i2({3'b000, se1_out}),
-		.i3(branch_mux_out),
-		.i4(adder_out),
-		.control(pc_control),
-		.out(new_pc)
 	);
 	
 	leftshifter12 ls12 (

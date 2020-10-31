@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/luke/csse232/project/2021a-project-2v/implementation/processor-2v/work/final_processor_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="final_processor_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/final_processor_tb/top_of_stack" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">top_of_stack[15:0]</obj_property>
+      <obj_property name="ObjectShortName">top_of_stack[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/second_of_stack" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">second_of_stack[15:0]</obj_property>
+      <obj_property name="ObjectShortName">second_of_stack[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/getin" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">getin[15:0]</obj_property>
+      <obj_property name="ObjectShortName">getin[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/pc/Q" type="array" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Q[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[15:0]</obj_property>
+      <obj_property name="label">PC</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/adder/ALU_Out" type="array" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">ALU_Out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_Out[15:0]</obj_property>
+      <obj_property name="label">adder_out</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/pc_control_mux/out" type="array" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">out[15:0]</obj_property>
+      <obj_property name="label">new_pc</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
