@@ -48,7 +48,7 @@ module final_processor(
 	mux3 pc_control_mux (
 		.i0(r_stack_out),
 		.i1(top_of_stack),
-		.i2({3'b000, se_out}),
+		.i2({3'b000, ls1_out}),
 		.i3(branch_mux_out),
 		.i4(adder_out),
 		.control(pc_control),
@@ -91,8 +91,8 @@ module final_processor(
 	);
 	
 	mux1 branch_mux(
-		.i0(ls1_out),
-		.i1(adder_out),
+		.i0(adder_out),
+		.i1({3'b000, ls1_out}),
 		.control(alu_out[0]),
 		.out(branch_mux_out)
 	);
@@ -134,7 +134,7 @@ module final_processor(
 	
 	blockmemory16kx1 data_memory (
 		.clka(CLK),
-		.addra({3'b000, ls1_out}),
+		.addra(ls1_out[12:1]),
 		.wea(mem_write),
 		.dina(alu_out),
 		.douta(data_mem_out)

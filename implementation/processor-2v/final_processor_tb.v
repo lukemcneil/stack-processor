@@ -24,7 +24,7 @@ module final_processor_tb;
    parameter   PERIOD = 20;
    parameter   real DUTY_CYCLE = 0.5;
    parameter   OFFSET = 10;
-	
+
    initial    // Clock process for CLK
      begin
         #OFFSET;
@@ -48,10 +48,8 @@ module final_processor_tb;
 		// Add stimulus here
 		reset = 1;
 		#PERIOD;
-		#PERIOD;
-		#PERIOD;
 		reset = 0;
-		$display("now %t", $time);
+		getin = 30030;
 	end
       
 endmodule

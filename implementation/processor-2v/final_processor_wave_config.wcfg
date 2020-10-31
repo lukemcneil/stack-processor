@@ -10,16 +10,16 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="15" />
    <wvobject fp_name="/final_processor_tb/top_of_stack" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">top_of_stack[15:0]</obj_property>
       <obj_property name="ObjectShortName">top_of_stack[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/final_processor_tb/second_of_stack" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">second_of_stack[15:0]</obj_property>
       <obj_property name="ObjectShortName">second_of_stack[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/final_processor_tb/getin" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">getin[15:0]</obj_property>
@@ -33,25 +33,48 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
+   <wvobject fp_name="/final_processor_tb/PERIOD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PERIOD[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/DUTY_CYCLE" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">DUTY_CYCLE</obj_property>
+      <obj_property name="ObjectShortName">DUTY_CYCLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/OFFSET" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OFFSET[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OFFSET[31:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/final_processor_tb/uut/pc/Q" type="array" db_ref_id="1">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Q[15:0]</obj_property>
       <obj_property name="ObjectShortName">Q[15:0]</obj_property>
-      <obj_property name="label">PC</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="label">PC[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/adder/ALU_Out" type="array" db_ref_id="1">
-      <obj_property name="DisplayName">label</obj_property>
+   <wvobject fp_name="/final_processor_tb/uut/alu/ALU_Out" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">ALU_Out[15:0]</obj_property>
       <obj_property name="ObjectShortName">ALU_Out[15:0]</obj_property>
-      <obj_property name="label">adder_out</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/pc_control_mux/out" type="array" db_ref_id="1">
-      <obj_property name="DisplayName">label</obj_property>
+   <wvobject fp_name="/final_processor_tb/uut/pc_control_mux/control" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">control[2:0]</obj_property>
+      <obj_property name="ObjectShortName">control[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/branch_mux/i0" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i0[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/branch_mux/i1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">i1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/branch_mux/control" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">control</obj_property>
+      <obj_property name="ObjectShortName">control</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/branch_mux/out" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">out[15:0]</obj_property>
       <obj_property name="ObjectShortName">out[15:0]</obj_property>
-      <obj_property name="label">new_pc</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>
