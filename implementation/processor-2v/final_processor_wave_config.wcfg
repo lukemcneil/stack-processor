@@ -25,10 +25,6 @@
       <obj_property name="ElementShortName">getin[15:0]</obj_property>
       <obj_property name="ObjectShortName">getin[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/CLK" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
    <wvobject fp_name="/final_processor_tb/reset" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -52,29 +48,32 @@
       <obj_property name="label">PC[15:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/alu/ALU_Out" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ALU_Out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ALU_Out[15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/final_processor_tb/uut/data_memory/wea" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/pc_control_mux/control" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">control[2:0]</obj_property>
-      <obj_property name="ObjectShortName">control[2:0]</obj_property>
+   <wvobject fp_name="/final_processor_tb/uut/data_memory/addra" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addra[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/branch_mux/i0" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">i0[15:0]</obj_property>
-      <obj_property name="ObjectShortName">i0[15:0]</obj_property>
+   <wvobject fp_name="/final_processor_tb/uut/data_memory/dina" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dina[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/branch_mux/i1" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">i1[15:0]</obj_property>
-      <obj_property name="ObjectShortName">i1[15:0]</obj_property>
+   <wvobject fp_name="/final_processor_tb/uut/data_memory/douta" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">douta[15:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/branch_mux/control" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">control</obj_property>
-      <obj_property name="ObjectShortName">control</obj_property>
+   <wvobject fp_name="/final_processor_tb/uut/data_memory/clka" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clka</obj_property>
+      <obj_property name="ObjectShortName">clka</obj_property>
    </wvobject>
-   <wvobject fp_name="/final_processor_tb/uut/branch_mux/out" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">out[15:0]</obj_property>
+   <wvobject fp_name="/final_processor_tb/CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/inst_memory/clka" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clka</obj_property>
+      <obj_property name="ObjectShortName">clka</obj_property>
    </wvobject>
 </wave_config>

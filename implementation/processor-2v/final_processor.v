@@ -29,10 +29,17 @@ module final_processor(
 	wire pc_write;
 	wire [3:0] alu_op;
 	
+	wire slowCLK;
+	
+	clock_splitter clock_splitter (
+		.CLK(CLK),
+		.slowCLK(slowCLK)
+	);
+	
 	register16b pc (
 		.D(new_pc),
 		.CE(pc_write),
-		.C(~CLK),
+		.C(~slowCLK),
 		.R(reset),
 		.Q(pc_out)
 	);
@@ -56,7 +63,7 @@ module final_processor(
 	);
 	
 	blockmemory16kx1 inst_memory (
-		.clka(CLK),
+		.clka(slowCLK),
 		.addra(pc_out[12:1]),
 		.wea(0),
 		.dina(0),
@@ -113,7 +120,7 @@ module final_processor(
 		.stackOP(stack_op), 
 		.w(new_top_of_stack),
 		.reset(reset),
-		.CLK(CLK)
+		.CLK(slowCLK)
 	);
 	
 	alu alu (
@@ -129,11 +136,11 @@ module final_processor(
 		.stackOP(r_stack_op),
 		.w(adder_out),
 		.reset(reset),
-		.CLK(CLK)
+		.CLK(slowCLK)
 	);
 	
 	blockmemory16kx1 data_memory (
-		.clka(CLK),
+		.clka(~(slowCLK & CLK)),
 		.addra(ls1_out[12:1]),
 		.wea(mem_write),
 		.dina(alu_out),
