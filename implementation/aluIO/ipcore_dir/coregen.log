@@ -23,27 +23,33 @@ Generating ISE project...
 XCO file found: blockmemory16kx1.xco
 XMDF file found: blockmemory16kx1_xmdf.tcl
 Adding
-/home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blk_mem_gen_v6_3_readme.txt
--view all -origin_type imported
-Adding /home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.asy
--view all -origin_type imported
-Adding /home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.ngc
--view all -origin_type created
+/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp/
+_cg/blk_mem_gen_v6_3_readme.txt -view all -origin_type imported
+Adding
+/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp/
+_cg/blockmemory16kx1.asy -view all -origin_type imported
+Adding
+/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp/
+_cg/blockmemory16kx1.ngc -view all -origin_type created
 Checking file
-"/home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.ngc" for
-project device match ...
-File "/home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.ngc"
-device information matches project device.
-Adding /home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.sym
--view all -origin_type imported
-Adding /home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.v
--view all -origin_type created
+"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp
+/_cg/blockmemory16kx1.ngc" for project device match ...
+File
+"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp
+/_cg/blockmemory16kx1.ngc" device information matches project device.
+Adding
+/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp/
+_cg/blockmemory16kx1.sym -view all -origin_type imported
+Adding
+/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp/
+_cg/blockmemory16kx1.v -view all -origin_type created
 INFO:HDLCompiler:1845 - Analyzing Verilog file
-   "/home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.v" into
-   library work
+   "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/
+   tmp/_cg/blockmemory16kx1.v" into library work
 INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
-Adding /home/luke/csse232/project/aluIO/ipcore_dir/tmp/_cg/blockmemory16kx1.veo
--view all -origin_type imported
+Adding
+/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/tmp/
+_cg/blockmemory16kx1.veo -view all -origin_type imported
 INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
    Please set the new top explicitly by running the "project set top" command.
    To re-calculate the new top automatically, set the "Auto Implementation Top"
