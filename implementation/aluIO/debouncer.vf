@@ -1,0 +1,96 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : debouncer.vf
+// /___/   /\     Timestamp : 11/02/2020 15:30:06
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -sympath /home/luke/csse232/project/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -sympath /home/luke/csse232/project/aluIO/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/aluIO/debouncer.vf -w /home/luke/csse232/project/aluIO/remote_sources/_/debounce/debouncer.sch
+//Design Name: debouncer
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module debouncer(button, 
+                 clk, 
+                 reset, 
+                 button_hi, 
+                 button_lo, 
+                 count, 
+                 debutton);
+
+    input button;
+    input clk;
+    input reset;
+   output button_hi;
+   output button_lo;
+   output [15:0] count;
+   output debutton;
+   
+   wire XLXN_101;
+   wire XLXN_152;
+   wire XLXN_205;
+   wire XLXN_219;
+   wire XLXN_251;
+   wire XLXN_265;
+   wire XLXN_266;
+   wire XLXN_268;
+   wire debutton_DUMMY;
+   wire button_lo_DUMMY;
+   wire button_hi_DUMMY;
+   
+   assign button_hi = button_hi_DUMMY;
+   assign button_lo = button_lo_DUMMY;
+   assign debutton = debutton_DUMMY;
+   AND2B1  XLXI_13 (.I0(debutton_DUMMY), 
+                   .I1(XLXN_219), 
+                   .O(XLXN_205));
+   FDC #( .INIT(1'b0) ) XLXI_22 (.C(clk), 
+                .CLR(reset), 
+                .D(button), 
+                .Q(XLXN_219));
+   XOR2  XLXI_45 (.I0(XLXN_219), 
+                 .I1(debutton_DUMMY), 
+                 .O(XLXN_101));
+   FDCE #( .INIT(1'b0) ) XLXI_50 (.C(clk), 
+                 .CE(XLXN_268), 
+                 .CLR(reset), 
+                 .D(XLXN_219), 
+                 .Q(debutton_DUMMY));
+   XOR2  XLXI_53 (.I0(button), 
+                 .I1(XLXN_219), 
+                 .O(XLXN_152));
+   AND2B1  XLXI_65 (.I0(XLXN_219), 
+                   .I1(debutton_DUMMY), 
+                   .O(XLXN_251));
+   FDCE #( .INIT(1'b0) ) XLXI_80 (.C(clk), 
+                 .CE(XLXN_265), 
+                 .CLR(reset), 
+                 .D(XLXN_205), 
+                 .Q(button_hi_DUMMY));
+   FDCE #( .INIT(1'b0) ) XLXI_81 (.C(clk), 
+                 .CE(XLXN_266), 
+                 .CLR(reset), 
+                 .D(XLXN_251), 
+                 .Q(button_lo_DUMMY));
+   OR2  XLXI_82 (.I0(button_hi_DUMMY), 
+                .I1(XLXN_268), 
+                .O(XLXN_265));
+   OR2  XLXI_83 (.I0(XLXN_268), 
+                .I1(button_lo_DUMMY), 
+                .O(XLXN_266));
+   debounce_counter  XLXI_85 (.ce(XLXN_101), 
+                             .clk(clk), 
+                             .sclr(XLXN_152), 
+                             .q(count[15:0]), 
+                             .thresh0(XLXN_268));
+endmodule

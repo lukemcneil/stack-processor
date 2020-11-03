@@ -1,0 +1,16 @@
+# Output products list for <blockmemory16kx1>
+_xmsgs/pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_v6_3_readme.txt
+blockmemory16kx1.asy
+blockmemory16kx1.gise
+blockmemory16kx1.mif
+blockmemory16kx1.ngc
+blockmemory16kx1.sym
+blockmemory16kx1.v
+blockmemory16kx1.veo
+blockmemory16kx1.xco
+blockmemory16kx1.xise
+blockmemory16kx1_flist.txt
+blockmemory16kx1_xmdf.tcl
+summary.log

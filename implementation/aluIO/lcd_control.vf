@@ -1,0 +1,457 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : lcd_control.vf
+// /___/   /\     Timestamp : 11/02/2020 15:30:07
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -sympath /home/luke/csse232/project/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -sympath /home/luke/csse232/project/aluIO/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/aluIO/lcd_control.vf -w /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/lcd_control.sch
+//Design Name: lcd_control
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module M2_1_MXILINX_lcd_control(D0, 
+                                D1, 
+                                S0, 
+                                O);
+
+    input D0;
+    input D1;
+    input S0;
+   output O;
+   
+   wire M0;
+   wire M1;
+   
+   AND2B1  I_36_7 (.I0(S0), 
+                  .I1(D0), 
+                  .O(M0));
+   OR2  I_36_8 (.I0(M1), 
+               .I1(M0), 
+               .O(O));
+   AND2  I_36_9 (.I0(D1), 
+                .I1(S0), 
+                .O(M1));
+endmodule
+`timescale 1ns / 1ps
+
+module mux4b2_MUSER_lcd_control(IA, 
+                                IB, 
+                                Sel, 
+                                O);
+
+    input [3:0] IA;
+    input [3:0] IB;
+    input Sel;
+   output [3:0] O;
+   
+   
+   (* HU_SET = "XLXI_1_54" *) 
+   M2_1_MXILINX_lcd_control  XLXI_1 (.D0(IA[0]), 
+                                    .D1(IB[0]), 
+                                    .S0(Sel), 
+                                    .O(O[0]));
+   (* HU_SET = "XLXI_2_55" *) 
+   M2_1_MXILINX_lcd_control  XLXI_2 (.D0(IA[1]), 
+                                    .D1(IB[1]), 
+                                    .S0(Sel), 
+                                    .O(O[1]));
+   (* HU_SET = "XLXI_3_56" *) 
+   M2_1_MXILINX_lcd_control  XLXI_3 (.D0(IA[2]), 
+                                    .D1(IB[2]), 
+                                    .S0(Sel), 
+                                    .O(O[2]));
+   (* HU_SET = "XLXI_4_57" *) 
+   M2_1_MXILINX_lcd_control  XLXI_4 (.D0(IA[3]), 
+                                    .D1(IB[3]), 
+                                    .S0(Sel), 
+                                    .O(O[3]));
+endmodule
+`timescale 1ns / 1ps
+
+module M2_1E_MXILINX_lcd_control(D0, 
+                                 D1, 
+                                 E, 
+                                 S0, 
+                                 O);
+
+    input D0;
+    input D1;
+    input E;
+    input S0;
+   output O;
+   
+   wire M0;
+   wire M1;
+   
+   AND3  I_36_30 (.I0(D1), 
+                 .I1(E), 
+                 .I2(S0), 
+                 .O(M1));
+   AND3B1  I_36_31 (.I0(S0), 
+                   .I1(E), 
+                   .I2(D0), 
+                   .O(M0));
+   OR2  I_36_38 (.I0(M1), 
+                .I1(M0), 
+                .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module M4_1E_MXILINX_lcd_control(D0, 
+                                 D1, 
+                                 D2, 
+                                 D3, 
+                                 E, 
+                                 S0, 
+                                 S1, 
+                                 O);
+
+    input D0;
+    input D1;
+    input D2;
+    input D3;
+    input E;
+    input S0;
+    input S1;
+   output O;
+   
+   wire M01;
+   wire M23;
+   
+   (* HU_SET = "I_M01_59" *) 
+   M2_1E_MXILINX_lcd_control  I_M01 (.D0(D0), 
+                                    .D1(D1), 
+                                    .E(E), 
+                                    .S0(S0), 
+                                    .O(M01));
+   (* HU_SET = "I_M23_58" *) 
+   M2_1E_MXILINX_lcd_control  I_M23 (.D0(D2), 
+                                    .D1(D3), 
+                                    .E(E), 
+                                    .S0(S0), 
+                                    .O(M23));
+   MUXF5  I_O (.I0(M01), 
+              .I1(M23), 
+              .S(S1), 
+              .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module mux8b4_MUSER_lcd_control(IA, 
+                                IB, 
+                                IC, 
+                                ID, 
+                                Sel, 
+                                O);
+
+    input [7:0] IA;
+    input [7:0] IB;
+    input [7:0] IC;
+    input [7:0] ID;
+    input [1:0] Sel;
+   output [7:0] O;
+   
+   wire V;
+   
+   (* HU_SET = "XLXI_1_60" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_1 (.D0(IA[0]), 
+                                     .D1(IB[0]), 
+                                     .D2(IC[0]), 
+                                     .D3(ID[0]), 
+                                     .E(V), 
+                                     .S0(Sel[0]), 
+                                     .S1(Sel[1]), 
+                                     .O(O[0]));
+   (* HU_SET = "XLXI_2_61" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_2 (.D0(IA[1]), 
+                                     .D1(IB[1]), 
+                                     .D2(IC[1]), 
+                                     .D3(ID[1]), 
+                                     .E(V), 
+                                     .S0(Sel[0]), 
+                                     .S1(Sel[1]), 
+                                     .O(O[1]));
+   (* HU_SET = "XLXI_3_62" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_3 (.D0(IA[2]), 
+                                     .D1(IB[2]), 
+                                     .D2(IC[2]), 
+                                     .D3(ID[2]), 
+                                     .E(V), 
+                                     .S0(Sel[0]), 
+                                     .S1(Sel[1]), 
+                                     .O(O[2]));
+   (* HU_SET = "XLXI_4_63" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_4 (.D0(IA[3]), 
+                                     .D1(IB[3]), 
+                                     .D2(IC[3]), 
+                                     .D3(ID[3]), 
+                                     .E(V), 
+                                     .S0(Sel[0]), 
+                                     .S1(Sel[1]), 
+                                     .O(O[3]));
+   VCC  XLXI_13 (.P(V));
+   (* HU_SET = "XLXI_38_64" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_38 (.D0(IA[4]), 
+                                      .D1(IB[4]), 
+                                      .D2(IC[4]), 
+                                      .D3(ID[4]), 
+                                      .E(V), 
+                                      .S0(Sel[0]), 
+                                      .S1(Sel[1]), 
+                                      .O(O[4]));
+   (* HU_SET = "XLXI_39_65" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_39 (.D0(IA[5]), 
+                                      .D1(IB[5]), 
+                                      .D2(IC[5]), 
+                                      .D3(ID[5]), 
+                                      .E(V), 
+                                      .S0(Sel[0]), 
+                                      .S1(Sel[1]), 
+                                      .O(O[5]));
+   (* HU_SET = "XLXI_40_66" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_40 (.D0(IA[6]), 
+                                      .D1(IB[6]), 
+                                      .D2(IC[6]), 
+                                      .D3(ID[6]), 
+                                      .E(V), 
+                                      .S0(Sel[0]), 
+                                      .S1(Sel[1]), 
+                                      .O(O[6]));
+   (* HU_SET = "XLXI_41_67" *) 
+   M4_1E_MXILINX_lcd_control  XLXI_41 (.D0(IA[7]), 
+                                      .D1(IB[7]), 
+                                      .D2(IC[7]), 
+                                      .D3(ID[7]), 
+                                      .E(V), 
+                                      .S0(Sel[0]), 
+                                      .S1(Sel[1]), 
+                                      .O(O[7]));
+endmodule
+`timescale 1ns / 1ps
+
+module timing_MUSER_lcd_control(CLK, 
+                                DoCount, 
+                                ResetCount, 
+                                CNT, 
+                                Wait1us, 
+                                Wait2ms, 
+                                Wait4ms, 
+                                Wait15ms, 
+                                Wait40ns, 
+                                Wait40us, 
+                                Wait100us, 
+                                Wait240ns);
+
+    input CLK;
+    input DoCount;
+    input ResetCount;
+   output [19:0] CNT;
+   output Wait1us;
+   output Wait2ms;
+   output Wait4ms;
+   output Wait15ms;
+   output Wait40ns;
+   output Wait40us;
+   output Wait100us;
+   output Wait240ns;
+   
+   wire [19:0] CNT_DUMMY;
+   
+   assign CNT[19:0] = CNT_DUMMY[19:0];
+   BUF  XLXI_16 (.I(CNT_DUMMY[1]), 
+                .O(Wait40ns));
+   BUF  XLXI_17 (.I(CNT_DUMMY[11]), 
+                .O(Wait40us));
+   AND2  XLXI_18 (.I0(CNT_DUMMY[3]), 
+                 .I1(CNT_DUMMY[2]), 
+                 .O(Wait240ns));
+   AND2  XLXI_19 (.I0(CNT_DUMMY[12]), 
+                 .I1(CNT_DUMMY[10]), 
+                 .O(Wait100us));
+   AND2  XLXI_20 (.I0(CNT_DUMMY[19]), 
+                 .I1(CNT_DUMMY[18]), 
+                 .O(Wait15ms));
+   AND3  XLXI_21 (.I0(CNT_DUMMY[5]), 
+                 .I1(CNT_DUMMY[4]), 
+                 .I2(CNT_DUMMY[1]), 
+                 .O(Wait1us));
+   AND4  XLXI_22 (.I0(CNT_DUMMY[16]), 
+                 .I1(CNT_DUMMY[14]), 
+                 .I2(CNT_DUMMY[6]), 
+                 .I3(CNT_DUMMY[4]), 
+                 .O(Wait2ms));
+   AND4  XLXI_23 (.I0(CNT_DUMMY[17]), 
+                 .I1(CNT_DUMMY[16]), 
+                 .I2(CNT_DUMMY[13]), 
+                 .I3(CNT_DUMMY[8]), 
+                 .O(Wait4ms));
+   lcdCounter  XLXI_25 (.ce(DoCount), 
+                       .clk(CLK), 
+                       .sclr(ResetCount), 
+                       .q(CNT_DUMMY[19:0]));
+endmodule
+`timescale 1ns / 1ps
+
+module lcd_control(CLEAR, 
+                   CLK, 
+                   Count, 
+                   dataIn, 
+                   RESET, 
+                   row, 
+                   startAddress, 
+                   Write, 
+                   currentAddress, 
+                   lcdData, 
+                   lcdEnable, 
+                   lcdReady, 
+                   lcdRegSel);
+
+    input CLEAR;
+    input CLK;
+    input [3:0] Count;
+    input [7:0] dataIn;
+    input RESET;
+    input row;
+    input [3:0] startAddress;
+    input Write;
+   output [3:0] currentAddress;
+   output [3:0] lcdData;
+   output lcdEnable;
+   output lcdReady;
+   output lcdRegSel;
+   
+   wire [7:0] dataOut;
+   wire [1:0] dataSel;
+   wire doCfgDisplay;
+   wire doPwrOnInit;
+   wire doWriteByte;
+   wire [3:0] initCmd;
+   wire XLXN_24;
+   wire XLXN_26;
+   wire XLXN_27;
+   wire XLXN_28;
+   wire XLXN_29;
+   wire XLXN_30;
+   wire XLXN_32;
+   wire XLXN_36;
+   wire XLXN_38;
+   wire XLXN_39;
+   wire XLXN_40;
+   wire XLXN_41;
+   wire XLXN_42;
+   wire XLXN_43;
+   wire XLXN_44;
+   wire XLXN_45;
+   wire XLXN_46;
+   wire XLXN_47;
+   wire XLXN_48;
+   wire XLXN_49;
+   wire XLXN_95;
+   wire [7:0] XLXN_102;
+   wire XLXN_120;
+   wire XLXN_121;
+   wire XLXN_133;
+   wire [7:0] XLXN_137;
+   
+   lcd_cfg_display  XLXI_2 (.CLK(CLK), 
+                           .doCfgDisplay(doCfgDisplay), 
+                           .RESET(RESET), 
+                           .wait2ms(XLXN_30), 
+                           .writeByteDone(XLXN_39), 
+                           .writeByteReady(XLXN_40), 
+                           .cfgDisplayDone(XLXN_95), 
+                           .dataOut(XLXN_102[7:0]), 
+                           .doCount(XLXN_47), 
+                           .doWriteByte(XLXN_38), 
+                           .resetCount(XLXN_44));
+   lcd_pwr_on_init  XLXI_3 (.CLK(CLK), 
+                           .doPwrOnInit(doPwrOnInit), 
+                           .RESET(RESET), 
+                           .wait4ms(XLXN_28), 
+                           .wait15ms(XLXN_29), 
+                           .wait40us(XLXN_26), 
+                           .wait100us(XLXN_27), 
+                           .wait240ns(XLXN_24), 
+                           .dataOut(initCmd[3:0]), 
+                           .doCount(XLXN_48), 
+                           .initDone(XLXN_49), 
+                           .lcdEnable(XLXN_120), 
+                           .resetCount(XLXN_43));
+   lcd_write_byte  XLXI_4 (.CLK(CLK), 
+                          .doWriteByte(XLXN_36), 
+                          .RESET(RESET), 
+                          .wait1us(XLXN_32), 
+                          .wait40us(XLXN_26), 
+                          .wait240ns(XLXN_24), 
+                          .doCount(XLXN_46), 
+                          .lcdEnable(XLXN_121), 
+                          .nibbleSel(XLXN_133), 
+                          .resetCount(XLXN_45), 
+                          .writeByteDone(XLXN_39), 
+                          .writeByteReady(XLXN_40));
+   timing_MUSER_lcd_control  XLXI_5 (.CLK(CLK), 
+                                    .DoCount(XLXN_42), 
+                                    .ResetCount(XLXN_41), 
+                                    .CNT(), 
+                                    .Wait1us(XLXN_32), 
+                                    .Wait2ms(XLXN_30), 
+                                    .Wait4ms(XLXN_28), 
+                                    .Wait15ms(XLXN_29), 
+                                    .Wait40ns(), 
+                                    .Wait40us(XLXN_26), 
+                                    .Wait100us(XLXN_27), 
+                                    .Wait240ns(XLXN_24));
+   OR2  XLXI_12 (.I0(XLXN_38), 
+                .I1(doWriteByte), 
+                .O(XLXN_36));
+   OR3  XLXI_13 (.I0(XLXN_45), 
+                .I1(XLXN_44), 
+                .I2(XLXN_43), 
+                .O(XLXN_41));
+   OR3  XLXI_14 (.I0(XLXN_46), 
+                .I1(XLXN_47), 
+                .I2(XLXN_48), 
+                .O(XLXN_42));
+   mux8b4_MUSER_lcd_control  XLXI_23 (.IA({initCmd[3:0], initCmd[3:0]}), 
+                                     .IB(XLXN_102[7:0]), 
+                                     .IC(XLXN_137[7:0]), 
+                                     .ID(dataIn[7:0]), 
+                                     .Sel(dataSel[1:0]), 
+                                     .O(dataOut[7:0]));
+   OR2  XLXI_27 (.I0(XLXN_121), 
+                .I1(XLXN_120), 
+                .O(lcdEnable));
+   mux4b2_MUSER_lcd_control  XLXI_29 (.IA(dataOut[3:0]), 
+                                     .IB(dataOut[7:4]), 
+                                     .Sel(XLXN_133), 
+                                     .O(lcdData[3:0]));
+   lcd_control_master  XLXI_30 (.cfgDisplayDone(XLXN_95), 
+                               .CLEAR(CLEAR), 
+                               .CLK(CLK), 
+                               .Count(Count[3:0]), 
+                               .initDone(XLXN_49), 
+                               .RESET(RESET), 
+                               .row(row), 
+                               .startAddress(startAddress[3:0]), 
+                               .Write(Write), 
+                               .writeByteDone(XLXN_39), 
+                               .commandOut(XLXN_137[7:0]), 
+                               .currentAddress(currentAddress[3:0]), 
+                               .dataSel(dataSel[1:0]), 
+                               .doCfgDisplay(doCfgDisplay), 
+                               .doPwrOnInit(doPwrOnInit), 
+                               .doWriteByte(doWriteByte), 
+                               .lcdReady(lcdReady), 
+                               .lcdRegSel(lcdRegSel));
+endmodule

@@ -1,0 +1,12 @@
+[Inputs]
+reset
+CLK
+=stackOP[2:0]=
+=w[15:0]=
+[Outputs]
+=a[15:0]=
+=b[15:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel register_stack
+

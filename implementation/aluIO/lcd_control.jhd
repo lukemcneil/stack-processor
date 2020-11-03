@@ -1,0 +1,15 @@
+MODULE lcd_control
+	SUBMODULE lcd_cfg_display
+		INSTANCE XLXI_2
+	SUBMODULE lcd_pwr_on_init
+		INSTANCE XLXI_3
+	SUBMODULE lcd_write_byte
+		INSTANCE XLXI_4
+	SUBMODULE timing
+		INSTANCE XLXI_5
+	SUBMODULE mux8b4
+		INSTANCE XLXI_23
+	SUBMODULE mux4b2
+		INSTANCE XLXI_29
+	SUBMODULE lcd_control_master
+		INSTANCE XLXI_30

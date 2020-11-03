@@ -1,0 +1,25 @@
+# Output products list for <opROM>
+_xmsgs/pn_parser.xmsgs
+dist_mem_gen_ds322.pdf
+dist_mem_gen_v6_3_readme.txt
+opROM.asy
+opROM.gise
+opROM.mif
+opROM.ngc
+opROM.sym
+opROM.v
+opROM.veo
+opROM.xco
+opROM.xise
+opROM_flist.txt
+opROM_ste/example_design/opROM_top.ucf
+opROM_ste/example_design/opROM_top.vhd
+opROM_ste/example_design/opROM_top.xdc
+opROM_ste/implement/implement.bat
+opROM_ste/implement/implement.sh
+opROM_ste/implement/planAhead_rdn.bat
+opROM_ste/implement/planAhead_rdn.sh
+opROM_ste/implement/planAhead_rdn.tcl
+opROM_ste/implement/xst.prj
+opROM_ste/implement/xst.scr
+opROM_xmdf.tcl
