@@ -84,6 +84,7 @@
            (slt "0000000000001001")
            (sub "0000000000001010")
            (swap "0000000000001011")
+           (getin2 "0000000000001100")
            
            (beq "0001")
            (bez "0010")
@@ -232,6 +233,5 @@ RETURNA:
 	drop
 	return")
 
-(assert (equal? (assemble-file "example-programs/rel-prime.asm") (assemble-string rel-prime)))
-(assemble-file "example-programs/rel-prime.asm")
-(map 16-bit->hex (assemble-file "example-programs/rel-prime.asm"))
+(assemble-file "example-assembly-programs/rel-prime.asm")
+(map 16-bit->hex (assemble-file "example-assembly-programs/rel-prime.asm"))
