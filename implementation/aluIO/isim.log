@@ -84,3 +84,4 @@ Block Memory Generator CORE Generator module final_processor_tb.uut.inst_memory.
  Block Memory Generator data initialization complete.
 Block Memory Generator CORE Generator module final_processor_tb.uut.data_memory.inst.\native_mem_module.blk_mem_gen_v6_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Finished circuit initialization process.
+# exit 0
