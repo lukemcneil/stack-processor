@@ -50,10 +50,10 @@ module final_processor_tb;
         
 		// Add stimulus here
 		reset = 1;
+		getin2 = 4;
+		getin = 2;
 		#PERIOD;
 		reset = 0;
-		getin = 1;
-		getin2 = 4;
 	end
       
 endmodule
