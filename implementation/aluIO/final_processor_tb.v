@@ -3,7 +3,8 @@
 module final_processor_tb;
 
 	// Inputs
-	reg [15:0] getin;
+	reg [15:0] getin;	
+	reg [15:0] getin2;
 	reg CLK;
 	reg reset;
 
@@ -13,7 +14,8 @@ module final_processor_tb;
 
 	// Instantiate the Unit Under Test (UUT)
 	final_processor uut (
-		.getin(getin), 
+		.getin(getin),
+		.getin2(getin2),
 		.CLK(CLK), 
 		.reset(reset), 
 		.top_of_stack(top_of_stack), 
@@ -39,6 +41,7 @@ module final_processor_tb;
 	initial begin
 		// Initialize Inputs
 		getin = 0;
+		getin2 = 0;
 		CLK = 0;
 		reset = 0;
 
@@ -49,7 +52,8 @@ module final_processor_tb;
 		reset = 1;
 		#PERIOD;
 		reset = 0;
-		getin = 30030;
+		getin = 1;
+		getin2 = 4;
 	end
       
 endmodule

@@ -2,6 +2,7 @@
 CLK
 reset
 =getin[15:0]=
+=getin2[15:0]=
 [Outputs]
 =top_of_stack[15:0]=
 =second_of_stack[15:0]=

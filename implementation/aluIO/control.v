@@ -38,6 +38,7 @@ module control(
 	parameter MEM = 2;
 	parameter ALU = 3;
 	parameter INPUT = 4;
+	parameter INPUT2 = 5;
 	
 //	PCControl
 	parameter RETURN = 0;
@@ -142,6 +143,14 @@ module control(
 					11: begin // swap
 						stackOP <= SWAP;
 						rStackOP <= NONE;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
+					end
+					12: begin // getin2
+						stackOP <= PUSH;
+						rStackOP <= NONE;
+						stackControl <= INPUT2;
 						PCControl <= PCINC;
 						MemWrite <= 0;
 						PCWrite <= 1;

@@ -7,11 +7,11 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : shift9.vf
-// /___/   /\     Timestamp : 11/02/2020 15:30:06
+// /___/   /\     Timestamp : 11/03/2020 19:22:25
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -sympath /home/luke/csse232/project/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -sympath /home/luke/csse232/project/aluIO/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/aluIO/shift9.vf -w /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/shift9.sch
+//Command: sch2hdl -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/shift9.vf -w /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/shift9.sch
 //Design Name: shift9
 //Device: spartan3e
 //Purpose:
@@ -149,48 +149,48 @@ module shift9(CLK,
                   .D(XLXN_84), 
                   .PRE(XLXN_30), 
                   .Q(isel8));
-   (* HU_SET = "XLXI_21_8" *) 
+   (* HU_SET = "XLXI_21_67" *) 
    M2_1_MXILINX_shift9  XLXI_21 (.D0(isel1), 
                                 .D1(isel8), 
                                 .S0(up), 
                                 .O(XLXN_76));
    GND  XLXI_53 (.G(XLXN_30));
-   (* HU_SET = "XLXI_56_0" *) 
+   (* HU_SET = "XLXI_56_59" *) 
    M2_1_MXILINX_shift9  XLXI_56 (.D0(isel2), 
                                 .D1(isel0), 
                                 .S0(up), 
                                 .O(XLXN_77));
-   (* HU_SET = "XLXI_57_1" *) 
+   (* HU_SET = "XLXI_57_60" *) 
    M2_1_MXILINX_shift9  XLXI_57 (.D0(isel3), 
                                 .D1(isel1), 
                                 .S0(up), 
                                 .O(XLXN_78));
-   (* HU_SET = "XLXI_58_7" *) 
+   (* HU_SET = "XLXI_58_66" *) 
    M2_1_MXILINX_shift9  XLXI_58 (.D0(isel4), 
                                 .D1(isel2), 
                                 .S0(up), 
                                 .O(XLXN_79));
-   (* HU_SET = "XLXI_59_6" *) 
+   (* HU_SET = "XLXI_59_65" *) 
    M2_1_MXILINX_shift9  XLXI_59 (.D0(isel5), 
                                 .D1(isel3), 
                                 .S0(up), 
                                 .O(XLXN_80));
-   (* HU_SET = "XLXI_60_2" *) 
+   (* HU_SET = "XLXI_60_61" *) 
    M2_1_MXILINX_shift9  XLXI_60 (.D0(isel6), 
                                 .D1(isel4), 
                                 .S0(up), 
                                 .O(XLXN_81));
-   (* HU_SET = "XLXI_61_5" *) 
+   (* HU_SET = "XLXI_61_64" *) 
    M2_1_MXILINX_shift9  XLXI_61 (.D0(isel7), 
                                 .D1(isel5), 
                                 .S0(up), 
                                 .O(XLXN_82));
-   (* HU_SET = "XLXI_62_3" *) 
+   (* HU_SET = "XLXI_62_62" *) 
    M2_1_MXILINX_shift9  XLXI_62 (.D0(isel8), 
                                 .D1(isel6), 
                                 .S0(up), 
                                 .O(XLXN_83));
-   (* HU_SET = "XLXI_63_4" *) 
+   (* HU_SET = "XLXI_63_63" *) 
    M2_1_MXILINX_shift9  XLXI_63 (.D0(isel0), 
                                 .D1(isel7), 
                                 .S0(up), 

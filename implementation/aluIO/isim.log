@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/luke/csse232/project/aluIO/final_processor_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/luke/csse232/project/aluIO/final_processor_tb_isim_beh.wdb 
+Running: /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/d.wcfg -wdb /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 ----------------------------------------------------------------------
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@ise.csse.rose-hulman.edu'.
@@ -20,7 +20,6 @@ WARNING:  For instance uut/inst_memory/, width 1 of formal port wea is not equal
 WARNING:  For instance uut/inst_memory/, width 16 of formal port dina is not equal to width 32 of actual constant.
 Time resolution is 1 ps
 # onerror resume
-# wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
  Block Memory Generator CORE Generator module loading initial data...
@@ -30,23 +29,4 @@ Block Memory Generator CORE Generator module final_processor_tb.uut.inst_memory.
  Block Memory Generator data initialization complete.
 Block Memory Generator CORE Generator module final_processor_tb.uut.data_memory.inst.\native_mem_module.blk_mem_gen_v6_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Finished circuit initialization process.
-# run all
-Stopped at time : 28366420100 ps : File "/home/luke/csse232/project/aluIO/mux3.v" Line 34
-# run all
-Stopped at time : 33170180100 ps : File "/home/luke/csse232/project/aluIO/mux3.v" Line 34
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# restart
-# run all
-Simulator is doing circuit initialization process.
- Block Memory Generator CORE Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator CORE Generator module final_processor_tb.uut.inst_memory.inst.\native_mem_module.blk_mem_gen_v6_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator CORE Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator CORE Generator module final_processor_tb.uut.data_memory.inst.\native_mem_module.blk_mem_gen_v6_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Finished circuit initialization process.
-Stopped at time : 60883470 ns : File "/home/luke/csse232/project/aluIO/final_processor_tb.v" Line 32
 # exit 0

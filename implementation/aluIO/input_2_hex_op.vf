@@ -7,11 +7,11 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : input_2_hex_op.vf
-// /___/   /\     Timestamp : 11/02/2020 15:30:06
+// /___/   /\     Timestamp : 11/03/2020 19:22:25
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -sympath /home/luke/csse232/project/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -sympath /home/luke/csse232/project/aluIO/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/aluIO/input_2_hex_op.vf -w /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/input_2_hex_op.sch
+//Command: sch2hdl -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/input_2_hex_op.vf -w /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/input_2_hex_op.sch
 //Design Name: input_2_hex_op
 //Device: spartan3e
 //Purpose:
@@ -149,48 +149,48 @@ module shift9_MUSER_input_2_hex_op(CLK,
                   .D(XLXN_84), 
                   .PRE(XLXN_30), 
                   .Q(isel8));
-   (* HU_SET = "XLXI_21_27" *) 
+   (* HU_SET = "XLXI_21_80" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_21 (.D0(isel1), 
                                         .D1(isel8), 
                                         .S0(up), 
                                         .O(XLXN_76));
    GND  XLXI_53 (.G(XLXN_30));
-   (* HU_SET = "XLXI_56_19" *) 
+   (* HU_SET = "XLXI_56_72" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_56 (.D0(isel2), 
                                         .D1(isel0), 
                                         .S0(up), 
                                         .O(XLXN_77));
-   (* HU_SET = "XLXI_57_20" *) 
+   (* HU_SET = "XLXI_57_73" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_57 (.D0(isel3), 
                                         .D1(isel1), 
                                         .S0(up), 
                                         .O(XLXN_78));
-   (* HU_SET = "XLXI_58_26" *) 
+   (* HU_SET = "XLXI_58_79" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_58 (.D0(isel4), 
                                         .D1(isel2), 
                                         .S0(up), 
                                         .O(XLXN_79));
-   (* HU_SET = "XLXI_59_25" *) 
+   (* HU_SET = "XLXI_59_78" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_59 (.D0(isel5), 
                                         .D1(isel3), 
                                         .S0(up), 
                                         .O(XLXN_80));
-   (* HU_SET = "XLXI_60_21" *) 
+   (* HU_SET = "XLXI_60_74" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_60 (.D0(isel6), 
                                         .D1(isel4), 
                                         .S0(up), 
                                         .O(XLXN_81));
-   (* HU_SET = "XLXI_61_24" *) 
+   (* HU_SET = "XLXI_61_77" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_61 (.D0(isel7), 
                                         .D1(isel5), 
                                         .S0(up), 
                                         .O(XLXN_82));
-   (* HU_SET = "XLXI_62_22" *) 
+   (* HU_SET = "XLXI_62_75" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_62 (.D0(isel8), 
                                         .D1(isel6), 
                                         .S0(up), 
                                         .O(XLXN_83));
-   (* HU_SET = "XLXI_63_23" *) 
+   (* HU_SET = "XLXI_63_76" *) 
    M2_1_MXILINX_input_2_hex_op  XLXI_63 (.D0(isel0), 
                                         .D1(isel7), 
                                         .S0(up), 
@@ -315,12 +315,12 @@ module M16_1E_MXILINX_input_2_hex_op(D0,
    wire M67;
    wire M89;
    
-   (* HU_SET = "I_MAB_31" *) 
+   (* HU_SET = "I_MAB_84" *) 
    M2_1_MXILINX_input_2_hex_op  I_MAB (.D0(D10), 
                                       .D1(D11), 
                                       .S0(S0), 
                                       .O(MAB));
-   (* HU_SET = "I_MCD_30" *) 
+   (* HU_SET = "I_MCD_83" *) 
    M2_1_MXILINX_input_2_hex_op  I_MCD (.D0(D12), 
                                       .D1(D13), 
                                       .S0(S0), 
@@ -329,7 +329,7 @@ module M16_1E_MXILINX_input_2_hex_op(D0,
                   .I1(MEF), 
                   .S(S1), 
                   .LO(MCF));
-   (* HU_SET = "I_MEF_29" *) 
+   (* HU_SET = "I_MEF_82" *) 
    M2_1_MXILINX_input_2_hex_op  I_MEF (.D0(D14), 
                                       .D1(D15), 
                                       .S0(S0), 
@@ -342,7 +342,7 @@ module M16_1E_MXILINX_input_2_hex_op(D0,
                 .I1(MCF), 
                 .S(S2), 
                 .O(MBF));
-   (* HU_SET = "I_M01_36" *) 
+   (* HU_SET = "I_M01_89" *) 
    M2_1_MXILINX_input_2_hex_op  I_M01 (.D0(D0), 
                                       .D1(D1), 
                                       .S0(S0), 
@@ -355,12 +355,12 @@ module M16_1E_MXILINX_input_2_hex_op(D0,
                 .I1(M47), 
                 .S(S2), 
                 .O(MO7));
-   (* HU_SET = "I_M23_35" *) 
+   (* HU_SET = "I_M23_88" *) 
    M2_1_MXILINX_input_2_hex_op  I_M23 (.D0(D2), 
                                       .D1(D3), 
                                       .S0(S0), 
                                       .O(M23));
-   (* HU_SET = "I_M45_34" *) 
+   (* HU_SET = "I_M45_87" *) 
    M2_1_MXILINX_input_2_hex_op  I_M45 (.D0(D4), 
                                       .D1(D5), 
                                       .S0(S0), 
@@ -369,17 +369,17 @@ module M16_1E_MXILINX_input_2_hex_op(D0,
                   .I1(M67), 
                   .S(S1), 
                   .LO(M47));
-   (* HU_SET = "I_M67_33" *) 
+   (* HU_SET = "I_M67_86" *) 
    M2_1_MXILINX_input_2_hex_op  I_M67 (.D0(D6), 
                                       .D1(D7), 
                                       .S0(S0), 
                                       .O(M67));
-   (* HU_SET = "I_M89_32" *) 
+   (* HU_SET = "I_M89_85" *) 
    M2_1_MXILINX_input_2_hex_op  I_M89 (.D0(D8), 
                                       .D1(D9), 
                                       .S0(S0), 
                                       .O(M89));
-   (* HU_SET = "I_O_28" *) 
+   (* HU_SET = "I_O_81" *) 
    M2_1E_MXILINX_input_2_hex_op  I_O (.D0(MO7), 
                                      .D1(MBF), 
                                      .E(E), 
@@ -428,7 +428,7 @@ module mux4b16_MUSER_input_2_hex_op(a,
    
    wire V;
    
-   (* HU_SET = "XLXI_1_37" *) 
+   (* HU_SET = "XLXI_1_90" *) 
    M16_1E_MXILINX_input_2_hex_op  XLXI_1 (.D0(a[0]), 
                                          .D1(b[0]), 
                                          .D2(c[0]), 
@@ -451,7 +451,7 @@ module mux4b16_MUSER_input_2_hex_op(a,
                                          .S2(s[2]), 
                                          .S3(s[3]), 
                                          .O(r[0]));
-   (* HU_SET = "XLXI_17_38" *) 
+   (* HU_SET = "XLXI_17_91" *) 
    M16_1E_MXILINX_input_2_hex_op  XLXI_17 (.D0(a[1]), 
                                           .D1(b[1]), 
                                           .D2(c[1]), 
@@ -474,7 +474,7 @@ module mux4b16_MUSER_input_2_hex_op(a,
                                           .S2(s[2]), 
                                           .S3(s[3]), 
                                           .O(r[1]));
-   (* HU_SET = "XLXI_19_39" *) 
+   (* HU_SET = "XLXI_19_92" *) 
    M16_1E_MXILINX_input_2_hex_op  XLXI_19 (.D0(a[2]), 
                                           .D1(b[2]), 
                                           .D2(c[2]), 
@@ -497,7 +497,7 @@ module mux4b16_MUSER_input_2_hex_op(a,
                                           .S2(s[2]), 
                                           .S3(s[3]), 
                                           .O(r[2]));
-   (* HU_SET = "XLXI_20_40" *) 
+   (* HU_SET = "XLXI_20_93" *) 
    M16_1E_MXILINX_input_2_hex_op  XLXI_20 (.D0(a[3]), 
                                           .D1(b[3]), 
                                           .D2(c[3]), 

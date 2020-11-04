@@ -48,8 +48,8 @@
         <signal name="lcd_D(3:0)" />
         <signal name="east" />
         <signal name="XLXN_384(15:0)" />
-        <signal name="XLXN_385" />
         <signal name="XLXN_387(15:0)" />
+        <signal name="XLXN_388(15:0)" />
         <port polarity="Input" name="CLK" />
         <port polarity="Input" name="s_button" />
         <port polarity="Output" name="lcdReady" />
@@ -181,8 +181,9 @@
             <line x2="48" y1="-48" y2="-48" x1="112" />
         </blockdef>
         <blockdef name="final_processor">
-            <timestamp>2020-11-2T20:28:34</timestamp>
-            <rect width="368" x="64" y="-192" height="192" />
+            <timestamp>2020-11-4T0:24:43</timestamp>
+            <rect width="64" x="0" y="20" height="24" />
+            <line x2="0" y1="32" y2="32" x1="64" />
             <line x2="0" y1="-160" y2="-160" x1="64" />
             <line x2="0" y1="-96" y2="-96" x1="64" />
             <rect width="64" x="0" y="-44" height="24" />
@@ -191,6 +192,7 @@
             <line x2="496" y1="-160" y2="-160" x1="432" />
             <rect width="64" x="432" y="-44" height="24" />
             <line x2="496" y1="-32" y2="-32" x1="432" />
+            <rect width="368" x="64" y="-192" height="256" />
         </blockdef>
         <block symbolname="buf" name="XLXI_13">
             <blockpin signalname="V" name="I" />
@@ -321,6 +323,7 @@
             <blockpin signalname="XLXN_387(15:0)" name="getin(15:0)" />
             <blockpin signalname="XLXN_384(15:0)" name="top_of_stack(15:0)" />
             <blockpin name="second_of_stack(15:0)" />
+            <blockpin signalname="XLXN_147(15:0)" name="getin2(15:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -466,6 +469,8 @@
         </instance>
         <branch name="XLXN_147(15:0)">
             <wire x2="2496" y1="1712" y2="1712" x1="2208" />
+            <wire x2="2624" y1="1488" y2="1488" x1="2496" />
+            <wire x2="2496" y1="1488" y2="1712" x1="2496" />
         </branch>
         <branch name="ovfl">
             <wire x2="3040" y1="1648" y2="1648" x1="2880" />

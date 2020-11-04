@@ -7,11 +7,11 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : aluIO.vf
-// /___/   /\     Timestamp : 11/02/2020 17:00:04
+// /___/   /\     Timestamp : 11/03/2020 19:25:07
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -sympath /home/luke/csse232/project/aluIO/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/aluIO/aluIO.vf -w /home/luke/csse232/project/aluIO/aluIO.sch
+//Command: sch2hdl -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/aluIO.vf -w /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/aluIO.sch
 //Design Name: aluIO
 //Device: spartan3e
 //Purpose:
@@ -169,6 +169,7 @@ module aluIO(a_button,
    GND  XLXI_132 (.G(zero));
    final_processor  XLXI_134 (.CLK(CLK), 
                              .getin(XLXN_387[15:0]), 
+                             .getin2(XLXN_147[15:0]), 
                              .reset(XLXN_116), 
                              .second_of_stack(), 
                              .top_of_stack(XLXN_384[15:0]));

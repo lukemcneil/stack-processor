@@ -7,11 +7,11 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : lcd_control.vf
-// /___/   /\     Timestamp : 11/02/2020 15:30:07
+// /___/   /\     Timestamp : 11/03/2020 19:22:25
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -sympath /home/luke/csse232/project/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -sympath /home/luke/csse232/project/aluIO/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/aluIO/lcd_control.vf -w /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/lcd_control.sch
+//Command: sch2hdl -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/lcd_control.vf -w /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/lcd_control.sch
 //Design Name: lcd_control
 //Device: spartan3e
 //Purpose:
@@ -56,22 +56,22 @@ module mux4b2_MUSER_lcd_control(IA,
    output [3:0] O;
    
    
-   (* HU_SET = "XLXI_1_54" *) 
+   (* HU_SET = "XLXI_1_94" *) 
    M2_1_MXILINX_lcd_control  XLXI_1 (.D0(IA[0]), 
                                     .D1(IB[0]), 
                                     .S0(Sel), 
                                     .O(O[0]));
-   (* HU_SET = "XLXI_2_55" *) 
+   (* HU_SET = "XLXI_2_95" *) 
    M2_1_MXILINX_lcd_control  XLXI_2 (.D0(IA[1]), 
                                     .D1(IB[1]), 
                                     .S0(Sel), 
                                     .O(O[1]));
-   (* HU_SET = "XLXI_3_56" *) 
+   (* HU_SET = "XLXI_3_96" *) 
    M2_1_MXILINX_lcd_control  XLXI_3 (.D0(IA[2]), 
                                     .D1(IB[2]), 
                                     .S0(Sel), 
                                     .O(O[2]));
-   (* HU_SET = "XLXI_4_57" *) 
+   (* HU_SET = "XLXI_4_97" *) 
    M2_1_MXILINX_lcd_control  XLXI_4 (.D0(IA[3]), 
                                     .D1(IB[3]), 
                                     .S0(Sel), 
@@ -129,13 +129,13 @@ module M4_1E_MXILINX_lcd_control(D0,
    wire M01;
    wire M23;
    
-   (* HU_SET = "I_M01_59" *) 
+   (* HU_SET = "I_M01_99" *) 
    M2_1E_MXILINX_lcd_control  I_M01 (.D0(D0), 
                                     .D1(D1), 
                                     .E(E), 
                                     .S0(S0), 
                                     .O(M01));
-   (* HU_SET = "I_M23_58" *) 
+   (* HU_SET = "I_M23_98" *) 
    M2_1E_MXILINX_lcd_control  I_M23 (.D0(D2), 
                                     .D1(D3), 
                                     .E(E), 
@@ -164,7 +164,7 @@ module mux8b4_MUSER_lcd_control(IA,
    
    wire V;
    
-   (* HU_SET = "XLXI_1_60" *) 
+   (* HU_SET = "XLXI_1_100" *) 
    M4_1E_MXILINX_lcd_control  XLXI_1 (.D0(IA[0]), 
                                      .D1(IB[0]), 
                                      .D2(IC[0]), 
@@ -173,7 +173,7 @@ module mux8b4_MUSER_lcd_control(IA,
                                      .S0(Sel[0]), 
                                      .S1(Sel[1]), 
                                      .O(O[0]));
-   (* HU_SET = "XLXI_2_61" *) 
+   (* HU_SET = "XLXI_2_101" *) 
    M4_1E_MXILINX_lcd_control  XLXI_2 (.D0(IA[1]), 
                                      .D1(IB[1]), 
                                      .D2(IC[1]), 
@@ -182,7 +182,7 @@ module mux8b4_MUSER_lcd_control(IA,
                                      .S0(Sel[0]), 
                                      .S1(Sel[1]), 
                                      .O(O[1]));
-   (* HU_SET = "XLXI_3_62" *) 
+   (* HU_SET = "XLXI_3_102" *) 
    M4_1E_MXILINX_lcd_control  XLXI_3 (.D0(IA[2]), 
                                      .D1(IB[2]), 
                                      .D2(IC[2]), 
@@ -191,7 +191,7 @@ module mux8b4_MUSER_lcd_control(IA,
                                      .S0(Sel[0]), 
                                      .S1(Sel[1]), 
                                      .O(O[2]));
-   (* HU_SET = "XLXI_4_63" *) 
+   (* HU_SET = "XLXI_4_103" *) 
    M4_1E_MXILINX_lcd_control  XLXI_4 (.D0(IA[3]), 
                                      .D1(IB[3]), 
                                      .D2(IC[3]), 
@@ -201,7 +201,7 @@ module mux8b4_MUSER_lcd_control(IA,
                                      .S1(Sel[1]), 
                                      .O(O[3]));
    VCC  XLXI_13 (.P(V));
-   (* HU_SET = "XLXI_38_64" *) 
+   (* HU_SET = "XLXI_38_104" *) 
    M4_1E_MXILINX_lcd_control  XLXI_38 (.D0(IA[4]), 
                                       .D1(IB[4]), 
                                       .D2(IC[4]), 
@@ -210,7 +210,7 @@ module mux8b4_MUSER_lcd_control(IA,
                                       .S0(Sel[0]), 
                                       .S1(Sel[1]), 
                                       .O(O[4]));
-   (* HU_SET = "XLXI_39_65" *) 
+   (* HU_SET = "XLXI_39_105" *) 
    M4_1E_MXILINX_lcd_control  XLXI_39 (.D0(IA[5]), 
                                       .D1(IB[5]), 
                                       .D2(IC[5]), 
@@ -219,7 +219,7 @@ module mux8b4_MUSER_lcd_control(IA,
                                       .S0(Sel[0]), 
                                       .S1(Sel[1]), 
                                       .O(O[5]));
-   (* HU_SET = "XLXI_40_66" *) 
+   (* HU_SET = "XLXI_40_106" *) 
    M4_1E_MXILINX_lcd_control  XLXI_40 (.D0(IA[6]), 
                                       .D1(IB[6]), 
                                       .D2(IC[6]), 
@@ -228,7 +228,7 @@ module mux8b4_MUSER_lcd_control(IA,
                                       .S0(Sel[0]), 
                                       .S1(Sel[1]), 
                                       .O(O[6]));
-   (* HU_SET = "XLXI_41_67" *) 
+   (* HU_SET = "XLXI_41_107" *) 
    M4_1E_MXILINX_lcd_control  XLXI_41 (.D0(IA[7]), 
                                       .D1(IB[7]), 
                                       .D2(IC[7]), 

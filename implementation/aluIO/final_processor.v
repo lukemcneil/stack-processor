@@ -1,7 +1,8 @@
 `timescale 1ns / 1ps
 
 module final_processor(
-   input [15:0] getin,
+   input [15:0] getin,  
+	input [15:0] getin2,
    input CLK,
    input reset,
    output [15:0] top_of_stack,
@@ -110,6 +111,7 @@ module final_processor(
 		.i2(data_mem_out),
 		.i3(alu_out),
 		.i4(getin),
+		.i5(getin2),
 		.control(stack_control),
 		.out(new_top_of_stack)
 	);

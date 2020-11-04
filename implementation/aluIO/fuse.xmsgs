@@ -5,28 +5,28 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 47: Port <arg fmt="%s" index="1">Overflow</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 48: Port <arg fmt="%s" index="1">Overflow</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 55: Port <arg fmt="%s" index="1">i5</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 56: Port <arg fmt="%s" index="1">i5</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 107: Port <arg fmt="%s" index="1">i5</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 108: Port <arg fmt="%s" index="1">i6</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 126: Port <arg fmt="%s" index="1">Overflow</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 128: Port <arg fmt="%s" index="1">Overflow</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 48: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">Oper</arg>&gt;. Formal port size is <arg fmt="%d" index="2">4</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 49: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">Oper</arg>&gt;. Formal port size is <arg fmt="%d" index="2">4</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 50: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">16</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 51: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">B</arg>&gt;. Formal port size is <arg fmt="%d" index="2">16</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 68: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wea</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 69: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wea</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/aluIO/final_processor.v" Line 69: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">dina</arg>&gt;. Formal port size is <arg fmt="%d" index="2">16</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 70: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">dina</arg>&gt;. Formal port size is <arg fmt="%d" index="2">16</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
 </messages>

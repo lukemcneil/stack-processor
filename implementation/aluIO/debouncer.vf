@@ -7,11 +7,11 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : debouncer.vf
-// /___/   /\     Timestamp : 11/02/2020 15:30:06
+// /___/   /\     Timestamp : 11/03/2020 19:22:24
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -sympath /home/luke/csse232/project/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -sympath /home/luke/csse232/project/aluIO/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/aluIO/debouncer.vf -w /home/luke/csse232/project/aluIO/remote_sources/_/debounce/debouncer.sch
+//Command: sch2hdl -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/debouncer.vf -w /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/debouncer.sch
 //Design Name: debouncer
 //Device: spartan3e
 //Purpose:
