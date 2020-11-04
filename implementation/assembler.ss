@@ -233,5 +233,5 @@ RETURNA:
 	drop
 	return")
 
-(assemble-file "example-assembly-programs/rel-prime.asm")
-(map 16-bit->hex (assemble-file "example-assembly-programs/rel-prime.asm"))
+(for-each (lambda (x) (printf "~a\n" x)) (assemble-file "/tmp/test.asm"))
+(map 16-bit->hex (assemble-file "/tmp/test.asm"))

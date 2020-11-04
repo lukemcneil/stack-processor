@@ -1,0 +1,686 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : input_2_hex_op.vf
+// /___/   /\     Timestamp : 11/03/2020 19:59:09
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/input_2_hex_op.vf -w /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/input_2_hex_op.sch
+//Design Name: input_2_hex_op
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module M2_1_MXILINX_input_2_hex_op(D0, 
+                                   D1, 
+                                   S0, 
+                                   O);
+
+    input D0;
+    input D1;
+    input S0;
+   output O;
+   
+   wire M0;
+   wire M1;
+   
+   AND2B1  I_36_7 (.I0(S0), 
+                  .I1(D0), 
+                  .O(M0));
+   OR2  I_36_8 (.I0(M1), 
+               .I1(M0), 
+               .O(O));
+   AND2  I_36_9 (.I0(D1), 
+                .I1(S0), 
+                .O(M1));
+endmodule
+`timescale 1ns / 1ps
+
+module shift9_MUSER_input_2_hex_op(CLK, 
+                                   count, 
+                                   enable, 
+                                   RESET, 
+                                   up, 
+                                   sel0, 
+                                   sel1, 
+                                   sel2, 
+                                   sel3, 
+                                   sel4, 
+                                   sel5, 
+                                   sel6, 
+                                   sel7, 
+                                   sel8);
+
+    input CLK;
+    input count;
+    input enable;
+    input RESET;
+    input up;
+   output sel0;
+   output sel1;
+   output sel2;
+   output sel3;
+   output sel4;
+   output sel5;
+   output sel6;
+   output sel7;
+   output sel8;
+   
+   wire isel0;
+   wire isel1;
+   wire isel2;
+   wire isel3;
+   wire isel4;
+   wire isel5;
+   wire isel6;
+   wire isel7;
+   wire isel8;
+   wire XLXN_30;
+   wire XLXN_76;
+   wire XLXN_77;
+   wire XLXN_78;
+   wire XLXN_79;
+   wire XLXN_80;
+   wire XLXN_81;
+   wire XLXN_82;
+   wire XLXN_83;
+   wire XLXN_84;
+   
+   FDCPE #( .INIT(1'b0) ) XLXI_6 (.C(CLK), 
+                 .CE(count), 
+                 .CLR(XLXN_30), 
+                 .D(XLXN_76), 
+                 .PRE(RESET), 
+                 .Q(isel0));
+   FDCPE #( .INIT(1'b0) ) XLXI_13 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_77), 
+                  .PRE(XLXN_30), 
+                  .Q(isel1));
+   FDCPE #( .INIT(1'b0) ) XLXI_14 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_78), 
+                  .PRE(XLXN_30), 
+                  .Q(isel2));
+   FDCPE #( .INIT(1'b0) ) XLXI_15 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_79), 
+                  .PRE(XLXN_30), 
+                  .Q(isel3));
+   FDCPE #( .INIT(1'b0) ) XLXI_16 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_80), 
+                  .PRE(XLXN_30), 
+                  .Q(isel4));
+   FDCPE #( .INIT(1'b0) ) XLXI_17 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_81), 
+                  .PRE(XLXN_30), 
+                  .Q(isel5));
+   FDCPE #( .INIT(1'b0) ) XLXI_18 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_82), 
+                  .PRE(XLXN_30), 
+                  .Q(isel6));
+   FDCPE #( .INIT(1'b0) ) XLXI_19 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_83), 
+                  .PRE(XLXN_30), 
+                  .Q(isel7));
+   FDCPE #( .INIT(1'b0) ) XLXI_20 (.C(CLK), 
+                  .CE(count), 
+                  .CLR(RESET), 
+                  .D(XLXN_84), 
+                  .PRE(XLXN_30), 
+                  .Q(isel8));
+   (* HU_SET = "XLXI_21_58" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_21 (.D0(isel1), 
+                                        .D1(isel8), 
+                                        .S0(up), 
+                                        .O(XLXN_76));
+   GND  XLXI_53 (.G(XLXN_30));
+   (* HU_SET = "XLXI_56_50" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_56 (.D0(isel2), 
+                                        .D1(isel0), 
+                                        .S0(up), 
+                                        .O(XLXN_77));
+   (* HU_SET = "XLXI_57_51" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_57 (.D0(isel3), 
+                                        .D1(isel1), 
+                                        .S0(up), 
+                                        .O(XLXN_78));
+   (* HU_SET = "XLXI_58_57" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_58 (.D0(isel4), 
+                                        .D1(isel2), 
+                                        .S0(up), 
+                                        .O(XLXN_79));
+   (* HU_SET = "XLXI_59_56" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_59 (.D0(isel5), 
+                                        .D1(isel3), 
+                                        .S0(up), 
+                                        .O(XLXN_80));
+   (* HU_SET = "XLXI_60_52" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_60 (.D0(isel6), 
+                                        .D1(isel4), 
+                                        .S0(up), 
+                                        .O(XLXN_81));
+   (* HU_SET = "XLXI_61_55" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_61 (.D0(isel7), 
+                                        .D1(isel5), 
+                                        .S0(up), 
+                                        .O(XLXN_82));
+   (* HU_SET = "XLXI_62_53" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_62 (.D0(isel8), 
+                                        .D1(isel6), 
+                                        .S0(up), 
+                                        .O(XLXN_83));
+   (* HU_SET = "XLXI_63_54" *) 
+   M2_1_MXILINX_input_2_hex_op  XLXI_63 (.D0(isel0), 
+                                        .D1(isel7), 
+                                        .S0(up), 
+                                        .O(XLXN_84));
+   AND2  XLXI_64 (.I0(isel0), 
+                 .I1(enable), 
+                 .O(sel0));
+   AND2  XLXI_65 (.I0(isel1), 
+                 .I1(enable), 
+                 .O(sel1));
+   AND2  XLXI_66 (.I0(isel2), 
+                 .I1(enable), 
+                 .O(sel2));
+   AND2  XLXI_67 (.I0(isel3), 
+                 .I1(enable), 
+                 .O(sel3));
+   AND2  XLXI_68 (.I0(isel4), 
+                 .I1(enable), 
+                 .O(sel4));
+   AND2  XLXI_69 (.I0(isel5), 
+                 .I1(enable), 
+                 .O(sel5));
+   AND2  XLXI_70 (.I0(isel6), 
+                 .I1(enable), 
+                 .O(sel6));
+   AND2  XLXI_71 (.I0(isel7), 
+                 .I1(enable), 
+                 .O(sel7));
+   AND2  XLXI_72 (.I0(isel8), 
+                 .I1(enable), 
+                 .O(sel8));
+endmodule
+`timescale 1ns / 1ps
+
+module M2_1E_MXILINX_input_2_hex_op(D0, 
+                                    D1, 
+                                    E, 
+                                    S0, 
+                                    O);
+
+    input D0;
+    input D1;
+    input E;
+    input S0;
+   output O;
+   
+   wire M0;
+   wire M1;
+   
+   AND3  I_36_30 (.I0(D1), 
+                 .I1(E), 
+                 .I2(S0), 
+                 .O(M1));
+   AND3B1  I_36_31 (.I0(S0), 
+                   .I1(E), 
+                   .I2(D0), 
+                   .O(M0));
+   OR2  I_36_38 (.I0(M1), 
+                .I1(M0), 
+                .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module M16_1E_MXILINX_input_2_hex_op(D0, 
+                                     D1, 
+                                     D2, 
+                                     D3, 
+                                     D4, 
+                                     D5, 
+                                     D6, 
+                                     D7, 
+                                     D8, 
+                                     D9, 
+                                     D10, 
+                                     D11, 
+                                     D12, 
+                                     D13, 
+                                     D14, 
+                                     D15, 
+                                     E, 
+                                     S0, 
+                                     S1, 
+                                     S2, 
+                                     S3, 
+                                     O);
+
+    input D0;
+    input D1;
+    input D2;
+    input D3;
+    input D4;
+    input D5;
+    input D6;
+    input D7;
+    input D8;
+    input D9;
+    input D10;
+    input D11;
+    input D12;
+    input D13;
+    input D14;
+    input D15;
+    input E;
+    input S0;
+    input S1;
+    input S2;
+    input S3;
+   output O;
+   
+   wire MAB;
+   wire MBF;
+   wire MCD;
+   wire MCF;
+   wire MEF;
+   wire MO7;
+   wire M8B;
+   wire M01;
+   wire M03;
+   wire M23;
+   wire M45;
+   wire M47;
+   wire M67;
+   wire M89;
+   
+   (* HU_SET = "I_MAB_62" *) 
+   M2_1_MXILINX_input_2_hex_op  I_MAB (.D0(D10), 
+                                      .D1(D11), 
+                                      .S0(S0), 
+                                      .O(MAB));
+   (* HU_SET = "I_MCD_61" *) 
+   M2_1_MXILINX_input_2_hex_op  I_MCD (.D0(D12), 
+                                      .D1(D13), 
+                                      .S0(S0), 
+                                      .O(MCD));
+   MUXF5_L  I_MCF (.I0(MCD), 
+                  .I1(MEF), 
+                  .S(S1), 
+                  .LO(MCF));
+   (* HU_SET = "I_MEF_60" *) 
+   M2_1_MXILINX_input_2_hex_op  I_MEF (.D0(D14), 
+                                      .D1(D15), 
+                                      .S0(S0), 
+                                      .O(MEF));
+   MUXF5_L  I_M8B (.I0(M89), 
+                  .I1(MAB), 
+                  .S(S1), 
+                  .LO(M8B));
+   MUXF6  I_M8F (.I0(M8B), 
+                .I1(MCF), 
+                .S(S2), 
+                .O(MBF));
+   (* HU_SET = "I_M01_67" *) 
+   M2_1_MXILINX_input_2_hex_op  I_M01 (.D0(D0), 
+                                      .D1(D1), 
+                                      .S0(S0), 
+                                      .O(M01));
+   MUXF5_L  I_M03 (.I0(M01), 
+                  .I1(M23), 
+                  .S(S1), 
+                  .LO(M03));
+   MUXF6  I_M07 (.I0(M03), 
+                .I1(M47), 
+                .S(S2), 
+                .O(MO7));
+   (* HU_SET = "I_M23_66" *) 
+   M2_1_MXILINX_input_2_hex_op  I_M23 (.D0(D2), 
+                                      .D1(D3), 
+                                      .S0(S0), 
+                                      .O(M23));
+   (* HU_SET = "I_M45_65" *) 
+   M2_1_MXILINX_input_2_hex_op  I_M45 (.D0(D4), 
+                                      .D1(D5), 
+                                      .S0(S0), 
+                                      .O(M45));
+   MUXF5_L  I_M47 (.I0(M45), 
+                  .I1(M67), 
+                  .S(S1), 
+                  .LO(M47));
+   (* HU_SET = "I_M67_64" *) 
+   M2_1_MXILINX_input_2_hex_op  I_M67 (.D0(D6), 
+                                      .D1(D7), 
+                                      .S0(S0), 
+                                      .O(M67));
+   (* HU_SET = "I_M89_63" *) 
+   M2_1_MXILINX_input_2_hex_op  I_M89 (.D0(D8), 
+                                      .D1(D9), 
+                                      .S0(S0), 
+                                      .O(M89));
+   (* HU_SET = "I_O_59" *) 
+   M2_1E_MXILINX_input_2_hex_op  I_O (.D0(MO7), 
+                                     .D1(MBF), 
+                                     .E(E), 
+                                     .S0(S3), 
+                                     .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module mux4b16_MUSER_input_2_hex_op(a, 
+                                    b, 
+                                    c, 
+                                    d, 
+                                    e, 
+                                    f, 
+                                    g, 
+                                    h, 
+                                    i, 
+                                    j, 
+                                    k, 
+                                    l, 
+                                    m, 
+                                    n, 
+                                    o, 
+                                    p, 
+                                    s, 
+                                    r);
+
+    input [3:0] a;
+    input [3:0] b;
+    input [3:0] c;
+    input [3:0] d;
+    input [3:0] e;
+    input [3:0] f;
+    input [3:0] g;
+    input [3:0] h;
+    input [3:0] i;
+    input [3:0] j;
+    input [3:0] k;
+    input [3:0] l;
+    input [3:0] m;
+    input [3:0] n;
+    input [3:0] o;
+    input [3:0] p;
+    input [3:0] s;
+   output [3:0] r;
+   
+   wire V;
+   
+   (* HU_SET = "XLXI_1_68" *) 
+   M16_1E_MXILINX_input_2_hex_op  XLXI_1 (.D0(a[0]), 
+                                         .D1(b[0]), 
+                                         .D2(c[0]), 
+                                         .D3(d[0]), 
+                                         .D4(e[0]), 
+                                         .D5(f[0]), 
+                                         .D6(g[0]), 
+                                         .D7(h[0]), 
+                                         .D8(i[0]), 
+                                         .D9(j[0]), 
+                                         .D10(k[0]), 
+                                         .D11(l[0]), 
+                                         .D12(m[0]), 
+                                         .D13(n[0]), 
+                                         .D14(o[0]), 
+                                         .D15(p[0]), 
+                                         .E(V), 
+                                         .S0(s[0]), 
+                                         .S1(s[1]), 
+                                         .S2(s[2]), 
+                                         .S3(s[3]), 
+                                         .O(r[0]));
+   (* HU_SET = "XLXI_17_69" *) 
+   M16_1E_MXILINX_input_2_hex_op  XLXI_17 (.D0(a[1]), 
+                                          .D1(b[1]), 
+                                          .D2(c[1]), 
+                                          .D3(d[1]), 
+                                          .D4(e[1]), 
+                                          .D5(f[1]), 
+                                          .D6(g[1]), 
+                                          .D7(h[1]), 
+                                          .D8(i[1]), 
+                                          .D9(j[1]), 
+                                          .D10(k[1]), 
+                                          .D11(l[1]), 
+                                          .D12(m[1]), 
+                                          .D13(n[1]), 
+                                          .D14(o[1]), 
+                                          .D15(p[1]), 
+                                          .E(V), 
+                                          .S0(s[0]), 
+                                          .S1(s[1]), 
+                                          .S2(s[2]), 
+                                          .S3(s[3]), 
+                                          .O(r[1]));
+   (* HU_SET = "XLXI_19_70" *) 
+   M16_1E_MXILINX_input_2_hex_op  XLXI_19 (.D0(a[2]), 
+                                          .D1(b[2]), 
+                                          .D2(c[2]), 
+                                          .D3(d[2]), 
+                                          .D4(e[2]), 
+                                          .D5(f[2]), 
+                                          .D6(g[2]), 
+                                          .D7(h[2]), 
+                                          .D8(i[2]), 
+                                          .D9(j[2]), 
+                                          .D10(k[2]), 
+                                          .D11(l[2]), 
+                                          .D12(m[2]), 
+                                          .D13(n[2]), 
+                                          .D14(o[2]), 
+                                          .D15(p[2]), 
+                                          .E(V), 
+                                          .S0(s[0]), 
+                                          .S1(s[1]), 
+                                          .S2(s[2]), 
+                                          .S3(s[3]), 
+                                          .O(r[2]));
+   (* HU_SET = "XLXI_20_71" *) 
+   M16_1E_MXILINX_input_2_hex_op  XLXI_20 (.D0(a[3]), 
+                                          .D1(b[3]), 
+                                          .D2(c[3]), 
+                                          .D3(d[3]), 
+                                          .D4(e[3]), 
+                                          .D5(f[3]), 
+                                          .D6(g[3]), 
+                                          .D7(h[3]), 
+                                          .D8(i[3]), 
+                                          .D9(j[3]), 
+                                          .D10(k[3]), 
+                                          .D11(l[3]), 
+                                          .D12(m[3]), 
+                                          .D13(n[3]), 
+                                          .D14(o[3]), 
+                                          .D15(p[3]), 
+                                          .E(V), 
+                                          .S0(s[0]), 
+                                          .S1(s[1]), 
+                                          .S2(s[2]), 
+                                          .S3(s[3]), 
+                                          .O(r[3]));
+   VCC  XLXI_23 (.P(V));
+endmodule
+`timescale 1ns / 1ps
+
+module input_2_hex_op(CLK, 
+                      count, 
+                      count_up, 
+                      inputData, 
+                      posSel, 
+                      RESET, 
+                      shift, 
+                      shift_up, 
+                      A, 
+                      B, 
+                      lcdData, 
+                      op);
+
+    input CLK;
+    input count;
+    input count_up;
+    input [15:0] inputData;
+    input [3:0] posSel;
+    input RESET;
+    input shift;
+    input shift_up;
+   output [15:0] A;
+   output [15:0] B;
+   output [7:0] lcdData;
+   output [2:0] op;
+   
+   wire G;
+   wire [1:0] sel;
+   wire V;
+   wire [3:0] XLXN_58;
+   wire [7:0] XLXN_61;
+   wire [7:0] XLXN_62;
+   wire XLXN_65;
+   wire XLXN_66;
+   wire XLXN_77;
+   wire XLXN_82;
+   wire XLXN_83;
+   wire XLXN_84;
+   wire XLXN_85;
+   wire XLXN_86;
+   wire XLXN_87;
+   wire XLXN_88;
+   wire XLXN_89;
+   wire XLXN_90;
+   wire [15:0] A_DUMMY;
+   wire [15:0] B_DUMMY;
+   wire [2:0] op_DUMMY;
+   
+   assign A[15:0] = A_DUMMY[15:0];
+   assign B[15:0] = B_DUMMY[15:0];
+   assign op[2:0] = op_DUMMY[2:0];
+   mux4b16_MUSER_input_2_hex_op  XLXI_30 (.a(A_DUMMY[15:12]), 
+                                         .b(A_DUMMY[11:8]), 
+                                         .c(A_DUMMY[7:4]), 
+                                         .d(A_DUMMY[3:0]), 
+                                         .e({G, op_DUMMY[2:0]}), 
+                                         .f({V, op_DUMMY[2:0]}), 
+                                         .g(B_DUMMY[15:12]), 
+                                         .h(B_DUMMY[11:8]), 
+                                         .i(B_DUMMY[7:4]), 
+                                         .j(B_DUMMY[3:0]), 
+                                         .k({G, G, G, G}), 
+                                         .l(inputData[15:12]), 
+                                         .m(inputData[11:8]), 
+                                         .n(inputData[7:4]), 
+                                         .o(inputData[3:0]), 
+                                         .p({G, G, G, G}), 
+                                         .s(posSel[3:0]), 
+                                         .r(XLXN_58[3:0]));
+   GND  XLXI_31 (.G(G));
+   hexROM  XLXI_33 (.a(XLXN_58[3:0]), 
+                   .spo(XLXN_62[7:0]));
+   opROM  XLXI_34 (.a(XLXN_58[3:0]), 
+                  .spo(XLXN_61[7:0]));
+   mux8b4  XLXI_35 (.IA(XLXN_62[7:0]), 
+                   .IB(XLXN_61[7:0]), 
+                   .IC({G, G, V, V, V, V, G, V}), 
+                   .ID({G, G, V, G, G, G, G, G}), 
+                   .Sel(sel[1:0]), 
+                   .O(lcdData[7:0]));
+   AND4  XLXI_37 (.I0(posSel[3]), 
+                 .I1(posSel[2]), 
+                 .I2(posSel[1]), 
+                 .I3(posSel[0]), 
+                 .O(XLXN_66));
+   AND3B2  XLXI_41 (.I0(posSel[3]), 
+                   .I1(posSel[1]), 
+                   .I2(posSel[2]), 
+                   .O(XLXN_65));
+   XNOR2  XLXI_42 (.I0(posSel[2]), 
+                  .I1(posSel[0]), 
+                  .O(XLXN_77));
+   shift9_MUSER_input_2_hex_op  XLXI_43 (.CLK(CLK), 
+                                        .count(shift), 
+                                        .enable(count), 
+                                        .RESET(RESET), 
+                                        .up(shift_up), 
+                                        .sel0(XLXN_82), 
+                                        .sel1(XLXN_83), 
+                                        .sel2(XLXN_84), 
+                                        .sel3(XLXN_85), 
+                                        .sel4(XLXN_86), 
+                                        .sel5(XLXN_87), 
+                                        .sel6(XLXN_88), 
+                                        .sel7(XLXN_89), 
+                                        .sel8(XLXN_90));
+   VCC  XLXI_46 (.P(V));
+   OR2  XLXI_47 (.I0(XLXN_66), 
+                .I1(XLXN_65), 
+                .O(sel[0]));
+   AND3  XLXI_48 (.I0(posSel[3]), 
+                 .I1(posSel[1]), 
+                 .I2(XLXN_77), 
+                 .O(sel[1]));
+   IOcounter4  XLXI_77 (.ce(XLXN_90), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(B_DUMMY[3:0]));
+   IOcounter4  XLXI_78 (.ce(XLXN_89), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(B_DUMMY[7:4]));
+   IOcounter4  XLXI_79 (.ce(XLXN_88), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(B_DUMMY[11:8]));
+   IOcounter4  XLXI_80 (.ce(XLXN_87), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(B_DUMMY[15:12]));
+   IOcounter4  XLXI_81 (.ce(XLXN_85), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(A_DUMMY[3:0]));
+   IOcounter4  XLXI_82 (.ce(XLXN_84), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(A_DUMMY[7:4]));
+   IOcounter4  XLXI_83 (.ce(XLXN_83), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(A_DUMMY[11:8]));
+   IOcounter4  XLXI_84 (.ce(XLXN_82), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(A_DUMMY[15:12]));
+   IOcounter3  XLXI_85 (.ce(XLXN_86), 
+                       .clk(CLK), 
+                       .sclr(RESET), 
+                       .up(count_up), 
+                       .q(op_DUMMY[2:0]));
+endmodule
