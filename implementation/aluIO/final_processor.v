@@ -6,7 +6,8 @@ module final_processor(
    input CLK,
    input reset,
    output [15:0] top_of_stack,
-   output [15:0] second_of_stack
+   output [15:0] second_of_stack,
+	output [31:0] inst_count
    );
 
 	wire [15:0] pc_out;
@@ -74,13 +75,15 @@ module final_processor(
 	control control (
 		.inst(inst), 
 		.reset(reset),
+		.CLK(slowCLK),
 		.stackOP(stack_op), 
 		.rStackOP(r_stack_op), 
 		.stackControl(stack_control), 
 		.PCControl(pc_control), 
 		.MemWrite(mem_write), 
 		.PCWrite(pc_write),
-		.ALUOP(alu_op)
+		.ALUOP(alu_op),
+		.instCount(inst_count)
 	);
 	
 	leftshifter12 ls12 (

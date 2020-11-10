@@ -11,6 +11,7 @@ module final_processor_tb;
 	// Outputs
 	wire [15:0] top_of_stack;
 	wire [15:0] second_of_stack;
+	wire [31:0] inst_count;
 
 	// Instantiate the Unit Under Test (UUT)
 	final_processor uut (
@@ -19,7 +20,8 @@ module final_processor_tb;
 		.CLK(CLK), 
 		.reset(reset), 
 		.top_of_stack(top_of_stack), 
-		.second_of_stack(second_of_stack)
+		.second_of_stack(second_of_stack),
+		.inst_count(inst_count)
 	);
 	
 	// use this if your design contains sequential logic
@@ -51,7 +53,8 @@ module final_processor_tb;
 		// Add stimulus here
 		reset = 1;
 		getin2 = 3;
-		getin = 2;
+		getin = 'h13b0;
+//		getin = 30030;
 		#PERIOD;
 		reset = 0;
 	end

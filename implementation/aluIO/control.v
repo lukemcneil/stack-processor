@@ -3,13 +3,15 @@
 module control(
    input [15:0] inst,
    input reset,
+	input CLK,
    output reg [2:0] stackOP,
    output reg [1:0] rStackOP,
    output reg [3:0] ALUOP,
    output reg [2:0] stackControl,
    output reg [2:0] PCControl,
    output reg MemWrite,
-   output reg PCWrite
+   output reg PCWrite,
+	output reg [31:0] instCount
    );
 	
 //	stackOP and rStackOP
@@ -46,6 +48,14 @@ module control(
 	parameter LABEL = 2;
 	parameter LABELORPCINC = 3;
 	parameter PCINC = 4;
+	
+	always @ (posedge(CLK)) begin
+		if (reset == 1)
+			instCount = 0;
+		else
+			if (inst != 'h0003)
+				instCount = instCount + 1;
+	end
 	
 	always @ (inst) begin
 		case(inst[15:12])
