@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+// This integration test puts together PC, a mux3, the adder, 
+// return stack, and instruction memory.
+
 module integration_updating_pc(
    input PCWrite,
    input [2:0] PCControl,

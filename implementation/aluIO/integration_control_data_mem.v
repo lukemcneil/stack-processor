@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+// This integration test puts together control, left shifters,
+// the sign extender, data memory, and a mux3.
+
 module integration_control_data_mem(
    input [15:0] inst,
    input [15:0] memWriteData,

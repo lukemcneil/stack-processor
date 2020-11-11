@@ -2,6 +2,8 @@
 
 // Author: Jinhao Sheng
 
+// This component is a 3 bit mux with 16 bit inputs.
+
 module mux3(
     input [15:0] i0,
     input [15:0] i1,

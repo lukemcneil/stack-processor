@@ -2,6 +2,10 @@
 
 // Author: Austin Swatek
 
+// This component takes two 16 bit values and an
+// op code. It then outputs the result of doing the
+// correct operation.
+
 module alu(
 	input [3:0] Oper,
 	input [15:0] A,

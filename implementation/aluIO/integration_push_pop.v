@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// This integration test puts together the stack, ALU, and a mux1.
+
 module integration_push_pop(
    input [2:0] stackOP,
 	input [3:0] aluOP,

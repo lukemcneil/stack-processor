@@ -2,6 +2,9 @@
 
 // Author: Luke McNeil
 
+// This component takes a clock and produces another
+// clock which has twice the period.
+
 module clock_splitter(
     input CLK,
 	 output reg slowCLK

@@ -2,6 +2,14 @@
 
 // Author: Luke McNeil
 
+// This component takes in write data and a stack operation.
+// On the negative edge of the clock the stack does the operation
+// which may or may not use w. If reset is ever high on the negative
+// edge then every entry on the stack is set to zero. The stack
+// outputs one 16 bit value which is the top of the stack. This component
+// is very similar to the register_stack just limited in stack ops and 
+// with only 1 output.
+
 module return_stack(a, stackOP, w, reset, CLK);
 	output [15:0] a;
 	input [1:0] stackOP;

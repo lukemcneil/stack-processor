@@ -2,6 +2,10 @@
 
 // Author: Luke McNeil
 
+// This component takes in the instruction and sets
+// the control bits to the correct values. This component
+// also keeps track of how many instructions have been executed.
+
 module control(
    input [15:0] inst,
    input reset,
