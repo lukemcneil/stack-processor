@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// Author: Austin Swatek
+
 module alu(
 	input [3:0] Oper,
 	input [15:0] A,

@@ -145,7 +145,7 @@ module final_processor(
 	);
 	
 	blockmemory16kx1 data_memory (
-		.clka(~(slowCLK & CLK)),
+		.clka(~(slowCLK & CLK)), // we need to make a clock that rises in between the rising and falling edge of the fast clock
 		.addra(ls1_out[12:1]),
 		.wea(mem_write),
 		.dina(alu_out),

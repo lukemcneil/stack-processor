@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// Author: Jinhao Sheng
+
 module mux1(
     input [15:0] i0,
     input [15:0] i1,

@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// Author: Luke McNeil
+
 module clock_splitter(
     input CLK,
 	 output reg slowCLK

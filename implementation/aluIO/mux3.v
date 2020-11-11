@@ -1,23 +1,7 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    14:38:32 10/20/2020 
-// Design Name: 
-// Module Name:    mux3 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
+// Author: Jinhao Sheng
+
 module mux3(
     input [15:0] i0,
     input [15:0] i1,

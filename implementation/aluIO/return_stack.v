@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// Author: Luke McNeil
+
 module return_stack(a, stackOP, w, reset, CLK);
 	output [15:0] a;
 	input [1:0] stackOP;

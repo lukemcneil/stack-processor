@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// Author: Luke McNeil
+
 module control(
    input [15:0] inst,
    input reset,

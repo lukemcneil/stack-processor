@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// Author: Luke McNeil
+
 module register_stack(a, b, stackOP, w, reset, CLK);
 	output [15:0] a;
    output [15:0] b;
