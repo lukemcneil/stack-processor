@@ -192,6 +192,7 @@
             (begin
               (printf "max-stack-size: ~s\nmax-return-stack-size: ~s\ninstruction-count: ~s\n"
                       max-stack-size max-return-stack-size instruction-count)
+              (printf "final-stack: ~d\n" stack-new)
               stack-new))))
     ;;(printf "~s\n" '())
     (loop starting-stack '() 0 0 0 0)))
@@ -286,6 +287,11 @@ F3:
 ;;(file->instructions "example-programs/rel-prime.asm")
 ;;(string->instructions rel-prime)
 
-(time (simulate (file->instructions "example-assembly-programs/fact.asm") '(61)))
-(time (simulate (file->instructions "example-assembly-programs/rel-prime.asm") '(30030)))
+;;(time (simulate (file->instructions "example-assembly-programs/fact.asm") '(61)))
+;;(time (simulate (file->instructions "example-assembly-programs/rel-prime.asm") '(30030)))
 ;;(time (simulate (string->instructions rel-prime) '(30030)))
+
+(let ([args (command-line)])
+  (if (< (length args) 2)
+      (printf "not enough arguments\n")
+      (time (simulate (file->instructions (cadr args)) (map string->number (cddr args))))))

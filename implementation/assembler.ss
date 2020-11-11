@@ -235,10 +235,10 @@ RETURNA:
 (let ([args (command-line)])
   (if (< (length args) 2)
       (printf "not enough arguments\n")
-      (if (and (> (length args) 2) (string=? (caddr args) "--hex"))
+      (if (and (> (length args) 2) (string=? (caddr args) "--binary"))
           (for-each
            (lambda (x) (printf "~d\n" x))
-           (map 16-bit->hex (assemble-file (cadr args))))
+           (assemble-file (cadr args)))
           (for-each
            (lambda (x) (printf "~d\n" x))
-           (assemble-file (cadr args))))))
+           (map 16-bit->hex (assemble-file (cadr args)))))))
