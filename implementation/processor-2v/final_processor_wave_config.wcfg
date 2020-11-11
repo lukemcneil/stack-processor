@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="19" />
    <wvobject fp_name="/final_processor_tb/top_of_stack" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">top_of_stack[15:0]</obj_property>
       <obj_property name="ObjectShortName">top_of_stack[15:0]</obj_property>
@@ -22,8 +22,8 @@
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/final_processor_tb/inst_count" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">inst_count[15:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_count[15:0]</obj_property>
+      <obj_property name="ElementShortName">inst_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_count[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/final_processor_tb/getin" type="array" db_ref_id="1">
@@ -80,5 +80,20 @@
    <wvobject fp_name="/final_processor_tb/uut/inst_memory/clka" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clka</obj_property>
       <obj_property name="ObjectShortName">clka</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/control/inst" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst[15:0]</obj_property>
+      <obj_property name="ObjectShortName">inst[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/data_memory/douta" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">douta[15:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/final_processor_tb/uut/data_memory/dina" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dina[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

@@ -1,0 +1,60 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.exe" -prj "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_beh.prj" "work.final_processor_tb" "work.glbl" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/signextender.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/return_stack.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/register_stack.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/register16b.vf" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/mux3.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/mux1.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/leftshifter12.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/leftshifter1.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/blockmemory16kx1.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/control.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/clock_splitter.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/alu.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 49: Port Overflow is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 57: Port i5 is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 111: Port i6 is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 131: Port Overflow is not connected to this instance
+WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 50: Size mismatch in connection of port <Oper>. Formal port size is 4-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 52: Size mismatch in connection of port <B>. Formal port size is 16-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 70: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 71: Size mismatch in connection of port <dina>. Formal port size is 16-bit while actual signal size is 32-bit.
+Completed static elaboration
+Fuse Memory Usage: 86592 KB
+Fuse CPU Usage: 930 ms
+Compiling module clock_splitter
+Compiling module FDCE
+Compiling module FD16CE_MXILINX_register16b
+Compiling module register16b
+Compiling module alu
+Compiling module mux3
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
+Compiling module blockmemory16kx1
+Compiling module control
+Compiling module leftshifter12
+Compiling module signextender
+Compiling module leftshifter1
+Compiling module mux1
+Compiling module register_stack
+Compiling module return_stack
+Compiling module final_processor
+Compiling module final_processor_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 21 Verilog Units
+Built simulation executable /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.exe
+Fuse Memory Usage: 1699104 KB
+Fuse CPU Usage: 980 ms
+GCC CPU Usage: 140 ms

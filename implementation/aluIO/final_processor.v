@@ -56,7 +56,7 @@ module final_processor(
 	
 	mux3 pc_control_mux (
 		.i0(r_stack_out),
-		.i1(top_of_stack),
+		.i1(top_of_stack << 1),
 		.i2({3'b000, ls1_out}),
 		.i3(branch_mux_out),
 		.i4(adder_out),
@@ -148,7 +148,7 @@ module final_processor(
 		.clka(~(slowCLK & CLK)), // we need to make a clock that rises in between the rising and falling edge of the fast clock
 		.addra(ls1_out[12:1]),
 		.wea(mem_write),
-		.dina(alu_out),
+		.dina(top_of_stack),
 		.douta(data_mem_out)
 	);
 
