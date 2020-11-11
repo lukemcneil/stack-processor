@@ -173,7 +173,6 @@
     (define (4-bit->hex str)
       (vector-ref order (string->number str 2)))
     (string-append
-     "0x"
      (4-bit->hex (substring str 0 4))
      (4-bit->hex (substring str 4 8))
      (4-bit->hex (substring str 8 12))
@@ -233,5 +232,13 @@ RETURNA:
 	drop
 	return")
 
-(for-each (lambda (x) (printf "~a\n" x)) (assemble-file "/tmp/test.asm"))
-(map 16-bit->hex (assemble-file "/tmp/test.asm"))
+(let ([args (command-line)])
+  (if (< (length args) 2)
+      (printf "not enough arguments\n")
+      (if (and (> (length args) 2) (string=? (caddr args) "--hex"))
+          (for-each
+           (lambda (x) (printf "~d\n" x))
+           (map 16-bit->hex (assemble-file (cadr args))))
+          (for-each
+           (lambda (x) (printf "~d\n" x))
+           (assemble-file (cadr args))))))
