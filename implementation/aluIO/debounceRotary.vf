@@ -1,0 +1,109 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : debounceRotary.vf
+// /___/   /\     Timestamp : 11/12/2020 14:15:59
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounce/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/lcdDisplayControl/ipcore_dir -sympath /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/rotaryInputHexOpHex/ipcore_dir -intstyle ise -family spartan3e -verilog /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/debounceRotary.vf -w /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/remote_sources/_/debounceRotary/debounceRotary.sch
+//Design Name: debounceRotary
+//Device: spartan3e
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module debounceRotary(A, 
+                      B, 
+                      CLK, 
+                      RESET, 
+                      rot_event, 
+                      rot_event_delay, 
+                      rot_left);
+
+    input A;
+    input B;
+    input CLK;
+    input RESET;
+   output rot_event;
+   output rot_event_delay;
+   output rot_left;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_8;
+   wire XLXN_17;
+   wire XLXN_23;
+   wire XLXN_24;
+   wire XLXN_25;
+   wire XLXN_26;
+   wire XLXN_29;
+   wire XLXN_43;
+   wire XLXN_47;
+   wire rot_event_DUMMY;
+   
+   assign rot_event = rot_event_DUMMY;
+   AND2  XLXI_9 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_10 (.I0(XLXN_3), 
+                 .I1(XLXN_2), 
+                 .O(XLXN_4));
+   OR2  XLXI_13 (.I0(XLXN_1), 
+                .I1(XLXN_17), 
+                .O(XLXN_2));
+   OR2  XLXI_14 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_3));
+   FDC #( .INIT(1'b0) ) XLXI_21 (.C(CLK), 
+                .CLR(RESET), 
+                .D(XLXN_4), 
+                .Q(XLXN_17));
+   FDC #( .INIT(1'b0) ) XLXI_22 (.C(CLK), 
+                .CLR(RESET), 
+                .D(XLXN_17), 
+                .Q(XLXN_8));
+   FDC #( .INIT(1'b0) ) XLXI_23 (.C(CLK), 
+                .CLR(RESET), 
+                .D(XLXN_47), 
+                .Q(rot_event_DUMMY));
+   FDCE #( .INIT(1'b0) ) XLXI_25 (.C(CLK), 
+                 .CE(XLXN_47), 
+                 .CLR(RESET), 
+                 .D(XLXN_43), 
+                 .Q(rot_left));
+   AND2B1  XLXI_26 (.I0(XLXN_8), 
+                   .I1(XLXN_17), 
+                   .O(XLXN_47));
+   AND2  XLXI_45 (.I0(B), 
+                 .I1(XLXN_29), 
+                 .O(XLXN_23));
+   OR2  XLXI_46 (.I0(XLXN_23), 
+                .I1(XLXN_43), 
+                .O(XLXN_24));
+   OR2  XLXI_47 (.I0(B), 
+                .I1(XLXN_29), 
+                .O(XLXN_25));
+   AND2  XLXI_48 (.I0(XLXN_25), 
+                 .I1(XLXN_24), 
+                 .O(XLXN_26));
+   FDC #( .INIT(1'b0) ) XLXI_49 (.C(CLK), 
+                .CLR(RESET), 
+                .D(XLXN_26), 
+                .Q(XLXN_43));
+   INV  XLXI_69 (.I(A), 
+                .O(XLXN_29));
+   FDC #( .INIT(1'b0) ) XLXI_70 (.C(CLK), 
+                .CLR(RESET), 
+                .D(rot_event_DUMMY), 
+                .Q(rot_event_delay));
+endmodule

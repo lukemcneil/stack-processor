@@ -5,6 +5,7 @@ module final_processor(
 	input [15:0] getin2,
    input CLK,
    input reset,
+	input [15:0] pc_reset_address,
    output [15:0] top_of_stack,
    output [15:0] second_of_stack,
 	output [31:0] inst_count
@@ -38,13 +39,22 @@ module final_processor(
 		.slowCLK(slowCLK)
 	);
 	
-	register16b pc (
-		.D(new_pc),
-		.CE(pc_write),
-		.C(~slowCLK),
-		.R(reset),
-		.Q(pc_out)
+	register16b_set pc (
+		.din(new_pc),
+		.enable(pc_write),
+		.CLK(~slowCLK),
+		.reset(reset),
+		.dout(pc_out),
+		.pc_reset_address(pc_reset_address)
 	);
+
+//	register16b pc (
+//		.D(new_pc),
+//		.CE(pc_write),
+//		.C(~slowCLK),
+//		.R(reset),
+//		.Q(pc_out)
+//	);
 	
 	alu adder (
 		.Oper(0), 
@@ -56,7 +66,7 @@ module final_processor(
 	
 	mux3 pc_control_mux (
 		.i0(r_stack_out),
-		.i1(top_of_stack << 1),
+		.i1((top_of_stack << 1)),
 		.i2({3'b000, ls1_out}),
 		.i3(branch_mux_out),
 		.i4(adder_out),
@@ -105,7 +115,7 @@ module final_processor(
 		.i0(adder_out),
 		.i1({3'b000, ls1_out}),
 		.control(alu_out[0]),
-		.out(branch_mux_out)
+		.dout(branch_mux_out)
 	);
 	
 	mux3 stack_control_mux (

@@ -1,8 +1,7 @@
 # Output products list for <blockmemory16kx1>
 _xmsgs/pn_parser.xmsgs
-blockmemory16kx1/blk_mem_gen_v7_3_readme.txt
-blockmemory16kx1/doc/blk_mem_gen_v7_3_vinfo.html
-blockmemory16kx1/doc/pg058-blk-mem-gen.pdf
+blk_mem_gen_ds512.pdf
+blk_mem_gen_v6_3_readme.txt
 blockmemory16kx1.asy
 blockmemory16kx1.gise
 blockmemory16kx1.mif

@@ -8,14 +8,14 @@
     <netlist>
         <signal name="CE" />
         <signal name="C" />
-        <signal name="R" />
-        <signal name="D(15:0)" />
         <signal name="Q(15:0)" />
+        <signal name="D(15:0)" />
+        <signal name="R" />
         <port polarity="Input" name="CE" />
         <port polarity="Input" name="C" />
-        <port polarity="Input" name="R" />
-        <port polarity="Input" name="D(15:0)" />
         <port polarity="Output" name="Q(15:0)" />
+        <port polarity="Input" name="D(15:0)" />
+        <port polarity="Input" name="R" />
         <blockdef name="fd16ce">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="64" y1="-128" y2="-128" x1="0" />
@@ -48,18 +48,18 @@
             <wire x2="1216" y1="1104" y2="1104" x1="1184" />
         </branch>
         <iomarker fontsize="28" x="1184" y="1104" name="C" orien="R180" />
-        <branch name="R">
-            <wire x2="1216" y1="1200" y2="1200" x1="1184" />
-        </branch>
-        <iomarker fontsize="28" x="1184" y="1200" name="R" orien="R180" />
-        <branch name="D(15:0)">
-            <wire x2="1216" y1="976" y2="976" x1="1184" />
-        </branch>
-        <iomarker fontsize="28" x="1184" y="976" name="D(15:0)" orien="R180" />
         <branch name="Q(15:0)">
             <wire x2="1632" y1="976" y2="976" x1="1600" />
         </branch>
         <iomarker fontsize="28" x="1632" y="976" name="Q(15:0)" orien="R0" />
         <instance x="1216" y="1232" name="XLXI_3" orien="R0" />
+        <branch name="D(15:0)">
+            <wire x2="1216" y1="976" y2="976" x1="1184" />
+        </branch>
+        <branch name="R">
+            <wire x2="1216" y1="1200" y2="1200" x1="1200" />
+        </branch>
+        <iomarker fontsize="28" x="1200" y="1200" name="R" orien="R180" />
+        <iomarker fontsize="28" x="1184" y="976" name="D(15:0)" orien="R180" />
     </sheet>
 </drawing>

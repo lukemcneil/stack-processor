@@ -8,14 +8,14 @@ module mux1(
     input [15:0] i0,
     input [15:0] i1,
     input control,
-    output reg [15:0] out
+    output reg [15:0] dout
     );
 
 	 always @(i0,i1,control) begin
 		if (control == 0)
-			out <= i0;
+			dout <= i0;
 		else
-			out <= i1;
+			dout <= i1;
 	 end
 
 

@@ -7,6 +7,7 @@ module final_processor_tb;
 	reg [15:0] getin2;
 	reg CLK;
 	reg reset;
+	reg [15:0] pc_reset_address;
 
 	// Outputs
 	wire signed [15:0] top_of_stack;
@@ -18,7 +19,8 @@ module final_processor_tb;
 		.getin(getin),
 		.getin2(getin2),
 		.CLK(CLK), 
-		.reset(reset), 
+		.reset(reset),
+		.pc_reset_address(pc_reset_address),
 		.top_of_stack(top_of_stack), 
 		.second_of_stack(second_of_stack),
 		.inst_count(inst_count)
@@ -57,6 +59,7 @@ module final_processor_tb;
 		CLK = 0;
 		reset = 0;
 		fails = 0;
+		pc_reset_address = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
@@ -67,7 +70,7 @@ module final_processor_tb;
 		resetProcessor();
 	
 // ###########################################	
-//		Test pushi and lui with
+//		Test pushi and lui
 
 // pushi 2
 // lui 1

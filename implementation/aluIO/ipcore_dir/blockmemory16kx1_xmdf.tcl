@@ -35,16 +35,12 @@ utilities_xmdf::xmdfSetData $instance FileSet $fcount type logical_library
 utilities_xmdf::xmdfSetData $instance FileSet $fcount logical_library unisim
 incr fcount
 
-utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kx1/blk_mem_gen_v7_3_readme.txt
-utilities_xmdf::xmdfSetData $instance FileSet $fcount type Ignore
+utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blk_mem_gen_ds512.pdf
+utilities_xmdf::xmdfSetData $instance FileSet $fcount type AnyView
 incr fcount
 
-utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kx1/doc/blk_mem_gen_v7_3_vinfo.html
-utilities_xmdf::xmdfSetData $instance FileSet $fcount type Ignore
-incr fcount
-
-utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kx1/doc/pg058-blk-mem-gen.pdf
-utilities_xmdf::xmdfSetData $instance FileSet $fcount type Ignore
+utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blk_mem_gen_v6_3_readme.txt
+utilities_xmdf::xmdfSetData $instance FileSet $fcount type text
 incr fcount
 
 utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path blockmemory16kx1.asy
