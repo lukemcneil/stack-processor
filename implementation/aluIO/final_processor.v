@@ -71,7 +71,7 @@ module final_processor(
 		.i3(branch_mux_out),
 		.i4(adder_out),
 		.control(pc_control),
-		.out(new_pc)
+		.dout(new_pc)
 	);
 	
 	blockmemory16kx1 inst_memory (
@@ -126,7 +126,7 @@ module final_processor(
 		.i4(getin),
 		.i5(getin2),
 		.control(stack_control),
-		.out(new_top_of_stack)
+		.dout(new_top_of_stack)
 	);
 	
 	register_stack stack (

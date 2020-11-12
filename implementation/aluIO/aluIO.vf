@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : aluIO.vf
-// /___/   /\     Timestamp : 11/12/2020 16:28:16
+// /___/   /\     Timestamp : 11/12/2020 17:08:12
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -166,19 +166,25 @@ module aluIO(a_button,
    wire XLXN_399;
    wire XLXN_400;
    wire XLXN_406;
+   wire [15:0] XLXN_415;
+   wire [15:0] XLXN_416;
+   wire [15:0] XLXN_418;
+   wire [15:0] XLXN_419;
    wire led0_DUMMY;
-   wire led1_DUMMY;
    
    assign XLXN_396 = 16'h0000;
    assign XLXN_397 = 16'h0008;
+   assign XLXN_415 = 16'h0010;
+   assign XLXN_416 = 16'h0018;
+   assign XLXN_418 = 16'h0060;
+   assign XLXN_419 = 16'h0086;
    assign led0 = led0_DUMMY;
-   assign led1 = led1_DUMMY;
    lcd_control  XLXI_1 (.CLEAR(south), 
                        .CLK(CLK), 
                        .Count({V, V, V, V}), 
                        .dataIn(XLXN_118[7:0]), 
                        .RESET(RESET), 
-                       .row(led1_DUMMY), 
+                       .row(G), 
                        .startAddress({G, G, G, G}), 
                        .Write(V), 
                        .currentAddress(XLXN_124[3:0]), 
@@ -189,7 +195,7 @@ module aluIO(a_button,
    BUF  XLXI_3 (.I(switch[0]), 
                .O(led0_DUMMY));
    BUF  XLXI_4 (.I(switch[1]), 
-               .O(led1_DUMMY));
+               .O(led1));
    BUF  XLXI_5 (.I(switch[2]), 
                .O(led2));
    BUF  XLXI_6 (.I(switch[3]), 
@@ -238,7 +244,7 @@ module aluIO(a_button,
                            .posSel(XLXN_124[3:0]), 
                            .RESET(RESET), 
                            .shift(east), 
-                           .shift_up(shift_up), 
+                           .shift_up(V), 
                            .A(XLXN_387[15:0]), 
                            .B(XLXN_147[15:0]), 
                            .lcdData(XLXN_118[7:0]), 
@@ -259,10 +265,6 @@ module aluIO(a_button,
                              .inst_count(), 
                              .second_of_stack(), 
                              .top_of_stack(XLXN_392[15:0]));
-   mux1  XLXI_135 (.control(switch[3]), 
-                  .i0(XLXN_396[15:0]), 
-                  .i1(XLXN_397[15:0]), 
-                  .dout(XLXN_398[15:0]));
    (* HU_SET = "XLXI_138_0" *) 
    OR12_MXILINX_aluIO  XLXI_138 (.I0(), 
                                 .I1(), 
@@ -277,4 +279,14 @@ module aluIO(a_button,
                                 .I10(RESET), 
                                 .I11(XLXN_400), 
                                 .O(XLXN_399));
+   mux3  XLXI_139 (.control(switch[2:0]), 
+                  .i0(XLXN_396[15:0]), 
+                  .i1(XLXN_397[15:0]), 
+                  .i2(XLXN_415[15:0]), 
+                  .i3(XLXN_416[15:0]), 
+                  .i4(XLXN_418[15:0]), 
+                  .i5(XLXN_419[15:0]), 
+                  .i6(), 
+                  .i7(), 
+                  .dout(XLXN_398[15:0]));
 endmodule

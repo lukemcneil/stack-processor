@@ -14,19 +14,19 @@ module mux3(
     input [15:0] i6,
     input [15:0] i7,
     input [2:0] control,
-    output reg [15:0] out
+    output reg [15:0] dout
     );
 
 	 always @(i0,i1,i2,i3,i4,i5,i6,i7,control) begin
 	 case(control)
-		3'b000 : out <= i0;
-		3'b001 : out <= i1;
-		3'b010 : out <= i2;
-		3'b011 : out <= i3;
-		3'b100 : out <= i4;
-		3'b101 : out <= i5;
-		3'b110 : out <= i6;
-		default : out <= i7;
+		3'b000 : dout <= i0;
+		3'b001 : dout <= i1;
+		3'b010 : dout <= i2;
+		3'b011 : dout <= i3;
+		3'b100 : dout <= i4;
+		3'b101 : dout <= i5;
+		3'b110 : dout <= i6;
+		default : dout <= i7;
 	 endcase
 	 end
 
