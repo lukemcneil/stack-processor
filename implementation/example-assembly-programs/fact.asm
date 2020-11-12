@@ -1,4 +1,5 @@
 MAIN:
+	getin
 	jal FACT
 	halt
 FACT:

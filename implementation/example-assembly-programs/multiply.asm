@@ -1,4 +1,6 @@
 MAIN:
+	getin
+	getin2
 	jal MUL
 	halt
 MUL:
