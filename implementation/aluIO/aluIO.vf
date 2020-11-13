@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : aluIO.vf
-// /___/   /\     Timestamp : 11/12/2020 17:08:12
+// /___/   /\     Timestamp : 11/12/2020 22:54:19
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -162,7 +162,6 @@ module aluIO(a_button,
    wire [15:0] XLXN_392;
    wire [15:0] XLXN_396;
    wire [15:0] XLXN_397;
-   wire [15:0] XLXN_398;
    wire XLXN_399;
    wire XLXN_400;
    wire XLXN_406;
@@ -170,6 +169,9 @@ module aluIO(a_button,
    wire [15:0] XLXN_416;
    wire [15:0] XLXN_418;
    wire [15:0] XLXN_419;
+   wire [15:0] XLXN_420;
+   wire [15:0] XLXN_421;
+   wire [15:0] XLXN_423;
    wire led0_DUMMY;
    
    assign XLXN_396 = 16'h0000;
@@ -178,6 +180,8 @@ module aluIO(a_button,
    assign XLXN_416 = 16'h0018;
    assign XLXN_418 = 16'h0060;
    assign XLXN_419 = 16'h0086;
+   assign XLXN_420 = 16'h0100;
+   assign XLXN_421 = 16'h00D0;
    assign led0 = led0_DUMMY;
    lcd_control  XLXI_1 (.CLEAR(south), 
                        .CLK(CLK), 
@@ -260,7 +264,7 @@ module aluIO(a_button,
    final_processor  XLXI_134 (.CLK(CLK), 
                              .getin(XLXN_387[15:0]), 
                              .getin2(XLXN_147[15:0]), 
-                             .pc_reset_address(XLXN_398[15:0]), 
+                             .pc_reset_address(XLXN_423[15:0]), 
                              .reset(XLXN_399), 
                              .inst_count(), 
                              .second_of_stack(), 
@@ -286,7 +290,7 @@ module aluIO(a_button,
                   .i3(XLXN_416[15:0]), 
                   .i4(XLXN_418[15:0]), 
                   .i5(XLXN_419[15:0]), 
-                  .i6(), 
-                  .i7(), 
-                  .dout(XLXN_398[15:0]));
+                  .i6(XLXN_420[15:0]), 
+                  .i7(XLXN_421[15:0]), 
+                  .dout(XLXN_423[15:0]));
 endmodule

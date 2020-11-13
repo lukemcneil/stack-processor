@@ -517,6 +517,9 @@ module final_processor_tb;
 //			fails = fails + 1;
 //		end
 
+		getin = 'h5000;
+		getin2 = 7;
+
 		if (fails == 0)
 			$display("ALL TESTS PASSED");
 		else

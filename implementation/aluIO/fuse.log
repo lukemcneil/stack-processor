@@ -1,9 +1,8 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.exe -prj /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_beh.prj work.final_processor_tb work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.exe" -prj "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_beh.prj" "work.final_processor_tb" "work.glbl" 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 12
 Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
-Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/blockmemory16kx1.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/signextender.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/return_stack.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/register_stack.v" into library work
@@ -12,6 +11,7 @@ Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementati
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/mux1.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/leftshifter12.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/leftshifter1.v" into library work
+Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/ipcore_dir/blockmemory16kx1.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/control.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/clock_splitter.v" into library work
 Analyzing Verilog file "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/alu.v" into library work
@@ -28,16 +28,16 @@ WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implement
 WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 80: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
 WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 81: Size mismatch in connection of port <dina>. Formal port size is 16-bit while actual signal size is 32-bit.
 Completed static elaboration
-Fuse Memory Usage: 86548 KB
-Fuse CPU Usage: 930 ms
+Fuse Memory Usage: 86544 KB
+Fuse CPU Usage: 870 ms
 Compiling module clock_splitter
 Compiling module register16b_set
 Compiling module alu
 Compiling module mux3
-Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
-Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
-Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
-Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
+Compiling module BLK_MEM_GEN_V6_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V6_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V6_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V6_3(C_FAMILY="spart...
 Compiling module blockmemory16kx1
 Compiling module control
 Compiling module leftshifter12
@@ -53,6 +53,6 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 19 Verilog Units
 Built simulation executable /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.exe
-Fuse Memory Usage: 1698700 KB
-Fuse CPU Usage: 980 ms
-GCC CPU Usage: 1730 ms
+Fuse Memory Usage: 1699040 KB
+Fuse CPU Usage: 910 ms
+GCC CPU Usage: 130 ms
