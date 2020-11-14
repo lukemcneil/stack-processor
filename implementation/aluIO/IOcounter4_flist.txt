@@ -1,0 +1,17 @@
+# Output products list for <IOcounter4>
+IOcounter4/doc/c_counter_binary_v11_0_readme.txt
+IOcounter4/doc/c_counter_binary_v11_0_vinfo.html
+IOcounter4/doc/ds215_counter.pdf
+IOcounter4.asy
+IOcounter4.gise
+IOcounter4.ngc
+IOcounter4.sym
+IOcounter4.v
+IOcounter4.veo
+IOcounter4.xco
+IOcounter4.xise
+IOcounter4_flist.txt
+IOcounter4_xmdf.tcl
+_xmsgs/pn_parser.xmsgs
+core_resources.txt
+gui_latency.txt

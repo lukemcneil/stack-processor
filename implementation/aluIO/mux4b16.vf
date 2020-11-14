@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : mux4b16.vf
-// /___/   /\     Timestamp : 11/12/2020 14:16:00
+// /___/   /\     Timestamp : 11/14/2020 10:40:40
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -135,12 +135,12 @@ module M16_1E_MXILINX_mux4b16(D0,
    wire M67;
    wire M89;
    
-   (* HU_SET = "I_MAB_31" *) 
+   (* HU_SET = "I_MAB_32" *) 
    M2_1_MXILINX_mux4b16  I_MAB (.D0(D10), 
                                .D1(D11), 
                                .S0(S0), 
                                .O(MAB));
-   (* HU_SET = "I_MCD_30" *) 
+   (* HU_SET = "I_MCD_31" *) 
    M2_1_MXILINX_mux4b16  I_MCD (.D0(D12), 
                                .D1(D13), 
                                .S0(S0), 
@@ -149,7 +149,7 @@ module M16_1E_MXILINX_mux4b16(D0,
                   .I1(MEF), 
                   .S(S1), 
                   .LO(MCF));
-   (* HU_SET = "I_MEF_29" *) 
+   (* HU_SET = "I_MEF_30" *) 
    M2_1_MXILINX_mux4b16  I_MEF (.D0(D14), 
                                .D1(D15), 
                                .S0(S0), 
@@ -162,7 +162,7 @@ module M16_1E_MXILINX_mux4b16(D0,
                 .I1(MCF), 
                 .S(S2), 
                 .O(MBF));
-   (* HU_SET = "I_M01_36" *) 
+   (* HU_SET = "I_M01_37" *) 
    M2_1_MXILINX_mux4b16  I_M01 (.D0(D0), 
                                .D1(D1), 
                                .S0(S0), 
@@ -175,12 +175,12 @@ module M16_1E_MXILINX_mux4b16(D0,
                 .I1(M47), 
                 .S(S2), 
                 .O(MO7));
-   (* HU_SET = "I_M23_35" *) 
+   (* HU_SET = "I_M23_36" *) 
    M2_1_MXILINX_mux4b16  I_M23 (.D0(D2), 
                                .D1(D3), 
                                .S0(S0), 
                                .O(M23));
-   (* HU_SET = "I_M45_34" *) 
+   (* HU_SET = "I_M45_35" *) 
    M2_1_MXILINX_mux4b16  I_M45 (.D0(D4), 
                                .D1(D5), 
                                .S0(S0), 
@@ -189,17 +189,17 @@ module M16_1E_MXILINX_mux4b16(D0,
                   .I1(M67), 
                   .S(S1), 
                   .LO(M47));
-   (* HU_SET = "I_M67_33" *) 
+   (* HU_SET = "I_M67_34" *) 
    M2_1_MXILINX_mux4b16  I_M67 (.D0(D6), 
                                .D1(D7), 
                                .S0(S0), 
                                .O(M67));
-   (* HU_SET = "I_M89_32" *) 
+   (* HU_SET = "I_M89_33" *) 
    M2_1_MXILINX_mux4b16  I_M89 (.D0(D8), 
                                .D1(D9), 
                                .S0(S0), 
                                .O(M89));
-   (* HU_SET = "I_O_28" *) 
+   (* HU_SET = "I_O_29" *) 
    M2_1E_MXILINX_mux4b16  I_O (.D0(MO7), 
                               .D1(MBF), 
                               .E(E), 
@@ -248,7 +248,7 @@ module mux4b16(a,
    
    wire V;
    
-   (* HU_SET = "XLXI_1_37" *) 
+   (* HU_SET = "XLXI_1_38" *) 
    M16_1E_MXILINX_mux4b16  XLXI_1 (.D0(a[0]), 
                                   .D1(b[0]), 
                                   .D2(c[0]), 
@@ -271,7 +271,7 @@ module mux4b16(a,
                                   .S2(s[2]), 
                                   .S3(s[3]), 
                                   .O(r[0]));
-   (* HU_SET = "XLXI_17_38" *) 
+   (* HU_SET = "XLXI_17_39" *) 
    M16_1E_MXILINX_mux4b16  XLXI_17 (.D0(a[1]), 
                                    .D1(b[1]), 
                                    .D2(c[1]), 
@@ -294,7 +294,7 @@ module mux4b16(a,
                                    .S2(s[2]), 
                                    .S3(s[3]), 
                                    .O(r[1]));
-   (* HU_SET = "XLXI_19_39" *) 
+   (* HU_SET = "XLXI_19_40" *) 
    M16_1E_MXILINX_mux4b16  XLXI_19 (.D0(a[2]), 
                                    .D1(b[2]), 
                                    .D2(c[2]), 
@@ -317,7 +317,7 @@ module mux4b16(a,
                                    .S2(s[2]), 
                                    .S3(s[3]), 
                                    .O(r[2]));
-   (* HU_SET = "XLXI_20_40" *) 
+   (* HU_SET = "XLXI_20_41" *) 
    M16_1E_MXILINX_mux4b16  XLXI_20 (.D0(a[3]), 
                                    .D1(b[3]), 
                                    .D2(c[3]), 

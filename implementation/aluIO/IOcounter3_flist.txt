@@ -1,0 +1,17 @@
+# Output products list for <IOcounter3>
+IOcounter3/doc/c_counter_binary_v11_0_readme.txt
+IOcounter3/doc/c_counter_binary_v11_0_vinfo.html
+IOcounter3/doc/ds215_counter.pdf
+IOcounter3.asy
+IOcounter3.gise
+IOcounter3.ngc
+IOcounter3.sym
+IOcounter3.v
+IOcounter3.veo
+IOcounter3.xco
+IOcounter3.xise
+IOcounter3_flist.txt
+IOcounter3_xmdf.tcl
+_xmsgs/pn_parser.xmsgs
+core_resources.txt
+gui_latency.txt

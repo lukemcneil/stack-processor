@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : mux8b4.vf
-// /___/   /\     Timestamp : 11/12/2020 14:15:59
+// /___/   /\     Timestamp : 11/14/2020 10:40:40
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -70,13 +70,13 @@ module M4_1E_MXILINX_mux8b4(D0,
    wire M01;
    wire M23;
    
-   (* HU_SET = "I_M01_19" *) 
+   (* HU_SET = "I_M01_20" *) 
    M2_1E_MXILINX_mux8b4  I_M01 (.D0(D0), 
                                .D1(D1), 
                                .E(E), 
                                .S0(S0), 
                                .O(M01));
-   (* HU_SET = "I_M23_18" *) 
+   (* HU_SET = "I_M23_19" *) 
    M2_1E_MXILINX_mux8b4  I_M23 (.D0(D2), 
                                .D1(D3), 
                                .E(E), 
@@ -105,7 +105,7 @@ module mux8b4(IA,
    
    wire V;
    
-   (* HU_SET = "XLXI_1_20" *) 
+   (* HU_SET = "XLXI_1_21" *) 
    M4_1E_MXILINX_mux8b4  XLXI_1 (.D0(IA[0]), 
                                 .D1(IB[0]), 
                                 .D2(IC[0]), 
@@ -114,7 +114,7 @@ module mux8b4(IA,
                                 .S0(Sel[0]), 
                                 .S1(Sel[1]), 
                                 .O(O[0]));
-   (* HU_SET = "XLXI_2_21" *) 
+   (* HU_SET = "XLXI_2_22" *) 
    M4_1E_MXILINX_mux8b4  XLXI_2 (.D0(IA[1]), 
                                 .D1(IB[1]), 
                                 .D2(IC[1]), 
@@ -123,7 +123,7 @@ module mux8b4(IA,
                                 .S0(Sel[0]), 
                                 .S1(Sel[1]), 
                                 .O(O[1]));
-   (* HU_SET = "XLXI_3_22" *) 
+   (* HU_SET = "XLXI_3_23" *) 
    M4_1E_MXILINX_mux8b4  XLXI_3 (.D0(IA[2]), 
                                 .D1(IB[2]), 
                                 .D2(IC[2]), 
@@ -132,7 +132,7 @@ module mux8b4(IA,
                                 .S0(Sel[0]), 
                                 .S1(Sel[1]), 
                                 .O(O[2]));
-   (* HU_SET = "XLXI_4_23" *) 
+   (* HU_SET = "XLXI_4_24" *) 
    M4_1E_MXILINX_mux8b4  XLXI_4 (.D0(IA[3]), 
                                 .D1(IB[3]), 
                                 .D2(IC[3]), 
@@ -142,7 +142,7 @@ module mux8b4(IA,
                                 .S1(Sel[1]), 
                                 .O(O[3]));
    VCC  XLXI_13 (.P(V));
-   (* HU_SET = "XLXI_38_24" *) 
+   (* HU_SET = "XLXI_38_25" *) 
    M4_1E_MXILINX_mux8b4  XLXI_38 (.D0(IA[4]), 
                                  .D1(IB[4]), 
                                  .D2(IC[4]), 
@@ -151,7 +151,7 @@ module mux8b4(IA,
                                  .S0(Sel[0]), 
                                  .S1(Sel[1]), 
                                  .O(O[4]));
-   (* HU_SET = "XLXI_39_25" *) 
+   (* HU_SET = "XLXI_39_26" *) 
    M4_1E_MXILINX_mux8b4  XLXI_39 (.D0(IA[5]), 
                                  .D1(IB[5]), 
                                  .D2(IC[5]), 
@@ -160,7 +160,7 @@ module mux8b4(IA,
                                  .S0(Sel[0]), 
                                  .S1(Sel[1]), 
                                  .O(O[5]));
-   (* HU_SET = "XLXI_40_26" *) 
+   (* HU_SET = "XLXI_40_27" *) 
    M4_1E_MXILINX_mux8b4  XLXI_40 (.D0(IA[6]), 
                                  .D1(IB[6]), 
                                  .D2(IC[6]), 
@@ -169,7 +169,7 @@ module mux8b4(IA,
                                  .S0(Sel[0]), 
                                  .S1(Sel[1]), 
                                  .O(O[6]));
-   (* HU_SET = "XLXI_41_27" *) 
+   (* HU_SET = "XLXI_41_28" *) 
    M4_1E_MXILINX_mux8b4  XLXI_41 (.D0(IA[7]), 
                                  .D1(IB[7]), 
                                  .D2(IC[7]), 

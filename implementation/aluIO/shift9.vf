@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : shift9.vf
-// /___/   /\     Timestamp : 11/12/2020 14:16:00
+// /___/   /\     Timestamp : 11/14/2020 10:40:41
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -149,48 +149,48 @@ module shift9(CLK,
                   .D(XLXN_84), 
                   .PRE(XLXN_30), 
                   .Q(isel8));
-   (* HU_SET = "XLXI_21_49" *) 
+   (* HU_SET = "XLXI_21_50" *) 
    M2_1_MXILINX_shift9  XLXI_21 (.D0(isel1), 
                                 .D1(isel8), 
                                 .S0(up), 
                                 .O(XLXN_76));
    GND  XLXI_53 (.G(XLXN_30));
-   (* HU_SET = "XLXI_56_41" *) 
+   (* HU_SET = "XLXI_56_42" *) 
    M2_1_MXILINX_shift9  XLXI_56 (.D0(isel2), 
                                 .D1(isel0), 
                                 .S0(up), 
                                 .O(XLXN_77));
-   (* HU_SET = "XLXI_57_42" *) 
+   (* HU_SET = "XLXI_57_43" *) 
    M2_1_MXILINX_shift9  XLXI_57 (.D0(isel3), 
                                 .D1(isel1), 
                                 .S0(up), 
                                 .O(XLXN_78));
-   (* HU_SET = "XLXI_58_48" *) 
+   (* HU_SET = "XLXI_58_49" *) 
    M2_1_MXILINX_shift9  XLXI_58 (.D0(isel4), 
                                 .D1(isel2), 
                                 .S0(up), 
                                 .O(XLXN_79));
-   (* HU_SET = "XLXI_59_47" *) 
+   (* HU_SET = "XLXI_59_48" *) 
    M2_1_MXILINX_shift9  XLXI_59 (.D0(isel5), 
                                 .D1(isel3), 
                                 .S0(up), 
                                 .O(XLXN_80));
-   (* HU_SET = "XLXI_60_43" *) 
+   (* HU_SET = "XLXI_60_44" *) 
    M2_1_MXILINX_shift9  XLXI_60 (.D0(isel6), 
                                 .D1(isel4), 
                                 .S0(up), 
                                 .O(XLXN_81));
-   (* HU_SET = "XLXI_61_46" *) 
+   (* HU_SET = "XLXI_61_47" *) 
    M2_1_MXILINX_shift9  XLXI_61 (.D0(isel7), 
                                 .D1(isel5), 
                                 .S0(up), 
                                 .O(XLXN_82));
-   (* HU_SET = "XLXI_62_44" *) 
+   (* HU_SET = "XLXI_62_45" *) 
    M2_1_MXILINX_shift9  XLXI_62 (.D0(isel8), 
                                 .D1(isel6), 
                                 .S0(up), 
                                 .O(XLXN_83));
-   (* HU_SET = "XLXI_63_45" *) 
+   (* HU_SET = "XLXI_63_46" *) 
    M2_1_MXILINX_shift9  XLXI_63 (.D0(isel0), 
                                 .D1(isel7), 
                                 .S0(up), 
