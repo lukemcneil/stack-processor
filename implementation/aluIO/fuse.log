@@ -29,7 +29,7 @@ WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implement
 WARNING:HDLCompiler:189 - "/home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor.v" Line 81: Size mismatch in connection of port <dina>. Formal port size is 16-bit while actual signal size is 32-bit.
 Completed static elaboration
 Fuse Memory Usage: 86544 KB
-Fuse CPU Usage: 870 ms
+Fuse CPU Usage: 940 ms
 Compiling module clock_splitter
 Compiling module register16b_set
 Compiling module alu
@@ -50,9 +50,8 @@ Compiling module final_processor
 Compiling module final_processor_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 19 Verilog Units
 Built simulation executable /home/luke/csse232/project/2021a-project-2v/implementation/aluIO/final_processor_tb_isim_beh.exe
 Fuse Memory Usage: 1699040 KB
-Fuse CPU Usage: 910 ms
+Fuse CPU Usage: 990 ms
 GCC CPU Usage: 130 ms
