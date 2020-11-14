@@ -59,14 +59,14 @@ module final_processor_tb;
 		CLK = 0;
 		reset = 0;
 		fails = 0;
-		pc_reset_address = 0;
+		pc_reset_address = 332;
 
 		// Wait 100 ns for global reset to finish
 		#100;
         
 		// Add stimulus here
-		getin = 3;
-		getin2 = 4;
+		getin = 3480;
+		getin2 = 2;
 		resetProcessor();
 	
 // ###########################################	
@@ -516,9 +516,6 @@ module final_processor_tb;
 //			$display("FAIL: rel prime");
 //			fails = fails + 1;
 //		end
-
-		getin = 4;
-		getin2 = 2;
 
 		if (fails == 0)
 			$display("ALL TESTS PASSED");

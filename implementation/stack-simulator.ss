@@ -4,6 +4,9 @@
 (define (sub stack return-stack pc labels)
   (cons* (cons (- (cadr stack) (car stack)) (cddr stack)) (1+ pc) return-stack))
 
+(define (div stack return-stack pc labels)
+  (cons* (cons (/ (cadr stack) (car stack)) (cddr stack)) (1+ pc) return-stack))
+
 (define (pushi imm stack return-stack pc labels)
   (cons* (cons imm stack) (1+ pc) return-stack))
 

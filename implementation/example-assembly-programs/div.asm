@@ -1,11 +1,12 @@
 MAIN:
 	getin
 	getin2
-	pushi 0
-	pop 1
 	jal DIV
 	halt
 DIV:
+	pushi 0
+	pop 1
+DIVLOOP:
 	over
 	over
 	slt
@@ -19,7 +20,7 @@ DIV:
 	pushi 1
 	add
 	pop 1
-	j DIV
+	j DIVLOOP
 DIVRETURNY:
 	drop
 	drop

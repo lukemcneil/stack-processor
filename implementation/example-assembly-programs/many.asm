@@ -30,8 +30,7 @@ FACTLOOP:
 	pushi 1
 	sub
 	jal FACT
-	jal MUL
-	return
+	j MUL
 MUL:
 	over
 	over
@@ -53,8 +52,7 @@ DONE:
 	return
 SWAP:
 	swap
-	jal MUL
-	return
+	j MUL
 5FIBMAIN:
 	getin
 	jal FIB
@@ -126,11 +124,12 @@ GCDRETURNA:
 7DIVMAIN:
 	getin
 	getin2
-	pushi 0
-	pop 1
 	jal DIV
 	halt
 DIV:
+	pushi 0
+	pop 1
+DIVLOOP:
 	over
 	over
 	slt
@@ -144,7 +143,7 @@ DIV:
 	pushi 1
 	add
 	pop 1
-	j DIV
+	j DIVLOOP
 DIVRETURNY:
 	drop
 	drop
@@ -168,4 +167,61 @@ MOD:
 	j MOD
 MODRETURNN:
 	drop
+	return
+9MAINCHOOSE:
+	getin
+	getin2
+	jal CHOOSE
+	halt
+CHOOSE:
+	over
+	over
+	slt
+	pushi 1
+	beq RETURN0
+	over
+	over
+	sub
+	jal FACT
+	swap
+	jal FACT
+	jal MUL
+	swap
+	jal FACT
+	swap
+	j DIV
+RETURN0:
+	drop
+	drop
+	pushi 0
+	return
+10MAINSQRT:
+	getin
+	jal SQRT
+	halt
+SQRT:
+	dup
+	bez SQRTRETURN0
+	pushi 1
+	j SQRTLOOP
+SQRTLOOP:
+	over
+	over
+	dup
+	jal MUL
+	slt
+	pushi 1
+	beq SQRTDONE
+	pushi 1
+	add
+	j SQRTLOOP
+SQRTDONE:
+	swap
+	drop
+	pushi 1
+	sub
+	return
+SQRTRETURN0:
+	drop
+	pushi 0
 	return
