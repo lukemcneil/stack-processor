@@ -1,5 +1,4 @@
 MAIN:
-	getin
 	jal RELPRIME
 	halt
 RELPRIME:
@@ -21,19 +20,16 @@ GCD:
 	over
 	bez RETURNB
 LOOP:
-	dup
-	bez RETURNA
-	over
-	over
+	bezn RETURNA
 	swap
-	slt
+	sltn
 	bez ELSE
-	swap
 	over
 	sub
 	swap
 	j LOOP
 ELSE:
+	swap
 	over
 	sub
 	j LOOP

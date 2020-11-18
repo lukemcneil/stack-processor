@@ -34,8 +34,18 @@
 (define (slt stack return-stack pc labels)
   (cons* (cons (if (< (cadr stack) (car stack)) 1 0) (cddr stack)) (1+ pc) return-stack))
 
+(define (sltn stack return-stack pc labels)
+  (cons* (cons (if (< (cadr stack) (car stack)) 1 0) stack) (1+ pc) return-stack))
+
 (define (bez label stack return-stack pc labels)
   (cons* (cdr stack)
+         (if (= (car stack) 0)
+             (hashtable-ref labels label -1)
+             (1+ pc))
+         return-stack))
+
+(define (bezn label stack return-stack pc labels)
+  (cons* stack
          (if (= (car stack) 0)
              (hashtable-ref labels label -1)
              (1+ pc))
@@ -298,3 +308,5 @@ F3:
   (if (< (length args) 2)
       (printf "not enough arguments\n")
       (time (simulate (file->instructions (cadr args)) (map string->number (cddr args))))))
+
+;;(simulate (file->instructions "/home/luke/csse232/project/2021a-project-2v/implementation/example-assembly-programs/rel-prime.asm") '(5040))
