@@ -85,6 +85,7 @@
            (sub "0000000000001010")
            (swap "0000000000001011")
            (getin2 "0000000000001100")
+           (sltn "0000000000001101")
            
            (beq "0001")
            (bez "0010")
@@ -93,7 +94,8 @@
            (pop "0101")
            (push "0110")
            (pushi "0111")
-           (lui "1000"))]
+           (lui "1000")
+           (bezn "1001"))]
         [hash (make-eq-hashtable)])
     (for-each
      (lambda (pair) (hashtable-set! hash (car pair) (cadr pair)))

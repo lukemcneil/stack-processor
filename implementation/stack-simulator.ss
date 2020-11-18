@@ -185,7 +185,8 @@
   (let* ([processed (process-instructions data)]
          [instructions (car processed)]
          [args (cadr processed)]
-         [labels (caddr processed)])
+         [labels (caddr processed)]
+         [stats (make-vector (vector-length instructions) 0)])
     (define (loop stack return-stack pc max-stack-size max-return-stack-size instruction-count)
       (let* ([inst (vector-ref instructions pc)]
              [arg (vector-ref args pc)]
@@ -195,6 +196,7 @@
              [stack-new (car result)]
              [pc-new (cadr result)]
              [return-stack-new (cddr result)])
+        (vector-set! stats pc (1+ (vector-ref stats pc)))
         ;;(printf "~s ~s\n  stack: ~s\n  return: ~s\n" inst arg stack-new return-stack-new)
         ;;(printf "~s\n" (length stack-new))
         (if (and (< pc-new (vector-length instructions)) (> pc-new 0))
@@ -203,12 +205,19 @@
                   (max (length return-stack-new) max-return-stack-size)
                   (1+ instruction-count))
             (begin
+              (printf "Number of times executed:\n")
+              (print-stats (vector->list (vector-map cons instructions stats)))
               (printf "max-stack-size: ~s\nmax-return-stack-size: ~s\ninstruction-count: ~s\n"
                       max-stack-size max-return-stack-size instruction-count)
               (printf "final-stack: ~d\n" stack-new)
               stack-new))))
     ;;(printf "~s\n" '())
     (loop starting-stack '() 0 0 0 0)))
+
+(define (print-stats stats)
+  (unless (null? stats)
+    (printf "    ~s: ~d\n" (caar stats) (cdar stats))
+    (print-stats (cdr stats))))
 
 (define rel-prime
   "	jal RELPRIME
@@ -309,4 +318,6 @@ F3:
       (printf "not enough arguments\n")
       (time (simulate (file->instructions (cadr args)) (map string->number (cddr args))))))
 
-;;(simulate (file->instructions "/home/luke/csse232/project/2021a-project-2v/implementation/example-assembly-programs/rel-prime.asm") '(5040))
+;;(simulate
+;; (file->instructions "/home/luke/csse232/project/2021a-project-2v/implementation/example-assembly-programs/rel-prime.asm")
+;; '(5040))

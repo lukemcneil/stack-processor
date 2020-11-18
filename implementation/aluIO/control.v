@@ -171,6 +171,15 @@ module control(
 						MemWrite <= 0;
 						PCWrite <= 1;
 					end
+					13: begin // sltn
+						stackOP <= PUSH;
+						rStackOP <= NONE;
+						ALUOP <= BLESSA;
+						stackControl <= ALU;
+						PCControl <= PCINC;
+						MemWrite <= 0;
+						PCWrite <= 1;
+					end
 				endcase
 			end
 			1: begin // beq
@@ -231,6 +240,14 @@ module control(
 				rStackOP <= NONE;
 				stackControl <= IMMLUI;
 				PCControl <= PCINC;
+				MemWrite <= 0;
+				PCWrite <= 1;
+			end
+			9: begin // bezn
+				stackOP <= NONE;
+				rStackOP <= NONE;
+				ALUOP <= EZ;
+				PCControl <= LABELORPCINC;
 				MemWrite <= 0;
 				PCWrite <= 1;
 			end

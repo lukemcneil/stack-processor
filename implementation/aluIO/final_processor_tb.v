@@ -65,7 +65,7 @@ module final_processor_tb;
 		#100;
         
 		// Add stimulus here
-		getin = 3480;
+		getin = 5040;
 		getin2 = 2;
 		resetProcessor();
 	
